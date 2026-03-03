@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/header.css">
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="language-switcher">
+      {% for l in site.translations.languages %}
+        <a class="languages" href="{{ page.url | replace(lang, l) }}">{{ l }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="site-header-inner">
+    <a style="border-bottom: none;" href={{["/", lang, "/resume/"] | join}} class="site-logo">c4205M</a>
+
+    {% set prefix = ["/", lang] | join %}
+
+    <nav class="site-nav">
+      {% if site.navigation %}
+        {% for url in site.navigation %}
+          <a href="{{[prefix, url.url] | join}}"
+            {% if page.url == [prefix, url.url] | join %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{url.label[lang]}}
+          </a>
+        {% endfor %}
+      {% endif %}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,141 @@
+---
+pagination:
+  data: site.translations.languages
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/resume/"
+
+resume:
+  en: "Resume"
+  tr: "Özgeçmiş"
+
+work:
+  en: "Work Experience"
+  tr: "Profesyonel Deneyim"
+
+projects:
+  en: "Shipped Projects"
+  tr: "Projeler"
+
+education:
+  en: "Education"
+  tr: "Eğitim"
+
+skills:
+  en: "Toolkit"
+  tr: "Yetkinlikler"
+---
+
+<!DOCTYPE html>
+<html lang={{lang}}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ resume.basics.name }} – {{resume[lang]}}</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  {% include "components/header.njk" %}
+    
+  <header>
+    <div class="name">
+      <h1>{{resume.basics.name}}</h1>
+      <p>{{resume.basics.label}}</p>
+    </div>
+    <div class="muted">
+      <a href="tel:{{resume.basics.phone}}">{{resume.basics.phone}}</a><br>
+      <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a><br>
+      {% if resume.basics.website %}
+        <a href="{{ resume.basics.website }}">{{ resume.basics.website }}</a><br>
+      {% endif %}
+      <p>{{ resume.basics.location }}</p>
+    </div>
+  </header>
+
+  {% if resume.basics.summary[lang] %}
+  <section>
+    <p>{{ resume.basics.summary[lang] }}</p>
+  </section>
+  {% endif %}
+
+  {% if resume.work %}
+  <section class="break">
+    <h2 lang={{lang}}>{{work[lang]}}</h2>
+    {% for job in resume.work %}
+      <div class="item">
+        <div class="row">
+          <strong>{{ job.position }} – {{ job.company }}</strong>
+          <span class="muted">
+            {{ job.startDate }} – {{ job.endDate or "Present" }}
+          </span>
+        </div>
+        <p class="muted">{{ job.location }}</p>
+        {% if job.highlights %}
+          <ul>
+            {% for highlight in job.highlights[lang] %}
+              <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if resume.projects %}
+  <section>
+    <h2 lang={{lang}}>{{projects[lang]}}</h2>
+    {% for project in resume.projects %}
+      <div class="item">
+        <div class="row">
+          <strong>{{ project.name }}</strong>
+          {% if project.href %}
+            <a href= {{["/", lang, project.href] | join}} class="muted">{{ project.label[lang] }}</a>
+          {% else %}
+            <a href= {{project.url}} class="muted" target="_blank" rel="noopener">{{ project.label[lang] }}</a>
+          {% endif %}
+        </div>
+        <p class="desc" lang={{lang}}> {{ project.description[lang] | safe}} </p>
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if resume.education %}
+  <section>
+    <h2 lang={{lang}}>{{education[lang]}}</h2>
+    {% for edu in resume.education %}
+      <div class="item">
+        <div class="row">
+          <strong>{{ edu.studyType[lang] }} – {{ edu.institution[lang] }}</strong>
+          <span class="muted">
+            {{ edu.startDate }} – {{ edu.endDate }}
+          </span>
+        </div>
+        <p class="muted">{{ edu.area[lang] }}</p>
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if resume.skills %}
+  <section>
+    <h2 lang={{lang}}>{{skills[lang]}}</h2>
+    <ul>
+      {% for skill in resume.skills %}
+        <li>
+          <strong>{{ skill.name[lang] }}:</strong>
+          {{ skill.keywords | join(", ") }}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <div class="no-print">
+    {% include "components/footer.njk" %}
+  </div>
+</body>
+<script src="/app.js"></script>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "c4205M's static portfolio and blog page made with 11ty.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "c4205M",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^4.0.0-alpha.6"
+  }
+}

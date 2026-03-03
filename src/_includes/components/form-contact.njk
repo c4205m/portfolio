@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/contact.css">
+
+<section class="contact no-print">
+  <h2>{{site.translations.contact.title[lang]}}</h2>
+
+  <div class="contact-card">
+    <p class="contact-intro">
+      {{site.translations.contact.intro[lang]}}
+    </p>
+
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/xgolgevd"
+      method="POST"
+      novalidate
+    >
+      <!-- Honeypot -->
+      <input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off">
+
+      <div class="field">
+        <label for="name">{{site.translations.contact.name[lang]}}</label>
+        <input id="name" type="text" name="name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">{{site.translations.contact.mail[lang]}}</label>
+        <input id="email" type="email" name="email" required />
+      </div>
+
+      <div class="field">
+        <label for="message">{{site.translations.contact.message[lang]}}</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">
+        <span class="btn-text">{{site.translations.contact.button[lang]}}</span>
+      </button>
+
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script src="/contact.js"></script>

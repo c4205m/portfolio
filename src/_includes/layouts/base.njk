@@ -1,0 +1,31 @@
+{% set t = translations[lang] %}
+
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+
+  {% for l in site.translations.languages %}
+    <link rel="alternate" hreflang="{{ l }}" href="/{{ l }}/" />
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="/{{ site.translations.defaultLang }}/" />
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  {% include "components/header.njk" %}
+  
+  {% if gallery %}
+    {% include "components/gallery.njk" %}
+  {% else %}
+    {{ content | safe }}
+  {% endif %}
+  
+  <div class="no-print">
+    {% include "components/footer.njk" %}
+  </div>
+</body>
+<script src="/app.js"></script>
+</html>

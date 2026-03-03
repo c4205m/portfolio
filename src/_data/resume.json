@@ -1,0 +1,260 @@
+{
+    "basics": {
+        "name": "[Can] Mustafa YILMAZ",
+        "label": "Technical Artist",
+        "email": "canmstfylmz@proton.me",
+        "phone": "+90 552 226 23 97",
+        "location": "Istanbul, Türkiye",
+        "website": "https://yourwebsite.com",
+        "summary": {}
+    },
+    "work": [
+        {
+            "company": "Qreal Agency",
+            "position": "Lens Expert",
+            "location": "Remote",
+            "startDate": "2024",
+            "endDate": "2026",
+            "highlights": {
+            "en": [
+                "Led project quality assurance to ensure performance and stability across AR experiences.",
+                "Provided lens-building assistance to internal teams and external collaborators.",
+                "Developed complex, high-performance lenses with interactive features.",
+                "Integrated AI-driven systems to enhance interactivity and user engagement."
+            ],
+            "tr": [
+                "AR deneyimlerinde performans ve kararlılığı sağlamak amacıyla proje kalite süreçlerinin yürütülmesi.",
+                "İç ekipler ve dış paydaşlara lens geliştirme desteğinin sağlanması.",
+                "İnteraktif, kompleks ve yüksek performanslı lenslerin geliştirilmesi.",
+                "Etkileşim ve kullanıcı katılımını artırmaya yönelik yapay zekâ destekli sistemlerin entegrasyonu."
+            ]
+            }
+        },
+        {
+            "company": "Qreal Agency",
+            "position": "Lens Specialist",
+            "location": "Remote",
+            "startDate": "2023",
+            "endDate": "2024",
+            "highlights": {
+            "en": [
+                "Led project quality assurance to maintain technical and creative standards.",
+                "Designed and developed interactive AR lenses from concept to deployment.",
+                "Built and optimized real-time shaders for immersive visual effects."
+            ],
+            "tr": [
+                "Teknik ve yaratıcı standartların korunmasına yönelik kalite süreçlerinin yürütülmesi.",
+                "Konseptten yayın aşamasına, etkileşimli AR lenslerinin tasarlanması ve geliştirilmesi.",
+                "Kapsamlı görsel efektler için gerçek zamanlı shaderların geliştirilmesi ve optimize edilmesi."
+            ]
+            }
+        },
+        {
+            "company": "Qreal Agency",
+            "position": "3D Generalist",
+            "location": "Remote",
+            "startDate": "2022",
+            "endDate": "2023",
+            "highlights": {
+            "en": [
+                "Created and animated 3D materials (models, shaders, textures, systems etc.) for AR experiences.",
+                "Developed real-time shaders to enhance visual quality and performance."
+            ],
+            "tr": [
+                "AR deneyimleri için 3D materyallerin oluşturulması ve animasyonlarının hazırlanması.",
+                "Görsel kalite ve performansı artırmaya yönelik gerçek zamanlı shader geliştirilmesi."
+            ]
+            }
+        },
+        {
+            "company": "Ortak Sanatlar",
+            "position": "Creative Developer",
+            "location": "Istanbul",
+            "startDate": "2019",
+            "endDate": "2021",
+            "highlights": {
+            "en": [
+                "Developed interactive visual experiences combining real-time graphics and creative coding.",
+                "Collaborated with artists and designers to translate concepts into technical implementations.",
+                "Created custom visual tools and workflows to streamline production processes."
+            ],
+            "tr": [
+                "Gerçek zamanlı grafikler ve yaratıcı kodlamayı birleştiren etkileşimli görsel deneyimlerin geliştirilmesi.",
+                "Sanatçılar ve tasarımcılarla iş birliği içinde konseptlerin teknik uygulamalara dönüştürülmesi.",
+                "Üretim süreçlerini optimize etmek amacıyla özel görsel araçlar ve iş akışlarının oluşturulması."
+            ]
+            }
+        }
+    ],
+    "projects": [
+        {
+            "name": "THORN — Parametric Lighting System",
+            "description": {
+                "en": "Thorn is a Red Dot Award–winning modular ceiling light by QZENS, constructed from two primary component types. To operationalize this design for production, I developed <strong>a parametric generation framework in Blender using Geometry Nodes and Blender API</strong>. The system encodes the assembly logic directly into the node structure, allowing controlled variation of length, density, and branching frequency while preserving structural constraints. <strong>A custom export add-on bridges the model to fabrication documentation</strong> that automatically compiles indexed component counts, part typologies, and configuration-specific production data directly from the geometry. The result is <strong>a computational design-to-production pipeline</strong> where variation, visualization, and installation logic coexist within a single system — transforming a sculptural object into a scalable, rule-based product architecture ready for launch.",
+
+                "tr": "Thorn, QZENS tarafından tasarlanan ve Red Dot ödülüne layık görülen modüler bir tavan aydınlatma sistemidir. Tasarımın üretim süreçlerine entegre edilebilmesi için, montaj mantığını doğrudan node yapısında taklit ederek uzunluk, yoğunluk ve dallanma biçimlerinin kontrollü varyasyonunlarını yaratmayı mümkün kılarken yapısal kısıtları koruyan bir sistem gerekliydi. Bunu <strong>Blender içerisinde Geometry Nodes ve Blender API kullanarak parametrik bir üretim altyapısı</strong> sağlayarak sağladım. <strong>Geliştirdiğim özel bir XML çıktı eklentisi, modelde kullanılan parçaları doğrudan üretim dokümantasyonuna kaydeder</strong> ve geometri üzerinden bileşen sayımlarını, parça tipolojilerini ve konfigürasyona özgü üretim verilerini otomatik olarak derler. Ortaya çıkan yapı görselleştirme ve montaj mantığını tek bir sistem içinde birleştiren <strong>prosedürel bir tasarımdan üretime geçiş altyapısıdır</strong>; böylece heykelsi bir nesne, ölçeklenebilir ve kural tabanlı bir ürün mimarisine dönüşür."
+            },
+            "href": "/projects/thorn/",
+            "label": {
+                "en": "View Project",
+                "tr": "Projeyi Görüntüle"
+            }
+        },
+        {
+            "name": "0 Days Without Accidents",
+            "description": {
+                "en": "An award-winning endless runner that received <strong>1st Place at the Devpost Hackathon</strong>. Set in Station 496, the game follows a newly hired technician who accidentally triggers an explosion and must navigate an unstable facility while recovering his scattered succulents. The project was conceived as a technical exploration of <strong>constraint-based procedural generation</strong> inspired by wave function collapse principles. Rather than implementing the algorithm directly, I translated its underlying ideas—adjacency rules, compatibility states, and weighted randomness into <strong>a modular tile-based generation framework</strong>. Each segment encodes spatial constraints and collision logic allowing the runtime system to assemble levels dynamically without producing invalid or unsolvable configurations. The result is a compact system-driven endless runner where procedural generation function as a cohesive framework shaped within the constraints of a hackathon setting.",
+
+                "tr": "<strong>Devpost Hackathon’da 1.lik ödülü kazanan</strong> bir <i>endless runner</i> projesidir. Oyun, Station 496’da göreve yeni başlayan bir teknisyenin yanlışlıkla bir patlamaya sebep olmasıyla başlar ve karakter, yıkılmaya başlayan tesisten kaçmaya çalışırken etrafa saçılan sukulentlerini toplamaya çalışır. Proje, <strong><i>constraint</i> temelli prosedürel üretim sistemlerinin teknik bir araştırması</strong> olarak ortaya çıktı ve <i>Wave Function Collapse</i> yaklaşımından ilham aldı. Algoritmayı doğrudan uygulamak yerine; komşuluk kuralları, uyumluluk durumları ve ağırlıklı rastgelelik prensiplerini <strong>modüler, <i>grid</i> tabanlı bir üretim çerçevesine</strong> dönüştürdüm. Her segment, mekânsal kısıtları ve çarpışma mantığını kendi içinde tanımlar; böylece çalışma zamanında sistem, geçersiz konfigürasyonlar üretmeden seviyeleri dinamik olarak oluşturabilir. Sonuç olarak proje, hackathon koşulları içinde, prosedürel üretimi bütüncül bir oyun sistemi olarak ele alan kompakt ve sistem odaklı bir <i>endless runner</i> deneyimine dönüştü."
+            },
+            "url": "https://devpost.com/software/dayswoaccident",
+            "label": {
+                "en": "View on Devpost",
+                "tr": "Devpost'ta Görüntüle"
+            }
+        },
+        {
+            "name": "NLE Batch Editor",
+            "description": {
+                "en": "NLA Batch Editor is a <strong>GNU-licensed, open-source Blender add-on</strong> focused on improving productivity inside the NLA Editor. Originally built as a personal workflow tool, it evolved into a community-ready project that enables batch pushdown, track and strip management, advanced selection tools, and large-scale animation cleanup. It aims to remove manual rivalry from animation workflows and provide a structured foundation for scalable, web-ready exports. The project is <strong>open for collaboration</strong> and future <strong>community-driven enhancements</strong>.",
+
+                "tr": "NLA Batch Editor, <strong>GNU lisanslı açık kaynaklı bir Blender eklentisidir</strong> ve NLA Editor içerisindeki üretkenliği artırmaya odaklanır. Başlangıçta kişisel bir proje olarak geliştirilirken, zamanla topluluk kullanımına uygun bir yapıya evrildi. Toplu <i>pushdown</i> işlemleri, <i>track ve strip</i> yönetimi, gelişmiş seçim araçları ve büyük ölçekli animasyon temizliği gibi özellikler sunar. Amaç, animasyon süreçlerindeki manuel tekrarları azaltmak ve ölçeklenebilir, web-uyumlu çıktılar için yapılandırılmış bir temel oluşturmaktır. Proje <strong>iş birliğine açık</strong> olup topluluk odaklı geliştirmelere zemin hazırlar."
+            },
+            "url": "https://github.com/c4205m/NLA-Batch-Editor",
+            "label": {
+                "en": "View on Github",
+                "tr": "Github'da Görüntüle"
+            }
+        },
+        {
+            "name": "Azuki: Elemental AR Experience",
+            "description": {
+                "en": "An immersive <strong>augmented reality experience</strong> developed to promote Azuki’s merchandise through character-driven environmental effects. Inspired by Azuki’s character universe, I designed and developed four <strong>real-time VFX ecosystem</strong> — each dynamically tracks, orbits, and responds to the user. The system used body tracking as a spatial anchor, generating real-time procedural effects centered around the user. I built <strong>custom GPU shaders to orchestrate particle systems</strong> and vertex displacement across four elemental effects. Procedural systems controlled the swirl, speed, and reactive movement of the particles, creating organic whirlpool effects around the user. The project required careful <strong>optimization of draw calls</strong> and particle counts to maintain high visual fidelity within mobile AR performance constraints.",
+
+                "tr": "Azuki markasının ürün lansmanını desteklemek amacıyla geliştirilen <strong>bir artırılmış gerçeklik deneyimidir</strong>. Azuki karakter evreninden ilham alarak dört farklı <strong>gerçek zamanlı VFX ekosistemi</strong> tasarlandı ve yazılım tabanları kuruldu. Sistem, gerçek zamanlı bir takip mekanizması kullanarak, Azuki evrenine uyumlu çevresel efektler ile kullanıcı odaklı bir artırılmış gerçeklik deneyimi sunar. <strong><i>Particle system</i> ve <i>vertex displacement</i> süreçlerini yönetmek için özel <i>GPU shader</i>’ları geliştirildi</strong>. Parçacıkların dönüşü, hızı ve reaktif hareketi parametrik sistemler tarafından kontrol edilerek kullanıcı etrafında organik girdap efektleri oluşturuldu. Proje, mobil AR performans kısıtlamalarına rağmen yüksek görsel kaliteyi koruyabilmek için <strong><i>draw call optimizasyonu</i></strong> ve parçacık sayısı denetimi gerektirdi."
+            },
+            "href": "/projects/azuki/",
+            "label": {
+                "en": "View Project",
+                "tr": "Projeyi Görüntüle"
+            }
+        }
+    ],
+    "education": [
+        {
+            "institution": {
+                "en": "Marmara University",
+                "tr": "Marmara Üniversitesi"
+            },
+            "area": {
+                "en": "Television and Cinema Department",
+                "tr": "Radyo, Sinema ve Televizyon Bölümü"
+            },
+            "studyType": {
+                "en": "Bachelor's Degree",
+                "tr": "Lisans"
+            },
+            "startDate": "2016",
+            "endDate": "2022"
+        }
+    ],
+    "skills": [
+        {
+            "name": {
+                "en": "Languages",
+                "tr": "Diller"
+            },
+            "keywords": [
+                "English",
+                "Latin",
+                "Türkçe"
+            ]
+        },
+        {
+            "name": {
+                "en": "Scripting Languages",
+                "tr": "Yazılım Dilleri"
+            },
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "TypeScript",
+                "C#",
+                "C++",
+                "GDScript",
+                "Python"
+            ]
+        },
+        {
+            "name": {
+                "en": "Frameworks and APIs",
+                "tr": "Frameworkler ve Programlama Arayüzleri"
+            },
+            "keywords": [
+                "Godot API",
+                "Blender API",
+                "Lens Studio API",
+                "Three.js",
+                "Bash",
+                "Git"
+            ]
+        },
+        {
+            "name": {
+                "en": "Real-time Development",
+                "tr": "Gerçek Zamanlı Yazılım"
+            },
+            "keywords": [
+                "Unity",
+                "Unreal Engine",
+                "Godot",
+                "Lens Studio",
+                "Effect House",
+                "YouTube Effects"
+            ]
+        },
+        {
+            "name": {
+                "en": "Rendering and Shader Development",
+                "tr": "Render ve Shader Yazılım"
+            },
+            "keywords": [
+                "GLSL",
+                "HLSL",
+                "WebGPU"
+            ]
+        },
+        {
+            "name": {
+                "en": "AI and Generative Systems",
+                "tr": "Yapay Zekâ ve Jeneratif Prodüksiyon"
+            },
+            "keywords": [
+                "ComfyUI",
+                "Weavy"
+            ]
+        },
+        {
+            "name": {
+                "en": "3D and Creative Production",
+                "tr": "3D ve Yaratıcı Prodüksiyon"
+            },
+            "keywords": [
+                "Blender",
+                "SideFX Houdini",
+                "GIMP",
+                "Inkscape",
+                "Graphite",
+                "Autodesk Maya",
+                "Autodesk 3Ds Max",
+                "Adobe Photoshop",
+                "Adobe Illustrator",
+                "Adobe After Effects",
+                "Adobe Premiere Pro",
+                "Adobe XD",
+                "Adobe Audition"
+            ]
+        }
+    ]
+}

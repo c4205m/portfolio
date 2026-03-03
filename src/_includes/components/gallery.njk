@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="/gallery.css">
+<section class="gallery-section">
+  {% if gallery.title %}
+    <h2 lang="en">{{ gallery.title }}</h2>
+  {% endif %}
+
+  {% if gallery.mobile %}
+    <div class="mobile-grid">
+      {% for item in gallery.mobile %}
+        <div class="mobile-item">
+          {% if item.type == "webm" %}
+            {% if item.href %}
+              <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
+              <video autoplay muted playsinline preload="metadata" 
+                {% if not item.loop %}
+                  loop
+                {% endif %}
+              >
+                <source src="{{ item.src }}" type="video/webm">
+              </video>
+              </a>
+            {% else %}
+              <video autoplay muted loop playsinline preload="metadata">
+                <source src="{{ item.src }}" type="video/webm">
+              </video>
+            {% endif %}
+          {% elif item.type == "embed" %}
+            <div class="mobile-embed">
+              {{ item.embed | safe }}
+            </div>
+          {% else %}
+            {% if item.href %}
+              <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
+              <img 
+                src="{{ item.src }}" 
+                alt="{{ item.alt or '' }}" 
+                loading="lazy"
+              >
+              </a>
+            {% else %}
+              <img 
+                src="{{ item.src }}" 
+                alt="{{ item.alt or '' }}" 
+                loading="lazy"
+              >
+            {% endif %}
+          {% endif %}
+
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class=" 
+  {% if gallery.title %}
+    desc
+  {% else %}
+    content
+  {% endif %}"> 
+    {% if title %}
+      <h2 lang="en">{{ title }}</h2>
+    {% endif %}
+    {{text[lang] | safe}}
+  </div>
+
+  <div class="gallery-grid">
+    {% for item in gallery.items %}
+      <div class="gallery-item">
+        {% if item.type == "webm" %}
+          {% if item.href %}
+            <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="{{ item.src }}" type="video/webm">
+            </video>
+            </a>
+          {% else %}
+            <video autoplay muted playsinline preload="metadata"
+              {% if not item.once %}
+                loop
+              {% endif %}
+            >
+              <source src="{{ item.src }}" type="video/webm">
+            </video>
+          {% endif %}
+        {% elif item.type == "text" %}
+          <div class="gallery-text">
+            {% if item.title %}
+              <span class="gallery-title">
+                {{ item.title[lang] | safe }}
+              </span>
+            {% endif %}
+            <span class="gallery-content" 
+              {% if not item.title[lang] %}
+                style="text-align: center;"
+              {% endif %}
+            >
+              {{ item.content[lang] | safe }}
+            </span>
+          </div>
+        {% elif item.type == "embed" %}
+          <div class="gallery-embed">
+            {{ item.embed | safe }}
+          </div>
+        {% else %}
+          {% if item.href %}
+            <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
+            <img 
+              src="{{ item.src }}" 
+              alt="{{ item.alt or '' }}" 
+              loading="lazy"
+            >
+            {% if item.name %}
+              <div class="img-title">{{ item.name }}</div>
+            {% endif %}
+            </a>
+          {% else %}
+            <img 
+              src="{{ item.src }}" 
+              alt="{{ item.alt or '' }}" 
+              loading="lazy"
+            >
+            {% if item.name %}
+              <div class="img-title">{{ item.name }}</div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </div>
+</section>
