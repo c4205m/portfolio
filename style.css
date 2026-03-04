@@ -156,8 +156,22 @@ li::before {
   hyphens: auto;
   line-height: 1.4;
 }
+.linkemph > img {
+    display: none;
+}
 
 @media (max-width: 640px) {
+  .linkemph > img {
+    display: inline;
+    position: relative;
+    width: 25px;
+    left: -12px;
+    bottom: -15px;
+
+    opacity: 0.0;
+    transform: translate(10px, 10px);
+    transition: transform 1s ease, opacity 1s ease;
+  }
   body {
     padding: 32px 16px;
   }
@@ -174,6 +188,15 @@ li::before {
 
   .desc {
     font-size: 12px;
+  }
+
+  .linkemph.show > img {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+
+  .linkemph.show > a {
+    border-bottom: 1px solid var(--text);
   }
 }
 
