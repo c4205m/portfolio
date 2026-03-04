@@ -91,9 +91,15 @@ skills:
         <div class="row">
           <strong>{{ project.name }}</strong>
           {% if project.href %}
-            <a href= {{["/", lang, project.href] | join}} class="muted">{{ project.label[lang] }}</a>
+          <div class="linkemph">
+            <a href= {{["/", lang, project.href] | join}}> {{ project.label[lang] }}</a>
+            <img src="/media/tap.webp" alt="">
+          </div>
           {% else %}
-            <a href= {{project.url}} class="muted" target="_blank" rel="noopener">{{ project.label[lang] }}</a>
+            <div class="linkemph">
+              <a href= {{project.url}} class="linkemph" target="_blank" rel="noopener">{{ project.label[lang] }}</a>
+              <img src="/media/tap.webp" alt="">
+            </div>
           {% endif %}
         </div>
         <p class="desc" lang={{lang}}> {{ project.description[lang] | safe}} </p>
