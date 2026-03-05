@@ -20,9 +20,9 @@
         { "url": "https://github.com/c4205m", "label": "Github" },
         { "url": "https://www.linkedin.com/in/c42m05/", "label": "Linkedin" }
     ],
-    "translations": {
-        "languages": ["en", "tr"],
-        "defaultLang": "en",
+    "defaultLang": "en",
+    "languages": ["en", "tr"],
+    "componentTranslations": {
         "contact": {
             "title": {
                 "en": "Contact",

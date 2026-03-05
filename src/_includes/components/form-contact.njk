@@ -1,11 +1,13 @@
 <link rel="stylesheet" href="/contact.css">
 
+{% set translate = site.componentTranslations.contact %}
+
 <section class="contact no-print">
-  <h2>{{site.translations.contact.title[lang]}}</h2>
+  <h2>{{site.componentTranslations.contact.title[lang]}}</h2>
 
   <div class="contact-card">
     <p class="contact-intro">
-      {{site.translations.contact.intro[lang]}}
+      {{site.componentTranslations.contact.intro[lang]}}
     </p>
 
     <form
@@ -18,22 +20,22 @@
       <input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off">
 
       <div class="field">
-        <label for="name">{{site.translations.contact.name[lang]}}</label>
+        <label for="name">{{site.componentTranslations.contact.name[lang]}}</label>
         <input id="name" type="text" name="name" required />
       </div>
 
       <div class="field">
-        <label for="email">{{site.translations.contact.mail[lang]}}</label>
+        <label for="email">{{site.componentTranslations.contact.mail[lang]}}</label>
         <input id="email" type="email" name="email" required />
       </div>
 
       <div class="field">
-        <label for="message">{{site.translations.contact.message[lang]}}</label>
+        <label for="message">{{site.componentTranslations.contact.message[lang]}}</label>
         <textarea id="message" name="message" rows="4" required></textarea>
       </div>
 
       <button type="submit">
-        <span class="btn-text">{{site.translations.contact.button[lang]}}</span>
+        <span class="btn-text">{{site.componentTranslations.contact.button[lang]}}</span>
       </button>
 
       <p class="form-status" aria-live="polite"></p>

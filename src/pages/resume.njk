@@ -1,44 +1,45 @@
+---json
+{
+	"pagination": {"data": "site.languages", "size": 1, "alias": "lang"},
+	"permalink": "/{{ lang }}/resume/",
+  "title": "Home | c4205M",
+  "translations" : {
+    "resume": {
+      "en": "Resume",
+      "tr": "Özgeçmiş"
+    },
+    "work": {
+      "en": "Work Experience",
+      "tr": "Profesyonel Deneyim"
+    },
+    "projects": {
+      "en": "Shipped Projects",
+      "tr": "Projeler"
+    },
+    "education": {
+      "en": "Education",
+      "tr": "Eğitim"
+    },
+    "skills": {
+      "en": "Toolkit",
+      "tr": "Yetkinlikler"
+    }
+  }
+}
 ---
-pagination:
-  data: site.translations.languages
-  size: 1
-  alias: lang
-permalink: "/{{ lang }}/resume/"
-
-resume:
-  en: "Resume"
-  tr: "Özgeçmiş"
-
-work:
-  en: "Work Experience"
-  tr: "Profesyonel Deneyim"
-
-projects:
-  en: "Shipped Projects"
-  tr: "Projeler"
-
-education:
-  en: "Education"
-  tr: "Eğitim"
-
-skills:
-  en: "Toolkit"
-  tr: "Yetkinlikler"
----
-
 <!DOCTYPE html>
 <html lang={{lang}}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ resume.basics.name }} – {{resume[lang]}}</title>
+  <title>{{ resume.basics.name }} – {{translations.resume[lang]}}</title>
 
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   {% include "components/header.njk" %}
     
-  <header>
+  <section class="resume-header">
     <div class="name">
       <h1>{{resume.basics.name}}</h1>
       <p>{{resume.basics.label}}</p>
@@ -51,7 +52,7 @@ skills:
       {% endif %}
       <p>{{ resume.basics.location }}</p>
     </div>
-  </header>
+  </section>
 
   {% if resume.basics.summary[lang] %}
   <section>
@@ -61,7 +62,7 @@ skills:
 
   {% if resume.work %}
   <section class="break">
-    <h2 lang={{lang}}>{{work[lang]}}</h2>
+    <h2 lang={{lang}}>{{translations.work[lang]}}</h2>
     {% for job in resume.work %}
       <div class="item">
         <div class="row">
@@ -85,7 +86,7 @@ skills:
 
   {% if resume.projects %}
   <section>
-    <h2 lang={{lang}}>{{projects[lang]}}</h2>
+    <h2 lang={{lang}}>{{translations.projects[lang]}}</h2>
     {% for project in resume.projects %}
       <div class="item">
         <div class="row">
@@ -110,7 +111,7 @@ skills:
 
   {% if resume.education %}
   <section>
-    <h2 lang={{lang}}>{{education[lang]}}</h2>
+    <h2 lang={{lang}}>{{translations.education[lang]}}</h2>
     {% for edu in resume.education %}
       <div class="item">
         <div class="row">
@@ -127,7 +128,7 @@ skills:
 
   {% if resume.skills %}
   <section>
-    <h2 lang={{lang}}>{{skills[lang]}}</h2>
+    <h2 lang={{lang}}>{{translations.skills[lang]}}</h2>
     <ul>
       {% for skill in resume.skills %}
         <li>

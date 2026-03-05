@@ -3,7 +3,7 @@
 <header class="site-header">
   <div class="header-top">
     <div class="language-switcher">
-      {% for l in site.translations.languages %}
+      {% for l in site.languages %}
         <a class="languages" href="{{ page.url | replace(lang, l) }}">{{ l }}</a>
       {% endfor %}
     </div>

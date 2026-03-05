@@ -1,42 +1,41 @@
 <link rel="stylesheet" href="/footer.css">
 
 {% set prefix = ["/", lang] | join %}
+{% set translate = site.componentTranslations.footer %}
 
 <footer class="site-footer">
   <div class="footer-inner">
-    
     <div class="footer-brand">
       <h3>c4205M</h3>
-      <p>{{site.translations.footer.slogan[lang]}}</p>
+      <p>{{translate.slogan[lang]}}</p>
     </div>
 
     <div class="footer-links">
       <div>
-        <h4>{{site.translations.footer.navi[lang]}}</h4>
+        <h4>{{translate.navi[lang]}}</h4>
         {% if site.navigation %}
-        {% for url in site.navigation %}
-          <a href="{{[prefix, url.url] | join}}">
-            {{url.label[lang]}}
-          </a>
-        {% endfor %}
-      {% endif %}
+          {% for url in site.navigation %}
+            <a href="{{[prefix, url.url] | join}}">
+              {{url.label[lang]}}
+            </a>
+          {% endfor %}
+        {% endif %}
       </div>
 
       <div>
-        <h4>{{site.translations.footer.social[lang]}}</h4>
+        <h4>{{translate.social[lang]}}</h4>
         {% if site.social %}
-        {% for url in site.social %}
-          <a href="{{url.url}}">
-            {{url.label}}
-          </a>
-        {% endfor %}
-      {% endif %}
+          {% for url in site.social %}
+            <a href="{{url.url}}">
+              {{url.label}}
+            </a>
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 c4205M. {{site.translations.footer.bottom[lang]}}</p>
+    <p>© 2026 c4205M. {{translate.bottom[lang]}}</p>
   </div>
 </footer>

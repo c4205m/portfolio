@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: site.translations.languages
+  data: site.languages
   size: 1
   alias: lang
 permalink: "/{{ lang }}/projects/azuki/"
