@@ -1,0 +1,66 @@
+---json
+{
+  "pagination": { "data": "site.languages", "size": 1, "alias": "lang" },
+  "permalink": "/{{ lang }}/projects/azuki/",
+  "layout": "layouts/base.njk",
+  "gallery0": {
+    "type": "slider",
+    "ratio": "vertical",
+    "items": [
+      { "type": "webm", "src": "/media/azuki/azuki-earth.webm","attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "webm", "src": "/media/azuki/azuki-fire.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "webm", "src": "/media/azuki/azuki-lightning.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "webm", "src": "/media/azuki/azuki-water.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] }
+    ]
+  },
+  "gallery1": {
+    "type": "ig",
+    "ratio": "square",
+    "items": [
+      { "type": "webm", "src": "/media/azuki/src0.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"]},
+      { "type": "text", "content": {
+         "en": "Custom GPU shaders inspired by Azuki universe", 
+         "tr": "Azuki evreninden ilham alan özel GPU shader'lar" 
+        } 
+      },
+      { "type": "webm", "src": "/media/azuki/src6.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "image", "src": "/media/azuki/src_code.png" },
+      { "type": "webm", "src": "/media/azuki/src10.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "webm", "src": "/media/azuki/src1.webm","attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "text", "title": { 
+          "en": "Four Real-time VFX", 
+          "tr": "Gerçek zamanlı VFX" 
+        }, 
+        "content": { 
+          "en": "Inspired by Azuki universe", 
+          "tr": "Azuki evreninden esinlendi" 
+        } 
+      },
+      { "type": "image", "src": "/media/azuki/src7.png" },
+      { "type": "webm", "src": "/media/azuki/src3.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "webm", "src": "/media/azuki/src9.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+      { "type": "text", "content": { 
+          "en": "High visual fidelity within mobile AR performance constraints", 
+          "tr": "Mobil AR performans kısıtları içinde yüksek görümtü kalitesi sağlayan optimizasyon" 
+        } 
+      },
+      { "type": "image", "src": "/media/azuki/src8.png" }
+    ]
+  },
+  
+  "text": {
+    "en": "An immersive augmented reality experience developed to promote Azuki's merchandise through Azuki's character-driven environmental effects. Inspired by Azuki's character universe, four real-time VFX ecosystem designed and developed - each dynamically tracks, orbits, and responds to the user.",
+    "tr": "Azuki'nin karakter odaklı Azuki ürünlerini tanıtmak için geliştirilmiş kapsamlı bir artırılmış gerçeklik deneyimidir. Azuki evreninden ilham alınarak tasarlanan dört adet gerçek zamanlı VFX ekosistemi geliştirilmiş olup, her biri kullanıcıyı dinamik olarak takip eder ve kullanıcının hareketlerine tepki verir."
+  }
+}
+---
+<!-- import component css-->
+<link rel="stylesheet" href="/gallery.css">
+
+{% import "components/gallery.njk" as galleryTemplate%}
+<div style="display: block; justify-items: center;">
+  <h2 class="section-h2">Azuki: Elemental AR Experience</h2>
+  {{ galleryTemplate.data(gallery0, lang) }}
+</div>
+{# {{text[lang]}} #}
+{{ galleryTemplate.data(gallery1, lang) }}

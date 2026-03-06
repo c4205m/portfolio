@@ -1,26 +1,18 @@
 img, video { width: 100%; object-fit: cover; display: block;}
 .gallery-section { margin-bottom: 40px;}
-.content { text-align: center; }
+.gallery-content { text-align: center; }
 .vertical { aspect-ratio: 9 / 16; }
 .horizontal { aspect-ratio: 16 / 9; }
 .square { aspect-ratio: 1 / 1; }
 
 /* ==GRID== */
-    .mason-grid {
-        columns: 250px;
-    }
-    .ig-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding-top: 20px;
-        overscroll-behavior-x: contain;
-    }
+    .mason-grid { columns: 250px; }
+    .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding-top: 20px; overscroll-behavior-x: contain; }
     .slider-grid {
         display: flex;
         gap: 10px;
         overflow-x: auto;
         overflow-y: hidden;
-        padding-bottom: 20px;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         overscroll-behavior-x: contain;
@@ -29,7 +21,7 @@ img, video { width: 100%; object-fit: cover; display: block;}
     .slider-grid { scrollbar-width: none; }
 
 /* == ITEM VARIATIONS == */
-    .ig-item { position: relative; overflow: hidden; }
+    .ig-item {  position: relative;  overflow: hidden; }
     .slider-item {
         position: relative;
         overflow: hidden;
@@ -53,12 +45,11 @@ img, video { width: 100%; object-fit: cover; display: block;}
 
 /* == TEXT BOX == */
     .text {
-        width: 100%;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: left;
-        padding: 24px;
         font-size: 0.9rem;
         border: 1px solid var(--line);
         background: var(--bg);
@@ -68,18 +59,26 @@ img, video { width: 100%; object-fit: cover; display: block;}
     .text > span { padding: 10px;}
     .mason-text { aspect-ratio: 1 / 1;}
 
-@media (hover: hover) and (pointer: fine) {
-    .gallery-item:hover .text {
-        background: var(--text);
-        color: var(--bg);
+/* == MODAL == */
+    .gallery-grid.modal-mode { grid-template-columns: repeat(1, 1fr); }
+    .gallery-modal-close {
+        font-size: 32px;      
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text);
     }
+
+/* QUERIES */
+@media (hover: hover) and (pointer: fine) {
+    .gallery-item:hover .text { background: var(--text); color: var(--bg); }
 }
 
 @media (hover: none) and (pointer: coarse) {
-    .gallery-item.show .text {
-        background: var(--text);
-        color: var(--bg);
-    }
+    .gallery-item.show .text { background: var(--text); color: var(--bg); }
 }
 
-/* TODO: IMG TITLE OVERLAY */
+@media (max-width: 640px) {
+    .ig-grid { grid-template-columns: repeat(3, 1fr); }
+    .text { font-size: 0.6rem; }
+}

@@ -4,6 +4,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPlugin(HtmlBasePlugin);
 
     eleventyConfig.addPassthroughCopy("./src/style.css");
+    eleventyConfig.addPassthroughCopy("./src/resume.css");
     eleventyConfig.addPassthroughCopy("./src/header.css");
     eleventyConfig.addPassthroughCopy("./src/footer.css");
     eleventyConfig.addPassthroughCopy("./src/gallery.css");

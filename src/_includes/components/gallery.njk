@@ -1,131 +1,91 @@
-<link rel="stylesheet" href="/gallery.css">
-<section class="gallery-section">
-  {% if gallery.title %}
-    <h2 lang="en">{{ gallery.title }}</h2>
-  {% endif %}
+{% macro data(gallery, lang) %}
+  <section class="gallery-section">
+    {% if gallery.title %}
+      <h2 class="section-h2" lang="en">{{ gallery.title }}</h2>
+    {% endif %}
 
-  {% if gallery.mobile %}
-    <div class="mobile-grid">
-      {% for item in gallery.mobile %}
-        <div class="mobile-item">
+    <div class="{{[gallery.type, "-grid gallery-grid"] | join}}">
+      {% for item in gallery.items %}
+        <div class="{{[gallery.type, "-item gallery-item"] | join}}" onclick="openGalleryModal(this)">
           {% if item.type == "webm" %}
             {% if item.href %}
               <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-              <video autoplay muted playsinline preload="metadata" 
-                {% if not item.loop %}
-                  loop
-                {% endif %}
-              >
-                <source src="{{ item.src }}" type="video/webm">
-              </video>
+                <video class="{{gallery.ratio}}" preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+                  <source src="{{ item.src }}" type="video/webm">
+                </video>
               </a>
             {% else %}
-              <video autoplay muted loop playsinline preload="metadata">
+              <video class="{{gallery.ratio}}" preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
                 <source src="{{ item.src }}" type="video/webm">
               </video>
             {% endif %}
           {% elif item.type == "embed" %}
-            <div class="mobile-embed">
+            <div class="{{[gallery.type, "-embed"] | join}}">
               {{ item.embed | safe }}
             </div>
-          {% else %}
+          {% elif item.type == "image" %}
             {% if item.href %}
               <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-              <img 
-                src="{{ item.src }}" 
-                alt="{{ item.alt or '' }}" 
-                loading="lazy"
-              >
+                <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
               </a>
             {% else %}
-              <img 
-                src="{{ item.src }}" 
-                alt="{{ item.alt or '' }}" 
-                loading="lazy"
-              >
+              <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
             {% endif %}
+          {% elif item.type == "text" %}
+            <div class="{{[gallery.ratio, " ", gallery.type, "-text text"] | join}}">
+              {% if item.title %}
+                <span class="title"> 
+                  {{ item.title[lang] | safe }}
+                </span>
+              {% endif %}
+              <span {% if not item.title[lang] %} class="gallery-content" {% endif %}>
+                {{ item.content[lang] | safe }}
+              </span>
+            </div>
           {% endif %}
-
         </div>
       {% endfor %}
     </div>
-  {% endif %}
+  </section>
+{% endmacro %}
 
-  <div class=" 
-  {% if gallery.title %}
-    desc
-  {% else %}
-    content
-  {% endif %}"> 
-    {% if title %}
-      <h2 lang="en">{{ title }}</h2>
-    {% endif %}
-    {{text[lang] | safe}}
-  </div>
+{# USAGE
+  gallery": { 
+      title: "URMOM" // Optional
+      type: "mason", //[mason, slider, ig]
+      ratio : "vertical", //[square, horizontal, vertical]
+      items: [
+        {
+          type: "image",    // [image, webm, embed, text]
+          src: "/media/photo.jpg",
+          alt: "Optional alt text",
+          href: "https://example.com"   // optional link
+        },
 
-  <div class="gallery-grid">
-    {% for item in gallery.items %}
-      <div class="gallery-item">
-        {% if item.type == "webm" %}
-          {% if item.href %}
-            <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-            <video autoplay muted loop playsinline preload="metadata">
-              <source src="{{ item.src }}" type="video/webm">
-            </video>
-            </a>
-          {% else %}
-            <video autoplay muted playsinline preload="metadata"
-              {% if not item.once %}
-                loop
-              {% endif %}
-            >
-              <source src="{{ item.src }}" type="video/webm">
-            </video>
-          {% endif %}
-        {% elif item.type == "text" %}
-          <div class="gallery-text">
-            {% if item.title %}
-              <span class="gallery-title">
-                {{ item.title[lang] | safe }}
-              </span>
-            {% endif %}
-            <span class="gallery-content" 
-              {% if not item.title[lang] %}
-                style="text-align: center;"
-              {% endif %}
-            >
-              {{ item.content[lang] | safe }}
-            </span>
-          </div>
-        {% elif item.type == "embed" %}
-          <div class="gallery-embed">
-            {{ item.embed | safe }}
-          </div>
-        {% else %}
-          {% if item.href %}
-            <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-            <img 
-              src="{{ item.src }}" 
-              alt="{{ item.alt or '' }}" 
-              loading="lazy"
-            >
-            {% if item.name %}
-              <div class="img-title">{{ item.name }}</div>
-            {% endif %}
-            </a>
-          {% else %}
-            <img 
-              src="{{ item.src }}" 
-              alt="{{ item.alt or '' }}" 
-              loading="lazy"
-            >
-            {% if item.name %}
-              <div class="img-title">{{ item.name }}</div>
-            {% endif %}
-          {% endif %}
-        {% endif %}
+        {
+          type: "webm",
+          src: "/media/video.webm",
+          href: "https://example.com",  // optional
+          attrs: ["controls", "muted", "loop", "playsinline"] // optional video attributes
+        },
 
-      </div>
-    {% endfor %}
-  </div>
-</section>
+        {
+          type: "embed",
+          embed: "<iframe src='https://www.youtube.com/embed/ID' allowfullscreen></iframe>"
+        },
+
+        {
+          type: "text",
+          title: {
+            en: "Optional title",
+            tr: "İsteğe bağlı başlık"
+          },
+          content: {
+            en: "Text content with <b>HTML</b>",
+            tr: "HTML içerebilen metin içeriği"
+          }
+        }
+      ]
+    }
+  }
+#}

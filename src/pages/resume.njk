@@ -35,110 +35,114 @@
   <title>{{ resume.basics.name }} – {{translations.resume[lang]}}</title>
 
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/resume.css">
+  <script>var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
 </head>
 <body>
   {% include "components/header.njk" %}
-    
-  <section class="resume-header">
-    <div class="name">
-      <h1>{{resume.basics.name}}</h1>
-      <p>{{resume.basics.label}}</p>
-    </div>
-    <div class="muted">
-      <a href="tel:{{resume.basics.phone}}">{{resume.basics.phone}}</a><br>
-      <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a><br>
-      {% if resume.basics.website %}
-        <a href="{{ resume.basics.website }}">{{ resume.basics.website }}</a><br>
-      {% endif %}
-      <p>{{ resume.basics.location }}</p>
-    </div>
-  </section>
 
-  {% if resume.basics.summary[lang] %}
-  <section>
-    <p>{{ resume.basics.summary[lang] }}</p>
-  </section>
-  {% endif %}
-
-  {% if resume.work %}
-  <section class="break">
-    <h2 lang={{lang}}>{{translations.work[lang]}}</h2>
-    {% for job in resume.work %}
-      <div class="item">
-        <div class="row">
-          <strong>{{ job.position }} – {{ job.company }}</strong>
-          <span class="muted">
-            {{ job.startDate }} – {{ job.endDate or "Present" }}
-          </span>
-        </div>
-        <p class="muted">{{ job.location }}</p>
-        {% if job.highlights %}
-          <ul>
-            {% for highlight in job.highlights[lang] %}
-              <li>{{ highlight }}</li>
-            {% endfor %}
-          </ul>
+  <div class="content">
+    <section class="resume-header">
+      <div class="name">
+        <h1>{{resume.basics.name}}</h1>
+        <p>{{resume.basics.label}}</p>
+      </div>
+      <div class="muted">
+        <a href="tel:{{resume.basics.phone}}">{{resume.basics.phone}}</a><br>
+        <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a><br>
+        {% if resume.basics.website %}
+          <a href="{{ resume.basics.website }}">{{ resume.basics.website }}</a><br>
         {% endif %}
+        <p>{{ resume.basics.location }}</p>
       </div>
-    {% endfor %}
-  </section>
-  {% endif %}
+    </section>
 
-  {% if resume.projects %}
-  <section>
-    <h2 lang={{lang}}>{{translations.projects[lang]}}</h2>
-    {% for project in resume.projects %}
-      <div class="item">
-        <div class="row">
-          <strong>{{ project.name }}</strong>
-          {% if project.href %}
-          <div class="linkemph">
-            <a href= {{["/", lang, project.href] | join}}> {{ project.label[lang] }}</a>
-            <img src="/media/tap.webp" alt="">
-          </div>
-          {% else %}
-            <div class="linkemph">
-              <a href= {{project.url}} class="linkemph" target="_blank" rel="noopener">{{ project.label[lang] }}</a>
-              <img src="/media/tap.webp" alt="">
+    {% if resume.basics.summary[lang] %}
+      <section>
+        <p>{{ resume.basics.summary[lang] }}</p>
+      </section>
+    {% endif %}
+
+    {% if resume.work %}
+      <h2 lang={{lang}}>{{translations.work[lang]}}</h2>
+      <section>
+        {% for job in resume.work %}
+          <div class="item">
+            <div class="row">
+              <strong>{{ job.position }} – {{ job.company }}</strong>
+              <span class="muted">
+                {{ job.startDate }} – {{ job.endDate or "Present" }}
+              </span>
             </div>
-          {% endif %}
-        </div>
-        <p class="desc" lang={{lang}}> {{ project.description[lang] | safe}} </p>
-      </div>
-    {% endfor %}
-  </section>
-  {% endif %}
+            <p class="muted">{{ job.location }}</p>
+            {% if job.highlights %}
+              <ul>
+                {% for highlight in job.highlights[lang] %}
+                  <li>{{ highlight }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
 
-  {% if resume.education %}
-  <section>
-    <h2 lang={{lang}}>{{translations.education[lang]}}</h2>
-    {% for edu in resume.education %}
-      <div class="item">
-        <div class="row">
-          <strong>{{ edu.studyType[lang] }} – {{ edu.institution[lang] }}</strong>
-          <span class="muted">
-            {{ edu.startDate }} – {{ edu.endDate }}
-          </span>
-        </div>
-        <p class="muted">{{ edu.area[lang] }}</p>
-      </div>
-    {% endfor %}
-  </section>
-  {% endif %}
+    {% if resume.projects %}
+      <h2 class="break" lang={{lang}}>{{translations.projects[lang]}}</h2>
+      <section>
+        {% for project in resume.projects %}
+          <div class="item">
+            <div class="row">
+              <strong>{{ project.name }}</strong>
+              {% if project.href %}
+              <div class="link-emphasize">
+                <a href= {{["/", lang, project.href] | join}}> {{ project.label[lang] }}</a>
+                <img src="/media/tap.webp" alt="">
+              </div>
+              {% else %}
+                <div class="link-emphasize">
+                  <a href= {{project.url}} target="_blank" rel="noopener">{{ project.label[lang] }}</a>
+                  <img src="/media/tap.webp" alt="">
+                </div>
+              {% endif %}
+            </div>
+            <p class="description" lang={{lang}}> {{ project.description[lang] | safe}} </p>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
 
-  {% if resume.skills %}
-  <section>
-    <h2 lang={{lang}}>{{translations.skills[lang]}}</h2>
-    <ul>
-      {% for skill in resume.skills %}
-        <li>
-          <strong>{{ skill.name[lang] }}:</strong>
-          {{ skill.keywords | join(", ") }}
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+    {% if resume.education %}
+      <h2 class="break" lang={{lang}}>{{translations.education[lang]}}</h2>
+      <section>
+        {% for edu in resume.education %}
+          <div class="item">
+            <div class="row">
+              <strong>{{ edu.studyType[lang] }} – {{ edu.institution[lang] }}</strong>
+              <span class="muted">
+                {{ edu.startDate }} – {{ edu.endDate }}
+              </span>
+            </div>
+            <p class="muted">{{ edu.area[lang] }}</p>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {% if resume.skills %}
+      <h2 lang={{lang}}>{{translations.skills[lang]}}</h2>
+      <section>
+        <ul>
+          {% for skill in resume.skills %}
+            <li>
+              <strong>{{ skill.name[lang] }}:</strong>
+              {{ skill.keywords | join(", ") }}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  </div>
 
   <div class="no-print">
     {% include "components/footer.njk" %}
