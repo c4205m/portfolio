@@ -17,11 +17,7 @@
 <body>
   {% include "components/header.njk" %}
   
-  {% if gallery %}
-    {% include "components/gallery.njk" %}
-  {% else %}
-    {{ content | safe }}
-  {% endif %}
+  {{ content | safe }}
   
   <div class="no-print">
     {% include "components/footer.njk" %}

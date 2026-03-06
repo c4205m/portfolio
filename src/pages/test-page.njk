@@ -1,0 +1,45 @@
+---json
+{
+	"pagination": {"data": "site.languages", "size": 1, "alias": "lang"},
+	"permalink": "/{{ lang }}/test/",
+	"layout": "layouts/base.njk",
+	"gallery": { 
+        "title": "URMOM",
+		"type": "slider",
+        "ratio": "vertical",
+		"items": [
+			{ "type": "webm", "src": "/media/thorn/thorn-03-m.webm", "attrs": ["autoplay", "muted", "playsinline"] },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "webm", "src": "/media/thorn/thorn-02-m.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
+			{ "type": "webm", "src": "/media/azuki/azuki-earth.webm", "attrs": ["autoplay", "muted", "playsinline"]},
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "webm", "src": "/media/azuki/azuki-earth.webm", "attrs": ["autoplay", "muted", "playsinline"] },
+			{ "type": "webm", "src": "/media/azuki/azuki-earth.webm", "attrs": ["autoplay", "muted", "playsinline"] },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "webm", "src": "/media/azuki/azuki-earth.webm", "attrs": ["autoplay", "muted", "playsinline"] },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "image", "src": "/media/thorn/thorn-07.webp" },
+            { "type": "text", "title": {
+                "en": "Optional title",
+                "tr": "İsteğe bağlı başlık"
+            },
+            "content": {
+                "en": "Text content with <b>HTML</b>",
+                "tr": "HTML içerebilen metin içeriği"
+            }
+        },
+        { "type": "image", "src": "/media/thorn/thorn-07.webp" },
+			{ "type": "webm", "src": "/media/azuki/azuki-earth.webm", "attrs": ["autoplay", "muted", "playsinline"] }
+        ]
+	}
+}
+---
+<!-- import component css-->
+<link rel="stylesheet" href="/gallery.css">
+
+{% import "components/gallery-slider.njk" as galleryTemplate%}
+{{ galleryTemplate.data(gallery, lang) }}

@@ -1,37 +1,91 @@
-{% macro data(gallery) %}
-  <h1>{{[gallery.type, "-item"] | join}}</h1>
+{% macro data(gallery, lang) %}
   <section class="gallery-section">
-    <div class={{[gallery.type, "-grid"] | join}}>
+    {% if gallery.title %}
+      <h2 lang="en">{{ gallery.title }}</h2>
+    {% endif %}
+
+    <div class="{{[gallery.type, "-grid"] | join}}">
       {% for item in gallery.items %}
-        <div class={{[gallery.type, "-item"] | join}}>
+        <div class="{{[gallery.type, "-item gallery-item"] | join}}">
           {% if item.type == "webm" %}
             {% if item.href %}
               <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-                <video preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+                <video class="{{gallery.ratio}}" preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
                   <source src="{{ item.src }}" type="video/webm">
                 </video>
               </a>
             {% else %}
-              <video preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+              <video class="{{gallery.ratio}}" preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
                 <source src="{{ item.src }}" type="video/webm">
               </video>
             {% endif %}
           {% elif item.type == "embed" %}
-            <div class={{[gallery.type, "-embed"] | join}}>
+            <div class="{{[gallery.type, "-embed"] | join}}">
               {{ item.embed | safe }}
             </div>
-          {% else %}
+          {% elif item.type == "image" %}
             {% if item.href %}
               <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-                <img src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
+                <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
               </a>
             {% else %}
-              <img src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
+              <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
             {% endif %}
+          {% elif item.type == "text" %}
+            <div class="{{[gallery.ratio, " ", gallery.type, "-text text"] | join}}">
+              {% if item.title %}
+                <span class="title"> 
+                  {{ item.title[lang] | safe }}
+                </span>
+              {% endif %}
+              <span {% if not item.title[lang] %} class="content" {% endif %}>
+                {{ item.content[lang] | safe }}
+              </span>
+            </div>
           {% endif %}
-
         </div>
       {% endfor %}
     </div>
   </section>
 {% endmacro %}
+
+{# USAGE
+  gallery": { 
+      title: "URMOM" // Optional
+      type: "mason", //[mason, slider, ig]
+      ratio : "vertical", //[square, horizontal, vertical]
+      items: [
+        {
+          type: "image",    // [image, webm, embed, text]
+          src: "/media/photo.jpg",
+          alt: "Optional alt text",
+          href: "https://example.com"   // optional link
+        },
+
+        {
+          type: "webm",
+          src: "/media/video.webm",
+          href: "https://example.com",  // optional
+          attrs: ["controls", "muted", "loop", "playsinline"] // optional video attributes
+        },
+
+        {
+          type: "embed",
+          embed: "<iframe src='https://www.youtube.com/embed/ID' allowfullscreen></iframe>"
+        },
+
+        {
+          type: "text",
+          title: {
+            en: "Optional title",
+            tr: "İsteğe bağlı başlık"
+          },
+          content: {
+            en: "Text content with <b>HTML</b>",
+            tr: "HTML içerebilen metin içeriği"
+          }
+        }
+      ]
+    }
+  }
+#}
