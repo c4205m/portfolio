@@ -1,22 +1,24 @@
 {% macro data(gallery, lang) %}
-  <section class="gallery-section">
+  <section class="gallery-section" style="--item-size: {{item.size or gallery.size or '0 0 180px'}}">
     {% if gallery.title %}
       <h2 class="section-h2" lang="en">{{ gallery.title }}</h2>
     {% endif %}
 
-    <div class="{{[gallery.type, "-grid gallery-grid"] | join}}">
-      {% for item in gallery.items %}
-        <div class="{{[gallery.type, "-item gallery-item"] | join}}" onclick="openGalleryModal(this)">
+    <div class="{{[gallery.type, "-grid gallery-grid", " infinite left" if gallery.scroll == "infinite-left", " infinite right" if gallery.scroll == "infinite-right"] | join}}">
+      {%- macro renderItem(item, gallery, lang, hidden) %}
+        <div class="{{[gallery.type, "-item gallery-item"] | join}}" 
+          {%if gallery.igmode%} onclick="openGalleryModal(this)" {%endif%} {% if hidden %}aria-hidden="true"{% endif %}
+        >
           {% if item.type == "webm" %}
             {% if item.href %}
               <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-                <video class="{{gallery.ratio}}" preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
-                  <source src="{{ item.src }}" type="video/webm">
+                <video class="{{gallery.ratio}}" preload="none" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+                  <source data-src="{{ item.src | url }}" type="video/webm">
                 </video>
               </a>
             {% else %}
-              <video class="{{gallery.ratio}}" preload="metadata" {% for attr in item.attrs %} {{attr}} {% endfor %}>
-                <source src="{{ item.src }}" type="video/webm">
+              <video class="{{gallery.ratio}}" preload="none" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+                <source data-src="{{ item.src | url }}" type="video/webm">
               </video>
             {% endif %}
           {% elif item.type == "embed" %}
@@ -26,15 +28,19 @@
           {% elif item.type == "image" %}
             {% if item.href %}
               <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
-                <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
+                {% if item.dark %}<picture><source srcset="{{ item.dark }}" media="(prefers-color-scheme: dark)">{% endif %}
+                <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy" {% if item.invert %}data-invert{% endif %}>
+                {% if item.dark %}</picture>{% endif %}
               </a>
             {% else %}
-              <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy">
+              {% if item.dark %}<picture><source srcset="{{ item.dark }}" media="(prefers-color-scheme: dark)">{% endif %}
+              <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy" {% if item.invert %}data-invert{% endif %}>
+              {% if item.dark %}</picture>{% endif %}
             {% endif %}
           {% elif item.type == "text" %}
             <div class="{{[gallery.ratio, " ", gallery.type, "-text text"] | join}}">
-              {% if item.title %}
-                <span class="title"> 
+              {% if item.title[lang] %}
+                <span class="title">
                   {{ item.title[lang] | safe }}
                 </span>
               {% endif %}
@@ -44,7 +50,16 @@
             </div>
           {% endif %}
         </div>
-      {% endfor %}
+      {%- endmacro %}
+
+      {% if gallery.scroll == "infinite-left" or gallery.scroll == "infinite-right" %}
+        <div class="{{["carousel-track", " ", gallery.scroll] | join}}" {% if gallery.speed %}data-speed="{{ gallery.speed }}"{% endif %}>
+          {% for item in gallery.items %}{{ renderItem(item, gallery, lang, false) }}{% endfor %}
+          {% for item in gallery.items %}{{ renderItem(item, gallery, lang, true) }}{% endfor %}
+        </div>
+      {% else %}
+        {% for item in gallery.items %}{{ renderItem(item, gallery, lang, false) }}{% endfor %}
+      {% endif %}
     </div>
   </section>
 {% endmacro %}
@@ -53,6 +68,10 @@
   gallery": { 
       title: "URMOM" // Optional
       type: "mason", //[mason, slider, ig]
+      scroll: "infinite-rigt", [infinite-right, infinite-left]
+      igmode: true,
+      speed: 
+      size:
       ratio : "vertical", //[square, horizontal, vertical]
       items: [
         {

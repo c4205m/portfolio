@@ -3,6 +3,7 @@
   "pagination": { "data": "site.languages", "size": 1, "alias": "lang" },
   "permalink": "/{{ lang }}/projects/azuki/",
   "layout": "layouts/base.njk",
+  "title": "Azuki: Elemental XR Experience",
   "gallery0": {
     "type": "slider",
     "ratio": "vertical",
@@ -16,6 +17,7 @@
   "gallery1": {
     "type": "ig",
     "ratio": "square",
+    "igmode": true,
     "items": [
       { "type": "webm", "src": "/media/azuki/src0.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"]},
       { "type": "text", "content": {
@@ -56,11 +58,9 @@
 ---
 <!-- import component css-->
 <link rel="stylesheet" href="/gallery.css">
-
 {% import "components/gallery.njk" as galleryTemplate%}
-<div style="display: block; justify-items: center;">
-  <h2 class="section-h2">Azuki: Elemental AR Experience</h2>
-  {{ galleryTemplate.data(gallery0, lang) }}
-</div>
-{# {{text[lang]}} #}
+
+<h2 class="section-h2 center">{{title}}</h2>
+{{ galleryTemplate.data(gallery0, lang) }}
+<p class="center description-gallery"> {{text[lang]}}</p>
 {{ galleryTemplate.data(gallery1, lang) }}

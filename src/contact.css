@@ -34,25 +34,30 @@
     font-weight: 600;
 }
 
-input,
-textarea {
+.contact-form input,
+.contact-form textarea {
     font: inherit;
+    width: 100%;
     padding: 10px 0;
     border: none;
     border-bottom: 1px solid var(--line);
     background: transparent;
     color: var(--text);
     resize: vertical;
-    transition: border-color 0.2s ease, opacity 0.2s ease;
+    transition: border-color 0.25s ease, opacity 0.2s ease;
 }
 
-input:focus,
-textarea:focus {
+.contact-form textarea {
+    min-height: 96px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--flash-2);
 }
 
-button {
+.contact-form button {
     position: relative;
     align-self: flex-start;
     padding: 8px 0;
@@ -61,50 +66,104 @@ button {
     border-bottom: 2px solid var(--accent);
     font: inherit;
     font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 1.6px;
     cursor: pointer;
     overflow: hidden;
-    transition: opacity 0.2s ease;
+    transition:
+        color 0.25s ease,
+        letter-spacing 0.25s ease;
 }
 
-button:disabled {
-    opacity: 0.5;
+.contact-form button:not(:disabled)::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--flash-2);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+}
+
+.contact-form button:not(:disabled):hover {
+    color: var(--flash-2);
+    border-bottom: 2px solid var(--flash-2);
+}
+
+.contact-form button:not(:disabled):hover::before {
+    transform: scaleX(1);
+}
+
+.contact-form button:not(:disabled):active {
+    transform: translateY(1px);
+}
+
+.contact-form button:not(:disabled):focus-visible {
+    outline: 2px solid var(--flash-2);
+    outline-offset: 4px;
+    border-radius: 1px;
+}
+
+.contact-form button:disabled {
+    color: var(--muted);
+    border-bottom: 2px solid var(--muted);
     cursor: not-allowed;
 }
+
+/* Mute button when form has validation errors */
+.contact-form:has(.field.error) button:not(:disabled) {
+    color: var(--muted);
+    border-bottom: 2px solid var(--muted);
+}
+
+.contact-form:has(.field.error) button:not(:disabled):hover {
+    color: var(--muted);
+    border-bottom: 2px solid var(--muted);
+}
+
+.contact-form:has(.field.error) button:not(:disabled)::before {
+    display: none;
+}
+
+/* --- Button text & sent state --------------------------------------------- */
 
 .btn-text {
     display: inline-block;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-button {
-    color: var(--accent);
-}
-
-button.sent .btn-text {
+.contact-form button.sent .btn-text {
     opacity: 0;
     transform: translateY(-4px);
 }
 
-button.sent::after {
-    content: "Sent";
+/* Uses attr() so JS can set data-sent-label from i18n data */
+.contact-form button.sent::after {
+    content: attr(data-sent-label);
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     opacity: 0;
-    animation: fadeIn 0.25s ease forwards;
+    animation: contactFadeIn 0.25s ease forwards;
 }
 
-@keyframes fadeIn {
+@keyframes contactFadeIn {
     to {
         opacity: 1;
     }
 }
 
+/* --- Form status ---------------------------------------------------------- */
+
 .form-status {
     font-size: 0.85rem;
-    color: var(--muted);
+    color: var(--flash-2);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -113,27 +172,31 @@ button.sent::after {
     opacity: 1;
 }
 
+/* --- Field error states --------------------------------------------------- */
+
+.field.error .contact-form input,
+.field.error .contact-form textarea {
+    border-bottom: 1px solid var(--error);
+}
+
 .field.error input,
 .field.error textarea {
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--error);
 }
 
 .field.error label {
-    color: var(--accent);
+    color: var(--error);
 }
 
 .field-error-message {
     font-size: 0.8rem;
-    color: var(--muted);
+    color: var(--error);
     margin-top: 4px;
     opacity: 0.8;
+    animation: contactFadeInError 0.2s ease forwards;
 }
 
-.field-error-message {
-    animation: fadeInError 0.2s ease forwards;
-}
-
-@keyframes fadeInError {
+@keyframes contactFadeInError {
     from {
         opacity: 0;
         transform: translateY(-2px);

@@ -1,17 +1,18 @@
 ---json
 {
   "pagination": { "data": "site.languages", "size": 1,"alias": "lang" },
-  "permalink": "{{ lang }}/projects/thorn/",
+  "permalink": "/{{ lang }}/projects/thorn/",
   "layout": "layouts/base.njk",
+  "title": "THORN — Parametric Lighting System",
   "gallery": {
-    "title": "THORN — Parametric Lighting System",
     "type": "ig",
     "ratio": "square",
+    "igmode": true,
     "items": [
-      { "type": "webm", "src": "/media/thorn/thorn-03-m.webm", "once": true },
+      { "type": "webm", "src": "/media/thorn/thorn-03-m.webm", "attrs": ["autoplay", "muted", "playsinline"] },
       { "type": "image", "src": "/media/thorn/thorn-07.webp" },
-      { "type": "webm", "src": "/media/thorn/thorn-02-m.webm", "once": true },
-      { "type": "webm", "src": "/media/thorn/thorn-01-m.webm" },
+      { "type": "webm", "src": "/media/thorn/thorn-02-m.webm", "attrs": ["autoplay", "muted", "playsinline"] },
+      { "type": "webm", "src": "/media/thorn/thorn-01-m.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "text", "content": { "en": "Assembly logic into the node structure", "tr": "Montaj mantığının node sisteminde inşası" } },
       { "type": "image", "src": "/media/thorn/thorn-00.webp" },
       { "type": "image", "src": "/media/thorn/thorn-03.webp" },
@@ -32,4 +33,7 @@
 <link rel="stylesheet" href="/gallery.css">
 
 {% import "components/gallery.njk" as galleryTemplate%}
+
+<h2 class="section-h2 center">{{title}}</h2>
+<p class="center description-gallery"> {{text[lang]}}</p>
 {{ galleryTemplate.data(gallery, lang) }}

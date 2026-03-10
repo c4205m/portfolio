@@ -6,6 +6,7 @@
 
 .footer-inner {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
@@ -58,13 +59,15 @@
   margin: 0;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 840px) {
   .footer-inner {
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
   }
-
+}
+@media (max-width: 320px) {
   .footer-links {
+    flex-direction: column;
     gap: 24px;
   }
 }

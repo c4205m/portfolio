@@ -17,13 +17,13 @@
             "endDate": "2026",
             "highlights": {
             "en": [
-                "Led project quality assurance to ensure performance and stability across AR experiences.",
+                "Led project quality assurance to ensure performance and stability across XR experiences.",
                 "Provided lens-building assistance to internal teams and external collaborators.",
                 "Developed complex, high-performance lenses with interactive features.",
                 "Integrated AI-driven systems to enhance interactivity and user engagement."
             ],
             "tr": [
-                "AR deneyimlerinde performans ve kararlılığı sağlamak amacıyla proje kalite süreçlerinin yürütülmesi.",
+                "XR deneyimlerinde performans ve kararlılığı sağlamak amacıyla proje kalite süreçlerinin yürütülmesi.",
                 "İç ekipler ve dış paydaşlara lens geliştirme desteğinin sağlanması.",
                 "İnteraktif, kompleks ve yüksek performanslı lenslerin geliştirilmesi.",
                 "Etkileşim ve kullanıcı katılımını artırmaya yönelik yapay zekâ destekli sistemlerin entegrasyonu."
@@ -39,12 +39,12 @@
             "highlights": {
             "en": [
                 "Led project quality assurance to maintain technical and creative standards.",
-                "Designed and developed interactive AR lenses from concept to deployment.",
+                "Designed and developed interactive XR lenses from concept to deployment.",
                 "Built and optimized real-time shaders for immersive visual effects."
             ],
             "tr": [
                 "Teknik ve yaratıcı standartların korunmasına yönelik kalite süreçlerinin yürütülmesi.",
-                "Konseptten yayın aşamasına, etkileşimli AR lenslerinin tasarlanması ve geliştirilmesi.",
+                "Konseptten yayın aşamasına, etkileşimli XR lenslerinin tasarlanması ve geliştirilmesi.",
                 "Kapsamlı görsel efektler için gerçek zamanlı shaderların geliştirilmesi ve optimize edilmesi."
             ]
             }
@@ -57,11 +57,11 @@
             "endDate": "2023",
             "highlights": {
             "en": [
-                "Created and animated 3D materials (models, shaders, textures, systems etc.) for AR experiences.",
+                "Created and animated 3D materials (models, shaders, textures, systems etc.) for XR experiences.",
                 "Developed real-time shaders to enhance visual quality and performance."
             ],
             "tr": [
-                "AR deneyimleri için 3D materyallerin oluşturulması ve animasyonlarının hazırlanması.",
+                "XR deneyimleri için 3D materyallerin oluşturulması ve animasyonlarının hazırlanması.",
                 "Görsel kalite ve performansı artırmaya yönelik gerçek zamanlı shader geliştirilmesi."
             ]
             }
@@ -127,11 +127,11 @@
             }
         },
         {
-            "name": "Azuki: Elemental AR Experience",
+            "name": "Azuki: Elemental XR Experience",
             "description": {
-                "en": "An immersive <strong>augmented reality experience</strong> developed to promote Azuki’s merchandise through character-driven environmental effects. Inspired by Azuki’s character universe, I designed and developed four <strong>real-time VFX ecosystem</strong> — each dynamically tracks, orbits, and responds to the user. The system used body tracking as a spatial anchor, generating real-time procedural effects centered around the user. I built <strong>custom GPU shaders to orchestrate particle systems</strong> and vertex displacement across four elemental effects. Procedural systems controlled the swirl, speed, and reactive movement of the particles, creating organic whirlpool effects around the user. The project required careful <strong>optimization of draw calls</strong> and particle counts to maintain high visual fidelity within mobile AR performance constraints.",
+                "en": "An immersive <strong>augmented reality experience</strong> developed to promote Azuki’s merchandise through character-driven environmental effects. Inspired by Azuki’s character universe, I designed and developed four <strong>real-time VFX ecosystem</strong> — each dynamically tracks, orbits, and responds to the user. The system used body tracking as a spatial anchor, generating real-time procedural effects centered around the user. I built <strong>custom GPU shaders to orchestrate particle systems</strong> and vertex displacement across four elemental effects. Procedural systems controlled the swirl, speed, and reactive movement of the particles, creating organic whirlpool effects around the user. The project required careful <strong>optimization of draw calls</strong> and particle counts to maintain high visual fidelity within mobile XR performance constraints.",
 
-                "tr": "Azuki markasının ürün lansmanını desteklemek amacıyla geliştirilen <strong>bir artırılmış gerçeklik deneyimidir</strong>. Azuki karakter evreninden ilham alarak dört farklı <strong>gerçek zamanlı VFX ekosistemi</strong> tasarlandı ve yazılım tabanları kuruldu. Sistem, gerçek zamanlı bir takip mekanizması kullanarak, Azuki evrenine uyumlu çevresel efektler ile kullanıcı odaklı bir artırılmış gerçeklik deneyimi sunar. <strong><i>Particle system</i> ve <i>vertex displacement</i> süreçlerini yönetmek için özel <i>GPU shader</i>’ları geliştirildi</strong>. Parçacıkların dönüşü, hızı ve reaktif hareketi parametrik sistemler tarafından kontrol edilerek kullanıcı etrafında organik girdap efektleri oluşturuldu. Proje, mobil AR performans kısıtlamalarına rağmen yüksek görsel kaliteyi koruyabilmek için <strong><i>draw call optimizasyonu</i></strong> ve parçacık sayısı denetimi gerektirdi."
+                "tr": "Azuki markasının ürün lansmanını desteklemek amacıyla geliştirilen <strong>bir artırılmış gerçeklik deneyimidir</strong>. Azuki karakter evreninden ilham alarak dört farklı <strong>gerçek zamanlı VFX ekosistemi</strong> tasarlandı ve yazılım tabanları kuruldu. Sistem, gerçek zamanlı bir takip mekanizması kullanarak, Azuki evrenine uyumlu çevresel efektler ile kullanıcı odaklı bir artırılmış gerçeklik deneyimi sunar. <strong><i>Particle system</i> ve <i>vertex displacement</i> süreçlerini yönetmek için özel <i>GPU shader</i>’ları geliştirildi</strong>. Parçacıkların dönüşü, hızı ve reaktif hareketi parametrik sistemler tarafından kontrol edilerek kullanıcı etrafında organik girdap efektleri oluşturuldu. Proje, mobil XR performans kısıtlamalarına rağmen yüksek görsel kaliteyi koruyabilmek için <strong><i>draw call optimizasyonu</i></strong> ve parçacık sayısı denetimi gerektirdi."
             },
             "href": "/projects/azuki/",
             "label": {
@@ -177,14 +177,14 @@
                 "tr": "Yazılım Dilleri"
             },
             "keywords": [
-                "HTML",
-                "CSS",
                 "JavaScript",
                 "TypeScript",
                 "C#",
                 "C++",
                 "GDScript",
-                "Python"
+                "Python",
+                "HTML",
+                "CSS"
             ]
         },
         {
@@ -196,7 +196,10 @@
                 "Godot API",
                 "Blender API",
                 "Lens Studio API",
+                "Telegram API",
                 "Three.js",
+                "Rive",
+                "Google Colab",
                 "Bash",
                 "Git"
             ]
@@ -232,8 +235,12 @@
                 "tr": "Yapay Zekâ ve Jeneratif Prodüksiyon"
             },
             "keywords": [
+                "Ollama",
                 "ComfyUI",
-                "Weavy"
+                "OpenCode",
+                "Calude Code",
+                "OpenClaw",
+                "n8n"
             ]
         },
         {
@@ -249,6 +256,8 @@
                 "Graphite",
                 "Autodesk Maya",
                 "Autodesk 3Ds Max",
+                "Adobe Substance Painter",
+                "Adobe Substance Designer",
                 "Adobe Photoshop",
                 "Adobe Illustrator",
                 "Adobe After Effects",

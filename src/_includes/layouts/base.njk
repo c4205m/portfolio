@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
 
-  {% for l in site.translations.languages %}
+  {% for l in site.languages %}
     <link rel="alternate" hreflang="{{ l }}" href="/{{ l }}/" />
   {% endfor %}
-  <link rel="alternate" hreflang="x-default" href="/{{ site.translations.defaultLang }}/" />
+  <link rel="alternate" hreflang="x-default" href="/{{ site.defaultLang }}/" />
 
   <link rel="stylesheet" href="/style.css">
   <script>var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);</script>
@@ -18,7 +18,9 @@
 <body>
   {% include "components/header.njk" %}
   
-  {{ content | safe }}
+  <div class="template-content">
+    {{ content | safe }}
+  </div>
   
   <div class="no-print">
     {% include "components/footer.njk" %}

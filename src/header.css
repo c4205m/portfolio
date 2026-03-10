@@ -31,19 +31,38 @@
 .theme-switcher label { padding: 2px 8px; font-size: 0.72rem; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: background 0.15s, color 0.15s; }
 #theme-dark:checked ~ label[for="theme-dark"],
 #theme-light:checked ~ label[for="theme-light"] { background: var(--accent); color: var(--bg); }
-
-/* == MODAL MODE == */
-header.modal-mode .languages,
-header.modal-mode .site-nav,
-header.modal-mode .site-logo { visibility: hidden; }
-header.modal-mode .site-header { margin: 0 auto 10px auto; padding: 5px 0 5px 0; }
+.theme-switcher label:hover {background: var(--flash); color: var(--bg); }
 
 /* QUERIES */
 @media (min-width: 640px) {
     .site-header.header-hidden { transform: translateY(-100%); }
+    .switcher-details { display: contents; }
+    .switcher-details summary { display: none; }
 }
 @media (max-width: 640px) {
+    .site-header { padding: 0; padding-bottom: 16px; }
     .site-header-inner { flex-direction: column; align-items: center; gap: 12px; }
+    .site-header-inner.modal-mode { flex-direction: row-reverse; }
+    .site-header-inner.modal-mode > .site-logo { display: none; }
+    .language-switcher.modal-mode { display: none; }
+    .switcher-details { position: absolute; top: 4px; right: 0; }
+    .switcher-details summary { display: block; cursor: pointer; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.15em; list-style: none; padding: 2px 4px; }
+    .switcher-details summary::-webkit-details-marker { display: none; }
+    .switcher-details[open] summary { color: var(--text); }
+    .switcher-details[open] .language-switcher {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 4px);
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px 12px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .language-switcher { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 0; }
+    .theme-switcher label { padding: 2px 6px; }
+    .lang-switcher { display: flex; align-items: center; }
     .site-nav { flex-wrap: wrap; gap: 16px; }
 }
 

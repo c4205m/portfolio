@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="/header.css">
 
 <header class="site-header">
-  <div class="language-switcher">
+  <details class="switcher-details" open>
+    <summary class="switcher-summary">···</summary>
+    <div class="language-switcher">
     <div class="lang-switcher">
       <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
       <label for="lang-toggle" class="lang-trigger">{{ lang }}</label>
@@ -20,7 +22,8 @@
       <label lang="en" for="theme-dark">dark</label>
       <label lang="en" for="theme-light">light</label>
     </div>
-  </div>
+    </div>
+  </details>
 
   <div class="site-header-inner">
     <a style="border-bottom: none;" href={{["/", lang, "/resume/"] | join}} class="site-logo">C</a>
