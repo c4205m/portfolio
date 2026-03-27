@@ -1,0 +1,37 @@
+{% macro data(item, props) %}
+    {% if item.type == "webm" %}
+        <video  preload="none" {{item.attrs | join(" ") if item.attrs}}>
+            <source data-src="{{ item.src | url }}" type="video/webm">
+        </video>
+    {% elif item.type == "webp" %}
+        {% if item.href %}
+            <a href="{{ item.href }}" class="gallery-link" target="_blank" rel="noopener">
+                {% if item.dark %}<picture>
+                    <source srcset="{{ item.dark }}" media="(prefers-color-scheme: dark)">{% endif %}
+                    <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy" {% if item.invert
+                        %}data-invert{% endif %}>
+                    {% if item.dark %}
+                </picture>{% endif %}
+            </a>
+        {% else %}
+            {% if item.dark %} <picture> <source srcset="{{ item.dark }}" media="(prefers-color-scheme: dark)"> {% endif %}
+                    <img class="{{gallery.ratio}}" src="{{ item.src }}" alt="{{ item.alt or '' }}" loading="lazy" {% if item.invert %} data-invert {% endif %}>
+            {% if item.dark %} </picture> {% endif %}
+        {% endif %}
+    {% elif item.type == "text" %}
+        <div class="gallery-text">
+            {% if item.title[props.pageLanguage] %}
+                <span class="gallery-title">
+                    {{ item.title[props.pageLanguage] | safe }}
+                </span>
+            {% endif %}
+            <span {% if not item.title[props.pageLanguage] %} class="gallery-content" {% endif %}>
+                {{ item.content[props.pageLanguage] | safe }}
+            </span>
+        </div>
+    {% elif item.type == "embed" %}
+        <div class="gallery-embed {{props.attrs.ratio}}">
+            {{ item.embed | safe }}
+        </div>
+    {% endif %}
+{% endmacro %}

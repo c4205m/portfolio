@@ -34,38 +34,27 @@ const sectionObserver = new IntersectionObserver((entries) => {
         });
     });
 }, { rootMargin: '200px 0px 200px 0px', threshold: 0 });
-
 document.querySelectorAll('.gallery-section').forEach(s => sectionObserver.observe(s));
 
-// INTERSECTION TRACKING
-const observer = new IntersectionObserver(observerAction, {root: null, rootMargin: "-40px 0px 0px 0px", threshold: 0});
-const observer2 = new IntersectionObserver(observerAction, {root: null, rootMargin: "-20% 0px -30% 0px", threshold: .8});
+// SCROLL EFFECTS
+const fadeInObserver = new IntersectionObserver(observerAction, {root: null, rootMargin: "-40px 0px 0px 0px", threshold: 0});
+const emphasizeObserver = new IntersectionObserver(observerAction, {root: null, rootMargin: "-20% 0px -30% 0px", threshold: .8});
 
 let observeTargets = [];
+observeTargets = [...observeTargets, ...document.querySelectorAll(".scroll-fade")];
 observeTargets = [...observeTargets, ...document.querySelectorAll("section")];
-observeTargets = [...observeTargets, ...document.querySelectorAll(".description-gallery")];
-observeTargets = [...observeTargets, ...document.querySelectorAll(".img-title")];
-observeTargets = [...observeTargets, ...document.querySelectorAll(".gallery-grid:not(.infinite) .gallery-item")];
-observeTargets = [...observeTargets, ...document.querySelectorAll(".gallery-grid:not(.infinite) video")];
 observeTargets = [...observeTargets, ...document.querySelectorAll("h2")];
-observeTargets.forEach(e => observer.observe(e));
+observeTargets.forEach(e => fadeInObserver.observe(e));
 
 observeTargets = [];
 observeTargets = [...observeTargets, ...document.querySelectorAll(".link-emphasize")];
-observeTargets.forEach(e => observer2.observe(e));
+observeTargets.forEach(e => emphasizeObserver.observe(e));
 
 function observerAction(els){
     els.forEach((el) => {
         if(el.isIntersecting){
-            if(el.target.tagName === "VIDEO"){
-                el.target.play();
-            }
-
             el.target.classList.add("show");
         } else {
-            if(el.target.tagName === "VIDEO"){
-                el.target.pause();
-            }
             el.target.classList.remove("show");
         }
     })
@@ -114,7 +103,7 @@ if (resumeHeader) {
     });
 }
 
-// HTML ONCLICKS
+// IG MODAL MODE
 let header;
 let langSwitch;
 let nav;
@@ -124,7 +113,7 @@ let lastClickedItem;
 function openGalleryModal(el) {
     if (window.innerWidth >= 640) return;
     if(modalMode) return
-    galleryGrid = el.closest(".gallery-grid");
+    galleryGrid = el.closest(".gallery-items");
     lastClickedItem = el;
 
     langSwitch = document.querySelector(".language-switcher")
@@ -178,15 +167,17 @@ function closeGalleryModal() {
 
 // INFINITE CAROUSEL
 function initCarousels() {
-    const DEFAULT_SPEED = 60; 
+    const DEFAULT_SPEED = 90; 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    document.querySelectorAll('.carousel-track').forEach(track => {
+    document.querySelectorAll('.infinite-carousel').forEach(track => {
         const SPEED = parseFloat(track.dataset.speed) || DEFAULT_SPEED;
-        const isLeft  = track.classList.contains('infinite-left');
-        const isRight = track.classList.contains('infinite-right');
+        const isLeft  = track.classList.contains('slide-left');
+        const isRight = track.classList.contains('slide-right');
         if (!isLeft && !isRight) return;
-        if (track.querySelectorAll('.gallery-item').length < 2) return;
+
+        const inner = track.firstElementChild;
+        [...inner.children].forEach(el => inner.appendChild(el.cloneNode(true)));
 
         let halfWidth = 0;
         let position  = 0;
@@ -194,8 +185,9 @@ function initCarousels() {
         let lastTime  = null;
         let hidden    = document.hidden;
 
+        //
         function measure() {
-            halfWidth = track.scrollWidth / 2;
+            halfWidth = inner.scrollWidth / 2;
         }
 
         function tick(ts) {
@@ -212,7 +204,7 @@ function initCarousels() {
                     position += step;
                     if (position >= 0) position -= halfWidth;
                 }
-                track.style.transform = `translateX(${position}px)`;
+                track.firstElementChild.style.transform = `translateX(${position}px)`;
             }
             requestAnimationFrame(tick);
         }
@@ -220,8 +212,9 @@ function initCarousels() {
         function pause()  { paused = true; }
         function resume() { paused = false; lastTime = null; }
 
-        const container = track.closest('.gallery-grid');
-        if (container) {
+        //
+        const container = track.closest('.gallery-section');
+        if (container && window.matchMedia('(hover: hover)').matches) {
             container.addEventListener('mouseenter', pause,  { passive: true });
             container.addEventListener('mouseleave', resume, { passive: true });
         }
@@ -232,17 +225,14 @@ function initCarousels() {
         });
 
         new ResizeObserver(measure).observe(container || track.parentElement);
-
         measure();
 
         if (prefersReduced) {
-            track.style.transform = `translateX(${-halfWidth / 2}px)`;
+            track.firstElementChild.style.transform = `translateX(${-halfWidth / 2}px)`;
             return;
         }
-
         if (isRight) position = -halfWidth;
         requestAnimationFrame(tick);
     });
 }
-
 initCarousels();

@@ -1,0 +1,20 @@
+{% macro data(gallery, item) %}
+    <style>
+        #tap {
+            position: absolute; z-index: 1000; width: 30px; transform: rotate(-30deg); bottom: -30%;
+        }
+    </style>
+    
+    {% if item.href %}
+        <a href="{{ item.href }}" class="gallery-link" {% if item.newTab %} target="_blank" rel="noopener" {% endif %}>
+            <video class="{{gallery.ratio}}" preload="none" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+                <source data-src="{{ item.src | url }}" type="video/webm">
+            </video>
+        </a>
+        <img id="tap" src="/media/tap.webp" alt="">
+    {% else %}
+        <video class="{{gallery.ratio}}" preload="none" {% for attr in item.attrs %} {{attr}} {% endfor %}>
+            <source data-src="{{ item.src | url }}" type="video/webm">
+        </video>
+    {% endif %}
+{% endmacro %}

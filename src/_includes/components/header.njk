@@ -1,47 +1,44 @@
 <link rel="stylesheet" href="/header.css">
 
 <header class="site-header">
-  <details class="switcher-details" open>
-    <summary class="switcher-summary">···</summary>
-    <div class="language-switcher">
-    <div class="lang-switcher">
-      <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
-      <label for="lang-toggle" class="lang-trigger">{{ lang }}</label>
-      <div class="lang-options">
-        {% for l in site.languages %}
-          {% if l != lang %}
-            <a class="lang-option" href="{{ page.url | replace(lang, l) }}">{{ l }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
+    <details class="switcher-details" open>
+        <summary class="switcher-summary">···</summary>
+        <div class="language-switcher">
+            <div class="lang-switcher">
+                <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
+                <label for="lang-toggle" class="lang-trigger">{{ lang }}</label>
+                <div class="lang-options">
+                    {% for l in site.languages %}
+                        {% if l != lang %}
+                            <a class="lang-option" href="{{ page.url | replace('/' + lang, '/' + l) }}">{{ l }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
 
-    <div id="theme" class="theme-switcher">
-      <input type="radio" name="theme-toggle" id="theme-dark" value="dark" checked>
-      <input type="radio" name="theme-toggle" id="theme-light" value="light">
-      <label lang="en" for="theme-dark">dark</label>
-      <label lang="en" for="theme-light">light</label>
-    </div>
-    </div>
-  </details>
+            <div id="theme" class="theme-switcher">
+                <input type="radio" name="theme-toggle" id="theme-dark" value="dark" checked>
+                <input type="radio" name="theme-toggle" id="theme-light" value="light">
+                <label lang="en" for="theme-dark">dark</label>
+                <label lang="en" for="theme-light">light</label>
+            </div>
+        </div>
+    </details>
 
-  <div class="site-header-inner">
-    <a style="border-bottom: none;" href={{["/", lang, "/resume/"] | join}} class="site-logo">C</a>
+    <div class="site-header-inner">
+        <a style="border-bottom: none;" href={{["/", lang, "/resume/" ] | join}} class="site-logo">C</a>
 
-    {% set prefix = ["/", lang] | join %}
+        {% set prefix = ["/", lang] | join %}
 
-    <nav class="site-nav">
-      {% if site.navigation %}
-        {% for url in site.navigation %}
-          <a href="{{[prefix, url.url] | join}}"
-            {% if page.url == [prefix, url.url] | join %}
-              aria-current="page"
+        <nav class="site-nav">
+            {% if site.navigation %}
+                {% for url in site.navigation %}
+                    <a href="{{[prefix, url.url] | join}}" {% if page.url==[prefix, url.url] | join %} aria-current="page" {%
+                        endif %}>
+                        {{url.label[lang]}}
+                    </a>
+                {% endfor %}
             {% endif %}
-          >
-            {{url.label[lang]}}
-          </a>
-        {% endfor %}
-      {% endif %}
-    </nav>
-  </div>
+        </nav>
+    </div>
 </header>

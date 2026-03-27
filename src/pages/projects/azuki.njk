@@ -6,7 +6,10 @@
   "title": "Azuki: Elemental XR Experience",
   "gallery0": {
     "type": "slider",
-    "ratio": "vertical",
+    "attr": {
+      "size":  "0 0 150px",
+      "ratio": "vertical"
+    },
     "items": [
       { "type": "webm", "src": "/media/azuki/azuki-earth.webm","attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "webm", "src": "/media/azuki/azuki-fire.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
@@ -16,8 +19,10 @@
   },
   "gallery1": {
     "type": "ig",
-    "ratio": "square",
-    "igmode": true,
+    "attr": {
+      "ratio": "square",
+      "igmodal": true
+    },
     "items": [
       { "type": "webm", "src": "/media/azuki/src0.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"]},
       { "type": "text", "content": {
@@ -26,7 +31,7 @@
         } 
       },
       { "type": "webm", "src": "/media/azuki/src6.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
-      { "type": "image", "src": "/media/azuki/src_code.png" },
+      { "type": "webp", "src": "/media/azuki/src_code.png" },
       { "type": "webm", "src": "/media/azuki/src10.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "webm", "src": "/media/azuki/src1.webm","attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "text", "title": { 
@@ -38,7 +43,7 @@
           "tr": "Azuki evreninden esinlendi" 
         } 
       },
-      { "type": "image", "src": "/media/azuki/src7.png" },
+      { "type": "webp", "src": "/media/azuki/src7.png" },
       { "type": "webm", "src": "/media/azuki/src3.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "webm", "src": "/media/azuki/src9.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "text", "content": { 
@@ -46,7 +51,7 @@
           "tr": "Mobil AR performans kısıtları içinde yüksek görümtü kalitesi sağlayan optimizasyon" 
         } 
       },
-      { "type": "image", "src": "/media/azuki/src8.png" }
+      { "type": "webp", "src": "/media/azuki/src8.png" }
     ]
   },
   
@@ -58,9 +63,11 @@
 ---
 <!-- import component css-->
 <link rel="stylesheet" href="/gallery.css">
-{% import "components/gallery.njk" as galleryTemplate%}
+{% import "components/gallery.njk" as galleryComp%}
 
 <h2 class="section-h2 center">{{title}}</h2>
-{{ galleryTemplate.data(gallery0, lang) }}
-<p class="center description-gallery"> {{text[lang]}}</p>
-{{ galleryTemplate.data(gallery1, lang) }}
+{{ galleryComp.data(gallery0.type, {attrs: gallery0.attr, pageLanguage: lang}, gallery0.items) }}
+<section>
+  <p class="center scroll-fade"> {{text[lang]}}</p>
+</section>
+{{ galleryComp.data(gallery1.type, {attrs: gallery1.attr, pageLanguage: lang}, gallery1.items) }}

@@ -6,21 +6,23 @@
   "title": "THORN — Parametric Lighting System",
   "gallery": {
     "type": "ig",
-    "ratio": "square",
-    "igmode": true,
+    "attr": {
+      "ratio": "square",
+      "igmodal": true
+    },
     "items": [
       { "type": "webm", "src": "/media/thorn/thorn-03-m.webm", "attrs": ["autoplay", "muted", "playsinline"] },
-      { "type": "image", "src": "/media/thorn/thorn-07.webp" },
+      { "type": "webp", "src": "/media/thorn/thorn-07.webp" },
       { "type": "webm", "src": "/media/thorn/thorn-02-m.webm", "attrs": ["autoplay", "muted", "playsinline"] },
       { "type": "webm", "src": "/media/thorn/thorn-01-m.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "text", "content": { "en": "Assembly logic into the node structure", "tr": "Montaj mantığının node sisteminde inşası" } },
-      { "type": "image", "src": "/media/thorn/thorn-00.webp" },
-      { "type": "image", "src": "/media/thorn/thorn-03.webp" },
-      { "type": "image", "src": "/media/thorn/thorn-06.webp" },
+      { "type": "webp", "src": "/media/thorn/thorn-00.webp" },
+      { "type": "webp", "src": "/media/thorn/thorn-03.webp" },
+      { "type": "webp", "src": "/media/thorn/thorn-06.webp" },
       { "type": "text", "content": { "en": "Parametric generation in Blender using Geometry Nodes", "tr": "Geometry Nodes ile parametrik jenerasyon" } },
       { "type": "text", "content": { "en": "Custom export add-on to create fabrication documentation", "tr": "Üretim dokümantasyonu oluşturmak için geliştirilmiş özel export eklentisi" } },
-      { "type": "image", "src": "/media/thorn/thorn-02.webp" },
-      { "type": "image", "src": "/media/thorn/thorn-05.webp" }
+      { "type": "webp", "src": "/media/thorn/thorn-02.webp" },
+      { "type": "webp", "src": "/media/thorn/thorn-05.webp" }
     ]
   },
   "text": {
@@ -32,8 +34,10 @@
 <!-- import component css-->
 <link rel="stylesheet" href="/gallery.css">
 
-{% import "components/gallery.njk" as galleryTemplate%}
+{% import "components/gallery.njk" as galleryComp%}
 
 <h2 class="section-h2 center">{{title}}</h2>
-<p class="center description-gallery"> {{text[lang]}}</p>
-{{ galleryTemplate.data(gallery, lang) }}
+<section>
+  <p class="center scroll-fade"> {{text[lang]}}</p>
+</section>
+{{ galleryComp.data(gallery.type, {attrs: gallery.attr, pageLanguage: lang}, gallery.items) }}
