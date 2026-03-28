@@ -2,96 +2,131 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>c4205M</title>
-
-  
-    <link rel="alternate" hreflang="en" href="/portfolio/en/">
-  
-    <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
-  
-  <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
-
-  <link rel="stylesheet" href="/portfolio/style.css">
-</head>
-<body>
-  <link rel="stylesheet" href="/portfolio/header.css">
-
-<header class="site-header">
-  <div class="header-top">
-    <div class="language-switcher">
-      
-        <a class="languages" href="/portfolio/en/contact/">en</a>
-      
-        <a class="languages" href="/portfolio/tr/contact/">tr</a>
-      
-    </div>
-  </div>
-
-  <div class="site-header-inner">
-    <a style="border-bottom: none;" href="/portfolio/en/resume/" class="site-logo">c4205M</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | c4205M</title>
 
     
+        <link rel="alternate" hreflang="en" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
+    
+        <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
 
-    <nav class="site-nav">
-      
+        <link rel="stylesheet" href="/portfolio/style.css">
+        <script>
+            var theme = localStorage.getItem('theme');
+            if (theme) document.documentElement.setAttribute('data-theme', theme);
+        </script>
+</head>
+
+<body>
+    <link rel="stylesheet" href="/portfolio/header.css">
+
+<header class="site-header">
+    <details class="switcher-details" open>
+        <summary class="switcher-summary">···</summary>
+        <div class="language-switcher">
+            <div class="lang-switcher">
+                <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
+                <label for="lang-toggle" class="lang-trigger">en</label>
+                <div class="lang-options">
+                    
+                        
+                    
+                        
+                            <a class="lang-option" href="/portfolio/tr/contact/">tr</a>
+                        
+                    
+                </div>
+            </div>
+
+            <div id="theme" class="theme-switcher">
+                <input type="radio" name="theme-toggle" id="theme-dark" value="dark" checked>
+                <input type="radio" name="theme-toggle" id="theme-light" value="light">
+                <label lang="en" for="theme-dark">dark</label>
+                <label lang="en" for="theme-light">light</label>
+            </div>
+        </div>
+    </details>
+
+    <div class="site-header-inner">
+        <a style="border-bottom: none;" href="/portfolio/en/resume/" class="site-logo">C</a>
+
         
-          <a href="/portfolio/en/resume/">
-            Resume
-          </a>
-        
-          <a href="/portfolio/en/contact/" aria-current="page">
-            Contact
-          </a>
-        
-      
-    </nav>
-  </div>
+
+        <nav class="site-nav">
+            
+                
+                    <a href="/portfolio/en/resume/">
+                        Resume
+                    </a>
+                
+                    <a href="/portfolio/en/contact/" aria-current="page">
+                        Contact
+                    </a>
+                
+            
+        </nav>
+    </div>
 </header>
-  
-  
-    <link rel="stylesheet" href="/portfolio/contact.css">
+
+    <div class="template-content">
+        
+<link rel="stylesheet" href="/portfolio/contact.css">
+
+
+
 <section class="contact no-print">
   <h2>Contact</h2>
+
   <div class="contact-card">
     <p class="contact-intro">
-      Have a project, collaboration, or idea in mind? Let’s build something meaningful.
+      Have a project, collaboration, or idea in mind? Let’s build something cool.
     </p>
-<p></p><form class="contact-form" action="https://formspree.io/f/xgolgevd" method="POST" novalidate>
-<!-- Honeypot -->
-<input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off"><p></p>
-<p></p><div class="field">
-<label for="name">Name</label>
-<input id="name" type="text" name="name" required>
-</div><p></p>
-<p></p><div class="field">
-<label for="email">Email</label>
-<input id="email" type="email" name="email" required>
-</div><p></p>
-<p></p><div class="field">
-<label for="message">Message</label>
-<textarea id="message" name="message" rows="4" required></textarea>
-</div><p></p>
-<p><button type="submit">
-<span class="btn-text">Send Message</span>
-</button></p>
-<p></p><p class="form-status" aria-live="polite"></p>
-</form><p></p>
+
+    <form class="contact-form" action="https://formspree.io/f/xgolgevd" method="POST" novalidate data-err-name="Please enter your name." data-err-email-empty="Please enter your email." data-err-email-invalid="Please enter a valid email." data-err-message="Please enter a message." data-sent="Sent" data-status-success="Message delivered successfully." data-status-error="Something went wrong. Please try again.">
+      <!-- Honeypot -->
+      <input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required aria-required="true">
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required aria-required="true">
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+      </div>
+
+      <button type="submit">
+        <span class="btn-text">Send Message</span>
+      </button>
+
+      <p class="form-status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
+
 <script src="/portfolio/contact.js"></script>
-  
-  
-  <div class="no-print">
-    <link rel="stylesheet" href="/portfolio/footer.css">
+
+    </div>
+
+    <div class="no-print">
+        <link rel="stylesheet" href="/portfolio/footer.css">
+
 
 
 
 <footer class="site-footer">
   <div class="footer-inner">
-    
     <div class="footer-brand">
       <h3>c4205M</h3>
       <p>Designing intelligent real-time experiences.</p>
@@ -101,45 +136,45 @@
       <div>
         <h4>Navigation</h4>
         
+          
+            <a href="/portfolio/en/resume/">
+              Resume
+            </a>
+          
+            <a href="/portfolio/en/contact/">
+              Contact
+            </a>
+          
         
-          <a href="/portfolio/en/resume/">
-            Resume
-          </a>
-        
-          <a href="/portfolio/en/contact/">
-            Contact
-          </a>
-        
-      
       </div>
 
       <div>
         <h4>Social</h4>
         
+          
+            <a href="https://x.com/c42m05">
+              X (Twitter)
+            </a>
+          
+            <a href="https://github.com/c4205m">
+              Github
+            </a>
+          
+            <a href="https://www.linkedin.com/in/c42m05/">
+              Linkedin
+            </a>
+          
         
-          <a href="https://x.com/c42m05">
-            X (Twitter)
-          </a>
-        
-          <a href="https://github.com/c4205m">
-            Github
-          </a>
-        
-          <a href="https://www.linkedin.com/in/c42m05/">
-            Linkedin
-          </a>
-        
-      
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 c4205M. All rights reserved.</p>
   </div>
 </footer>
-  </div>
+    </div>
 </body>
-<script src="/portfolio/app.js"></script>
+<script src="/portfolio/script.js"></script>
+
 </html>

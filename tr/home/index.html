@@ -2,67 +2,89 @@
 
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>c4205M</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | c4205M</title>
 
-  
-    <link rel="alternate" hreflang="en" href="/portfolio/en/">
-  
-    <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
-  
-  <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="en" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
+    
+        <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
 
-  <link rel="stylesheet" href="/portfolio/style.css">
+        <link rel="stylesheet" href="/portfolio/style.css">
+        <script>
+            var theme = localStorage.getItem('theme');
+            if (theme) document.documentElement.setAttribute('data-theme', theme);
+        </script>
 </head>
+
 <body>
-  <link rel="stylesheet" href="/portfolio/header.css">
+    <link rel="stylesheet" href="/portfolio/header.css">
 
 <header class="site-header">
-  <div class="header-top">
-    <div class="language-switcher">
-      
-        <a class="languages" href="/portfolio/en/home/">en</a>
-      
-        <a class="languages" href="/portfolio/tr/home/">tr</a>
-      
+    <details class="switcher-details" open>
+        <summary class="switcher-summary">···</summary>
+        <div class="language-switcher">
+            <div class="lang-switcher">
+                <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
+                <label for="lang-toggle" class="lang-trigger">tr</label>
+                <div class="lang-options">
+                    
+                        
+                            <a class="lang-option" href="/portfolio/en/home/">en</a>
+                        
+                    
+                        
+                    
+                </div>
+            </div>
+
+            <div id="theme" class="theme-switcher">
+                <input type="radio" name="theme-toggle" id="theme-dark" value="dark" checked>
+                <input type="radio" name="theme-toggle" id="theme-light" value="light">
+                <label lang="en" for="theme-dark">dark</label>
+                <label lang="en" for="theme-light">light</label>
+            </div>
+        </div>
+    </details>
+
+    <div class="site-header-inner">
+        <a style="border-bottom: none;" href="/portfolio/tr/resume/" class="site-logo">C</a>
+
+        
+
+        <nav class="site-nav">
+            
+                
+                    <a href="/portfolio/tr/resume/">
+                        Özgeçmiş
+                    </a>
+                
+                    <a href="/portfolio/tr/contact/">
+                        İletişim
+                    </a>
+                
+            
+        </nav>
     </div>
-  </div>
-
-  <div class="site-header-inner">
-    <a style="border-bottom: none;" href="/portfolio/tr/resume/" class="site-logo">c4205M</a>
-
-    
-
-    <nav class="site-nav">
-      
-        
-          <a href="/portfolio/tr/resume/">
-            Özgeçmiş
-          </a>
-        
-          <a href="/portfolio/tr/contact/">
-            İletişim
-          </a>
-        
-      
-    </nav>
-  </div>
 </header>
-  
-  
-    
-  
-  
-  <div class="no-print">
-    <link rel="stylesheet" href="/portfolio/footer.css">
+
+    <div class="template-content">
+        
+    </div>
+
+    <div class="no-print">
+        <link rel="stylesheet" href="/portfolio/footer.css">
+
 
 
 
 <footer class="site-footer">
   <div class="footer-inner">
-    
     <div class="footer-brand">
       <h3>c4205M</h3>
       <p>Designing intelligent real-time experiences.</p>
@@ -72,45 +94,45 @@
       <div>
         <h4>Navigasyon</h4>
         
+          
+            <a href="/portfolio/tr/resume/">
+              Özgeçmiş
+            </a>
+          
+            <a href="/portfolio/tr/contact/">
+              İletişim
+            </a>
+          
         
-          <a href="/portfolio/tr/resume/">
-            Özgeçmiş
-          </a>
-        
-          <a href="/portfolio/tr/contact/">
-            İletişim
-          </a>
-        
-      
       </div>
 
       <div>
         <h4>Sosyal</h4>
         
+          
+            <a href="https://x.com/c42m05">
+              X (Twitter)
+            </a>
+          
+            <a href="https://github.com/c4205m">
+              Github
+            </a>
+          
+            <a href="https://www.linkedin.com/in/c42m05/">
+              Linkedin
+            </a>
+          
         
-          <a href="https://x.com/c42m05">
-            X (Twitter)
-          </a>
-        
-          <a href="https://github.com/c4205m">
-            Github
-          </a>
-        
-          <a href="https://www.linkedin.com/in/c42m05/">
-            Linkedin
-          </a>
-        
-      
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 c4205M. Tüm hakları saklıdır.</p>
   </div>
 </footer>
-  </div>
+    </div>
 </body>
-<script src="/portfolio/app.js"></script>
+<script src="/portfolio/script.js"></script>
+
 </html>

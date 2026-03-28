@@ -2,215 +2,251 @@
 
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THORN — Parametric Lighting System</title>
 
-  
-    <link rel="alternate" hreflang="en" href="/portfolio/en/">
-  
-    <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
-  
-  <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="en" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
+    
+        <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
 
-  <link rel="stylesheet" href="/portfolio/style.css">
+        <link rel="stylesheet" href="/portfolio/style.css">
+        <script>
+            var theme = localStorage.getItem('theme');
+            if (theme) document.documentElement.setAttribute('data-theme', theme);
+        </script>
 </head>
+
 <body>
-  <link rel="stylesheet" href="/portfolio/header.css">
+    <link rel="stylesheet" href="/portfolio/header.css">
 
 <header class="site-header">
-  <div class="header-top">
-    <div class="language-switcher">
-      
-        <a class="languages" href="/portfolio/en/projects/thorn/">en</a>
-      
-        <a class="languages" href="/portfolio/tr/projects/thorn/">tr</a>
-      
+    <details class="switcher-details" open>
+        <summary class="switcher-summary">···</summary>
+        <div class="language-switcher">
+            <div class="lang-switcher">
+                <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
+                <label for="lang-toggle" class="lang-trigger">tr</label>
+                <div class="lang-options">
+                    
+                        
+                            <a class="lang-option" href="/portfolio/en/projects/thorn/">en</a>
+                        
+                    
+                        
+                    
+                </div>
+            </div>
+
+            <div id="theme" class="theme-switcher">
+                <input type="radio" name="theme-toggle" id="theme-dark" value="dark" checked>
+                <input type="radio" name="theme-toggle" id="theme-light" value="light">
+                <label lang="en" for="theme-dark">dark</label>
+                <label lang="en" for="theme-light">light</label>
+            </div>
+        </div>
+    </details>
+
+    <div class="site-header-inner">
+        <a style="border-bottom: none;" href="/portfolio/tr/resume/" class="site-logo">C</a>
+
+        
+
+        <nav class="site-nav">
+            
+                
+                    <a href="/portfolio/tr/resume/">
+                        Özgeçmiş
+                    </a>
+                
+                    <a href="/portfolio/tr/contact/">
+                        İletişim
+                    </a>
+                
+            
+        </nav>
     </div>
-  </div>
-
-  <div class="site-header-inner">
-    <a style="border-bottom: none;" href="/portfolio/tr/resume/" class="site-logo">c4205M</a>
-
-    
-
-    <nav class="site-nav">
-      
-        
-          <a href="/portfolio/tr/resume/">
-            Özgeçmiş
-          </a>
-        
-          <a href="/portfolio/tr/contact/">
-            İletişim
-          </a>
-        
-      
-    </nav>
-  </div>
 </header>
-  
-  
-    <link rel="stylesheet" href="/portfolio/gallery.css">
-<section class="gallery-section">
-  
-    <h2 lang="en">THORN — Parametric Lighting System</h2>
-  
 
-  
+    <div class="template-content">
+        <!-- import component css-->
+<link rel="stylesheet" href="/portfolio/gallery.css">
 
-  <div class=" 
-  
-    desc
-  "> 
-    
-    Thorn, QZENS tarafından tasarlanmış ve Red Dot Ödülü kazanmış modüler bir tavan aydınlatmasıdır; iki ana bileşenden oluşur. Tasarımın üretim süreçlerine entegre edilebilmesi amacıyla Blender Geometry Nodes ve Blender API kullanılarak parametrik bir üretim çerçevesi geliştirilmiştir.
-  </div>
 
-  <div class="gallery-grid">
-    
-      <div class="gallery-item">
-        
-          
-            <video autoplay muted playsinline preload="metadata">
-              <source src="/portfolio/media/thorn/thorn-03-m.webm" type="video/webm">
-            </video>
-          
-        
 
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-07.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <video autoplay muted playsinline preload="metadata">
-              <source src="/portfolio/media/thorn/thorn-02-m.webm" type="video/webm">
-            </video>
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <video autoplay muted playsinline preload="metadata" loop>
-              <source src="/portfolio/media/thorn/thorn-01-m.webm" type="video/webm">
-            </video>
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          <div class="gallery-text">
-            
-            <span class="gallery-content" style="text-align: center;">
-              Montaj mantığının node sisteminde inşası
-            </span>
-          </div>
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-00.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-03.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-06.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          <div class="gallery-text">
-            
-            <span class="gallery-content" style="text-align: center;">
-              Geometry Nodes ile parametrik jenerasyon
-            </span>
-          </div>
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          <div class="gallery-text">
-            
-            <span class="gallery-content" style="text-align: center;">
-              Üretim dokümantasyonu oluşturmak için geliştirilmiş özel export eklentisi
-            </span>
-          </div>
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-02.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-05.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-  </div>
+<h2 class="section-h2 center">THORN — Parametric Lighting System</h2>
+<section>
+  <p class="center scroll-fade"> Thorn, QZENS&#39;in ürettiği ve Red Dot Award sahibi modüler bir tavan armatürüdür; üç temel bileşen tipi üzerine kurulmuştur. Projeyi üretime taşımak, kombinatoryal bir problemi çözmeyi gerektiriyordu: yüzlerce parça kombinasyonunu manuel olarak takip etmeden tüm geçerli konfigürasyonları nasıl belgelersiniz?</p>
 </section>
-  
-  
-  <div class="no-print">
-    <link rel="stylesheet" href="/portfolio/footer.css">
+
+    <section class="gallery-section gallery-ig" style="--item-size: 0 0 200px">
+        <div class="gallery-items">
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            <video preload="none" autoplay muted playsinline>
+                <source data-src="/portfolio/media/thorn/thorn-03-m.webm" type="video/webm">
+            </video>
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-07.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            <video preload="none" autoplay muted playsinline>
+                <source data-src="/portfolio/media/thorn/thorn-02-m.webm" type="video/webm">
+            </video>
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            <video preload="none" autoplay muted playsinline loop>
+                <source data-src="/portfolio/media/thorn/thorn-01-m.webm" type="video/webm">
+            </video>
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        <div class="gallery-text">
+            
+            <span class="center">
+                Tasarımdan üretime uzanan bir pipeline: 3D model ile üretim dökümanları her zaman senkron halinde
+            </span>
+        </div>
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-00.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-03.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-06.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        <div class="gallery-text">
+            
+            <span class="center">
+                Montaj kurallarını <em>node graph</em>'e kodlayan Geometry Nodes ve Blender API kullanarak gerçekleştirilen parametrik bir üretim sistemi
+            </span>
+        </div>
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        <div class="gallery-text">
+            
+            <span class="center">
+                Çıktı anında bileşen sayılarını, parça tiplerini ve konfigürasyon verilerini üretime hazır dokümantasyonda derleyen add-on
+            </span>
+        </div>
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-02.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-05.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+        </div>
+    </section>
+
+    </div>
+
+    <div class="no-print">
+        <link rel="stylesheet" href="/portfolio/footer.css">
+
 
 
 
 <footer class="site-footer">
   <div class="footer-inner">
-    
     <div class="footer-brand">
       <h3>c4205M</h3>
       <p>Designing intelligent real-time experiences.</p>
@@ -220,45 +256,45 @@
       <div>
         <h4>Navigasyon</h4>
         
+          
+            <a href="/portfolio/tr/resume/">
+              Özgeçmiş
+            </a>
+          
+            <a href="/portfolio/tr/contact/">
+              İletişim
+            </a>
+          
         
-          <a href="/portfolio/tr/resume/">
-            Özgeçmiş
-          </a>
-        
-          <a href="/portfolio/tr/contact/">
-            İletişim
-          </a>
-        
-      
       </div>
 
       <div>
         <h4>Sosyal</h4>
         
+          
+            <a href="https://x.com/c42m05">
+              X (Twitter)
+            </a>
+          
+            <a href="https://github.com/c4205m">
+              Github
+            </a>
+          
+            <a href="https://www.linkedin.com/in/c42m05/">
+              Linkedin
+            </a>
+          
         
-          <a href="https://x.com/c42m05">
-            X (Twitter)
-          </a>
-        
-          <a href="https://github.com/c4205m">
-            Github
-          </a>
-        
-          <a href="https://www.linkedin.com/in/c42m05/">
-            Linkedin
-          </a>
-        
-      
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 c4205M. Tüm hakları saklıdır.</p>
   </div>
 </footer>
-  </div>
+    </div>
 </body>
-<script src="/portfolio/app.js"></script>
+<script src="/portfolio/script.js"></script>
+
 </html>

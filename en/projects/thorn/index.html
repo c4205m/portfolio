@@ -2,215 +2,251 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THORN — Parametric Lighting System</title>
 
-  
-    <link rel="alternate" hreflang="en" href="/portfolio/en/">
-  
-    <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
-  
-  <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="en" href="/portfolio/en/">
+    
+        <link rel="alternate" hreflang="tr" href="/portfolio/tr/">
+    
+        <link rel="alternate" hreflang="x-default" href="/portfolio/en/">
 
-  <link rel="stylesheet" href="/portfolio/style.css">
+        <link rel="stylesheet" href="/portfolio/style.css">
+        <script>
+            var theme = localStorage.getItem('theme');
+            if (theme) document.documentElement.setAttribute('data-theme', theme);
+        </script>
 </head>
+
 <body>
-  <link rel="stylesheet" href="/portfolio/header.css">
+    <link rel="stylesheet" href="/portfolio/header.css">
 
 <header class="site-header">
-  <div class="header-top">
-    <div class="language-switcher">
-      
-        <a class="languages" href="/portfolio/en/projects/thorn/">en</a>
-      
-        <a class="languages" href="/portfolio/tr/projects/thorn/">tr</a>
-      
+    <details class="switcher-details" open>
+        <summary class="switcher-summary">···</summary>
+        <div class="language-switcher">
+            <div class="lang-switcher">
+                <input type="checkbox" id="lang-toggle" class="lang-toggle-input">
+                <label for="lang-toggle" class="lang-trigger">en</label>
+                <div class="lang-options">
+                    
+                        
+                    
+                        
+                            <a class="lang-option" href="/portfolio/tr/projects/thorn/">tr</a>
+                        
+                    
+                </div>
+            </div>
+
+            <div id="theme" class="theme-switcher">
+                <input type="radio" name="theme-toggle" id="theme-dark" value="dark" checked>
+                <input type="radio" name="theme-toggle" id="theme-light" value="light">
+                <label lang="en" for="theme-dark">dark</label>
+                <label lang="en" for="theme-light">light</label>
+            </div>
+        </div>
+    </details>
+
+    <div class="site-header-inner">
+        <a style="border-bottom: none;" href="/portfolio/en/resume/" class="site-logo">C</a>
+
+        
+
+        <nav class="site-nav">
+            
+                
+                    <a href="/portfolio/en/resume/">
+                        Resume
+                    </a>
+                
+                    <a href="/portfolio/en/contact/">
+                        Contact
+                    </a>
+                
+            
+        </nav>
     </div>
-  </div>
-
-  <div class="site-header-inner">
-    <a style="border-bottom: none;" href="/portfolio/en/resume/" class="site-logo">c4205M</a>
-
-    
-
-    <nav class="site-nav">
-      
-        
-          <a href="/portfolio/en/resume/">
-            Resume
-          </a>
-        
-          <a href="/portfolio/en/contact/">
-            Contact
-          </a>
-        
-      
-    </nav>
-  </div>
 </header>
-  
-  
-    <link rel="stylesheet" href="/portfolio/gallery.css">
-<section class="gallery-section">
-  
-    <h2 lang="en">THORN — Parametric Lighting System</h2>
-  
 
-  
+    <div class="template-content">
+        <!-- import component css-->
+<link rel="stylesheet" href="/portfolio/gallery.css">
 
-  <div class=" 
-  
-    desc
-  "> 
-    
-    Thorn is a Red Dot Award–winning modular ceiling light designed by QZENS, constructed from two primary component types. A parametric generation framework in Blender using Geometry Nodes and Blender API is developed to operationalize this design for production.
-  </div>
 
-  <div class="gallery-grid">
-    
-      <div class="gallery-item">
-        
-          
-            <video autoplay muted playsinline preload="metadata">
-              <source src="/portfolio/media/thorn/thorn-03-m.webm" type="video/webm">
-            </video>
-          
-        
 
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-07.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <video autoplay muted playsinline preload="metadata">
-              <source src="/portfolio/media/thorn/thorn-02-m.webm" type="video/webm">
-            </video>
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <video autoplay muted playsinline preload="metadata" loop>
-              <source src="/portfolio/media/thorn/thorn-01-m.webm" type="video/webm">
-            </video>
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          <div class="gallery-text">
-            
-            <span class="gallery-content" style="text-align: center;">
-              Assembly logic into the node structure
-            </span>
-          </div>
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-00.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-03.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-06.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          <div class="gallery-text">
-            
-            <span class="gallery-content" style="text-align: center;">
-              Parametric generation in Blender using Geometry Nodes
-            </span>
-          </div>
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          <div class="gallery-text">
-            
-            <span class="gallery-content" style="text-align: center;">
-              Custom export add-on to create fabrication documentation
-            </span>
-          </div>
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-02.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-      <div class="gallery-item">
-        
-          
-            <img src="/portfolio/media/thorn/thorn-05.webp" alt="" loading="lazy">
-            
-          
-        
-
-      </div>
-    
-  </div>
+<h2 class="section-h2 center">THORN — Parametric Lighting System</h2>
+<section>
+  <p class="center scroll-fade"> Thorn is a Red Dot Award–winning modular ceiling light by QZENS, built from three primary component types. Taking it to production meant solving a combinatorial problem: how do you document every valid configuration without manually tracking hundreds of part combinations?</p>
 </section>
-  
-  
-  <div class="no-print">
-    <link rel="stylesheet" href="/portfolio/footer.css">
+
+    <section class="gallery-section gallery-ig" style="--item-size: 0 0 200px">
+        <div class="gallery-items">
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            <video preload="none" autoplay muted playsinline>
+                <source data-src="/portfolio/media/thorn/thorn-03-m.webm" type="video/webm">
+            </video>
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-07.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            <video preload="none" autoplay muted playsinline>
+                <source data-src="/portfolio/media/thorn/thorn-02-m.webm" type="video/webm">
+            </video>
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            <video preload="none" autoplay muted playsinline loop>
+                <source data-src="/portfolio/media/thorn/thorn-01-m.webm" type="video/webm">
+            </video>
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        <div class="gallery-text">
+            
+            <span class="center">
+                A design-to-production pipeline where the 3D model and the manufacturing docs stay in sync
+            </span>
+        </div>
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-00.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-03.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-06.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        <div class="gallery-text">
+            
+            <span class="center">
+                A parametric generation system in Blender using Geometry Nodes and the Blender API that encodes the assembly rules directly into the node graph
+            </span>
+        </div>
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        <div class="gallery-text">
+            
+            <span class="center">
+                A custom export add-on reads the geometry at output time and compiles the component counts, part types, and configuration data
+            </span>
+        </div>
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-02.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+                <div class="gallery-item square" onclick="openGalleryModal(this)">
+                    
+    
+        
+            
+                    <img class="" src="/portfolio/media/thorn/thorn-05.webp" alt="" loading="lazy">
+            
+        
+    
+
+                </div>
+            
+        </div>
+    </section>
+
+    </div>
+
+    <div class="no-print">
+        <link rel="stylesheet" href="/portfolio/footer.css">
+
 
 
 
 <footer class="site-footer">
   <div class="footer-inner">
-    
     <div class="footer-brand">
       <h3>c4205M</h3>
       <p>Designing intelligent real-time experiences.</p>
@@ -220,45 +256,45 @@
       <div>
         <h4>Navigation</h4>
         
+          
+            <a href="/portfolio/en/resume/">
+              Resume
+            </a>
+          
+            <a href="/portfolio/en/contact/">
+              Contact
+            </a>
+          
         
-          <a href="/portfolio/en/resume/">
-            Resume
-          </a>
-        
-          <a href="/portfolio/en/contact/">
-            Contact
-          </a>
-        
-      
       </div>
 
       <div>
         <h4>Social</h4>
         
+          
+            <a href="https://x.com/c42m05">
+              X (Twitter)
+            </a>
+          
+            <a href="https://github.com/c4205m">
+              Github
+            </a>
+          
+            <a href="https://www.linkedin.com/in/c42m05/">
+              Linkedin
+            </a>
+          
         
-          <a href="https://x.com/c42m05">
-            X (Twitter)
-          </a>
-        
-          <a href="https://github.com/c4205m">
-            Github
-          </a>
-        
-          <a href="https://www.linkedin.com/in/c42m05/">
-            Linkedin
-          </a>
-        
-      
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 c4205M. All rights reserved.</p>
   </div>
 </footer>
-  </div>
+    </div>
 </body>
-<script src="/portfolio/app.js"></script>
+<script src="/portfolio/script.js"></script>
+
 </html>
