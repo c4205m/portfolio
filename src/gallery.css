@@ -12,6 +12,7 @@
         overflow: hidden;
         display: flex;
         text-align: left;
+        font-size: 0.9rem;
         transition: background 0.4s ease, color 0.4s ease;
         > span { padding: 10px;}
     }
@@ -38,7 +39,7 @@
     }
 
     .infinite-carousel {
-        overflow-x: hidden; 
+        overflow-x: hidden;
     }
 
     .gallery-mason { 
@@ -79,6 +80,10 @@
     .gallery-items{
         > *:has(.gallery-text).show {background: var(--text); color: var(--bg);}
     }
+}
+
+@media (max-width: 820px) {
+    .gallery-text { font-size: 0.8rem; }
 }
 
 @media (max-width: 640px) {

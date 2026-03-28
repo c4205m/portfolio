@@ -17,16 +17,16 @@
             "endDate": "2026",
             "highlights": {
             "en": [
-                "Led project quality assurance to ensure performance and stability across XR experiences.",
-                "Provided lens-building assistance to internal teams and external collaborators.",
-                "Developed complex, high-performance lenses with interactive features.",
-                "Integrated AI-driven systems to enhance interactivity and user engagement."
+                "Owned quality assurance across XR projects, setting technical and performance standards for the team.",
+                "Consulted with internal teams and external collaborators on lens architecture and implementation.",
+                "Delivered production Snapchat lenses for global brands including Nike, Adidas, Cartier, IKEA, and Coca-Cola, with the most technically demanding work centered on custom GLSL shaders engineered around Lens Studio's rendering constraints.",
+                "Extended production beyond Snapchat into standalone AR applications and retail XR mirror installations for clients including GigXR, Fanta, and Løci."
             ],
             "tr": [
-                "XR deneyimlerinde performans ve kararlılığı sağlamak amacıyla proje kalite süreçlerinin yürütülmesi.",
-                "İç ekipler ve dış paydaşlara lens geliştirme desteğinin sağlanması.",
-                "İnteraktif, kompleks ve yüksek performanslı lenslerin geliştirilmesi.",
-                "Etkileşim ve kullanıcı katılımını artırmaya yönelik yapay zekâ destekli sistemlerin entegrasyonu."
+                "XR projeleri genelinde kalite güvencesinin yönetimi, ekip için teknik standartların belirlenmesi ve performans denetimi.",
+                "Lens mimarisi ve implementasyonu konularında, iç ekiplere ve dış iş birlikçilere teknik danışmanlık.",
+                "Nike, Adidas, Cartier, IKEA ve Coca-Cola dahil global markalar için Snapchat lens üretimi; teknik yoğunluğu en yüksek çalışmalarda Lens Studio render kısıtları gözetilerek GLSL shader tasarımı.",
+                "GigXR, Fanta ve Løci için bağımsız AR uygulama geliştirme ve perakende XR ayna kurulumlarıyla Snapchat ötesi üretim kapsamı."
             ]
             }
         },
@@ -38,14 +38,14 @@
             "endDate": "2024",
             "highlights": {
             "en": [
-                "Led project quality assurance to maintain technical and creative standards.",
-                "Designed and developed interactive XR lenses from concept to deployment.",
-                "Built and optimized real-time shaders for immersive visual effects."
+                "Provided technical review and feedback on team lens productions in an advisory capacity, supporting quality across releases without formal ownership.",
+                "Operated as the team's only full-stack lens developer, bridging what was otherwise a split 3D asset and development pipeline: taking productions from 3D asset creation through Lens Studio implementation and deployment independently.",
+                "Established the team's shader capability as the only developer working across both node-based materials and custom GLSL, raising the visual quality baseline across productions where shader work had previously been underserved."
             ],
             "tr": [
-                "Teknik ve yaratıcı standartların korunmasına yönelik kalite süreçlerinin yürütülmesi.",
-                "Konseptten yayın aşamasına, etkileşimli XR lenslerinin tasarlanması ve geliştirilmesi.",
-                "Kapsamlı görsel efektler için gerçek zamanlı shaderların geliştirilmesi ve optimize edilmesi."
+                "Ekip içi lens üretimlerinde teknik inceleme ve geri bildirim desteği.",
+                "Ekibin tek full-stack lens geliştiricisi sıfatıyla, 3D varlık oluşturmadan Lens Studio implementasyonu ve yayınına kadar, tüm üretim sürecinin bağımsız yönetimi - daha önce ayrışık işleyen 3D varlık ve geliştirme hattının tek elde toplanması.",
+                "Ekibin shader kapasitesinin tesisi - node tabanlı materyaller ve GLSL üzerinde tek geliştirici olarak görsel kalite standardında iyileştirme."
             ]
             }
         },
@@ -57,16 +57,17 @@
             "endDate": "2023",
             "highlights": {
             "en": [
-                "Created and animated 3D materials (models, shaders, textures, systems etc.) for XR experiences.",
-                "Developed real-time shaders to enhance visual quality and performance."
+                "Produced 3D assets (models, textures, rigs, materials and animations) for Snapchat lens productions serving global brand clients, built to strict mobile performance and file-size constraints.",
+                "Independently expanded into Lens Studio material and shader development beyond the 3D asset scope, building the technical foundation that led to taking on full-stack lens production in the following role."
             ],
             "tr": [
-                "XR deneyimleri için 3D materyallerin oluşturulması ve animasyonlarının hazırlanması.",
-                "Görsel kalite ve performansı artırmaya yönelik gerçek zamanlı shader geliştirilmesi."
+                "Global marka müşterilere yönelik Snapchat lens üretimleri için mobil performans ve dosya boyutu kısıtlarına uyumlu model, doku, rig, materyal ve animasyon dahil 3D varlık üretimi.",
+                "3D varlık kapsamının ötesinde Lens Studio API, materyal ve shader geliştirimi üzerine bireysel çalışmalar sonucu tam lens üretimine geçişin teknik altyapısının kurulumu."
             ]
             }
         },
         {
+            "classAttr": "break",
             "company": "Ortak Sanatlar",
             "position": "Creative Developer",
             "location": "Istanbul",
@@ -74,14 +75,12 @@
             "endDate": "2021",
             "highlights": {
             "en": [
-                "Developed interactive visual experiences combining real-time graphics and creative coding.",
-                "Collaborated with artists and designers to translate concepts into technical implementations.",
-                "Created custom visual tools and workflows to streamline production processes."
+                "Produced visual design and creative content like print materials, social media assets, and video for cultural clients including Arter İstanbul, Tiyatro Kültüral, and writer Yasemin Eren.",
+                "Handled end-to-end creative production as part of a two-person studio, managing projects from brief to final delivery across print, digital, and video formats."
             ],
             "tr": [
-                "Gerçek zamanlı grafikler ve yaratıcı kodlamayı birleştiren etkileşimli görsel deneyimlerin geliştirilmesi.",
-                "Sanatçılar ve tasarımcılarla iş birliği içinde konseptlerin teknik uygulamalara dönüştürülmesi.",
-                "Üretim süreçlerini optimize etmek amacıyla özel görsel araçlar ve iş akışlarının oluşturulması."
+                "Arter İstanbul, Tiyatro Kültüral ve yazar Yasemin Eren gibi kültürel müşteriler için baskı, sosyal medya ve video kapsamında görsel tasarım ve yaratıcı içerik üretimi.",
+                "İki kişilik bir stüdyoda baskı, dijital ve video formatlarında brieften nihai teslimata kadar uçtan uca yaratıcı üretim sürecinin yönetimi."
             ]
             }
         }
@@ -90,8 +89,8 @@
         {
             "name": "THORN — Parametric Lighting System",
             "description": {
-                "en": "Thorn is a Red Dot Award–winning modular ceiling light by QZENS, constructed from two primary component types. To operationalize this design for production, I developed <strong>a parametric generation framework in Blender using Geometry Nodes and Blender API</strong>. The system encodes the assembly logic directly into the node structure, allowing controlled variation of length, density, and branching frequency while preserving structural constraints. <strong>A custom export add-on bridges the model to fabrication documentation</strong> that automatically compiles indexed component counts, part typologies, and configuration-specific production data directly from the geometry. The result is <strong>a computational design-to-production pipeline</strong> where variation, visualization, and installation logic coexist within a single system — transforming a sculptural object into a scalable, rule-based product architecture ready for launch.",
-                "tr": "Thorn, QZENS tarafından tasarlanan ve Red Dot ödülüne layık görülen modüler bir tavan aydınlatma sistemidir. Tasarımın üretim süreçlerine entegre edilebilmesi için, montaj mantığını doğrudan node yapısında taklit ederek uzunluk, yoğunluk ve dallanma biçimlerinin kontrollü varyasyonunlarını yaratmayı mümkün kılarken yapısal kısıtları koruyan bir sistem gerekliydi. Bunu <strong>Blender içerisinde Geometry Nodes ve Blender API kullanarak parametrik bir üretim altyapısı</strong> sağlayarak sağladım. <strong>Geliştirdiğim özel bir XML çıktı eklentisi, modelde kullanılan parçaları doğrudan üretim dokümantasyonuna kaydeder</strong> ve geometri üzerinden bileşen sayımlarını, parça tipolojilerini ve konfigürasyona özgü üretim verilerini otomatik olarak derler. Ortaya çıkan yapı görselleştirme ve montaj mantığını tek bir sistem içinde birleştiren <strong>prosedürel bir tasarımdan üretime geçiş altyapısıdır</strong>; böylece heykelsi bir nesne, ölçeklenebilir ve kural tabanlı bir ürün mimarisine dönüşür."
+                "en": "Thorn is a Red Dot Award–winning modular ceiling light by QZENS, built from three primary component types. Taking it to production meant solving a combinatorial problem: how do you document every valid configuration without manually tracking hundreds of part combinations? I built <strong>a parametric generation system in Blender using Geometry Nodes and the Blender API</strong> that encodes the assembly rules directly into the node graph. Length, density, and branching frequency can all vary; the system handles the constraints. <strong>A custom export add-on</strong> reads the geometry at output time and compiles the component counts, part types, and configuration data into fabrication-ready documentation automatically. The result is <strong>a design-to-production pipeline</strong> where the 3D model and the manufacturing docs stay in sync. Change the design, regenerate the export and that's it.",
+                "tr": "Thorn, QZENS'in ürettiği ve Red Dot Award sahibi modüler bir tavan armatürüdür; üç temel bileşen tipi üzerine kurulmuştur. Projeyi üretime taşımak, kombinatoryal bir problemi çözmeyi gerektiriyordu: yüzlerce parça kombinasyonunu manuel olarak takip etmeden tüm geçerli konfigürasyonları nasıl belgelersiniz? Montaj kurallarını doğrudan <em>node graph</em>'e kodlayan <strong>Geometry Nodes ve Blender API kullanarak parametrik bir üretim sistemi</strong> geliştirdim. Uzunluk, yoğunluk ve dallanma sıklığı serbestçe değişebiliyor; kısıtlamaları sistem yönetiyor. <strong>Özel bir export add-on'u</strong>, çıktı anında geometriyi okuyarak bileşen sayılarını, parça tiplerini ve konfigürasyon verilerini üretim için hazır dokümantasyona otomatik olarak derliyor. Ortaya çıkan şey <strong>tasarımdan üretime uzanan bir pipeline</strong>: 3D model ile üretim dökümanları her zaman senkron halinde. Tasarımı değiştir, export'u yeniden oluştur."
             },
             "href": "/projects/thorn/",
             "label": {
@@ -102,8 +101,8 @@
         {
             "name": "0 Days Without Accidents",
             "description": {
-                "en": "An award-winning endless runner that received <strong>1st Place at the Devpost Hackathon</strong>. Set in Station 496, the game follows a newly hired technician who accidentally triggers an explosion and must navigate an unstable facility while recovering his scattered succulents. The project was conceived as a technical exploration of <strong>constraint-based procedural generation</strong> inspired by wave function collapse principles. Rather than implementing the algorithm directly, I translated its underlying ideas—adjacency rules, compatibility states, and weighted randomness into <strong>a modular tile-based generation framework</strong>. Each segment encodes spatial constraints and collision logic allowing the runtime system to assemble levels dynamically without producing invalid or unsolvable configurations. The result is a compact system-driven endless runner where procedural generation function as a cohesive framework shaped within the constraints of a hackathon setting.",
-                "tr": "<strong>Devpost Hackathon’da 1.lik ödülü kazanan</strong> bir <i>endless runner</i> projesidir. Oyun, Station 496’da göreve yeni başlayan bir teknisyenin yanlışlıkla bir patlamaya sebep olmasıyla başlar ve karakter, yıkılmaya başlayan tesisten kaçmaya çalışırken etrafa saçılan sukulentlerini toplamaya çalışır. Proje, <strong><i>constraint</i> temelli prosedürel üretim sistemlerinin teknik bir araştırması</strong> olarak ortaya çıktı ve <i>Wave Function Collapse</i> yaklaşımından ilham aldı. Algoritmayı doğrudan uygulamak yerine; komşuluk kuralları, uyumluluk durumları ve ağırlıklı rastgelelik prensiplerini <strong>modüler, <i>grid</i> tabanlı bir üretim çerçevesine</strong> dönüştürdüm. Her segment, mekânsal kısıtları ve çarpışma mantığını kendi içinde tanımlar; böylece çalışma zamanında sistem, geçersiz konfigürasyonlar üretmeden seviyeleri dinamik olarak oluşturabilir. Sonuç olarak proje, hackathon koşulları içinde, prosedürel üretimi bütüncül bir oyun sistemi olarak ele alan kompakt ve sistem odaklı bir <i>endless runner</i> deneyimine dönüştü."
+                "en": "An award-winning endless runner, <strong>1st Place at the Devpost Hackathon</strong>. You play a new facility technician at Station 496 who accidentally triggers an explosion and has to escape through an unstable building while collecting scattered succulents. The core technical challenge was level generation. I wanted each run to feel structurally different without producing dead ends or broken geometry. Rather than implementing wave function collapse directly, I adapted its core ideas — adjacency rules, compatibility states, weighted randomness — into <strong>a modular tile-based generation system</strong>. Each tile segment carries its own spatial and collision constraints, so the runtime assembles levels from those rules rather than from a fixed layout. The hackathon scope forced real decisions about what to cut. The generation logic ended up small but deterministic, it was compact enough to tune quickly, robust enough not to break under time pressure.",
+                "tr": "Devpost Hackathon’da <strong>birincilik ödülü</strong> kazanan bir <em>endless runner</em>. 496 İstasyonu’nun yeni tesisatçısını oynuyorsunuz; karakteriniz yanlışlıkla bir patlamayı tetikledikten sonra çökmekte olan tesisten kaçarken etrafa saçılmış sukülentlerini toplamak zorunda kalıyor. Ouyunun yapımındaki asıl teknik mesele level üretimiydi: her oynanış yapısal açıdan farklı hissettirmeli, ama çıkmaz sokaklar ya da bozuk geometriler üretmemeliydi. <em>Wave function collapse</em>’i olduğu gibi uygulamak yerine temel kavramlarını — komşuluk kuralları, uyumluluk durumları, ağırlıklı rastlantısallık — alıp <strong>modüler bir tile-based üretim sistemine</strong> uyarladım. Her tile segmenti kendi uzamsal ve çarpışma kısıtlamalarını beraberinde taşıdığı için <em>runtime</em>, level kurulumunu sabit bir şablondan değil bu kuralların birleşiminden üretiyor. Hackathon’un dar kapsamı, nereden kısmam gerektiğine dair gerçek tercihler yapmaya zorladı; bu da üretim mantığının küçük ama deterministik kalmasını sağladı. Ortaya çıkan yapı hem hızlıca ayarlanabilecek kadar sade, hem de zaman baskısında dağılmayacak kadar sağlamdı."
             },
             "url": "https://devpost.com/software/dayswoaccident",
             "label": {
@@ -112,23 +111,10 @@
             }
         },
         {
-            "name": "Snapchat Lenses",
-            "description": {
-                "en": "",
-
-                "tr": ""
-            },
-            "href": "/projects/lenses/",
-            "label": {
-                "en": "View Project",
-                "tr": "Projeyi Görüntüle"
-            }
-        },
-        {
             "name": "NLE Batch Editor",
             "description": {
-                "en": "NLA Batch Editor is a <strong>GNU-licensed, open-source Blender add-on</strong> focused on improving productivity inside the NLA Editor. Originally built as a personal workflow tool, it evolved into a community-ready project that enables batch pushdown, track and strip management, advanced selection tools, and large-scale animation cleanup. It aims to remove manual rivalry from animation workflows and provide a structured foundation for scalable, web-ready exports. The project is <strong>open for collaboration</strong> and future <strong>community-driven enhancements</strong>.",
-                "tr": "NLA Batch Editor, <strong>GNU lisanslı açık kaynaklı bir Blender eklentisidir</strong> ve NLA Editor içerisindeki üretkenliği artırmaya odaklanır. Başlangıçta kişisel bir proje olarak geliştirilirken, zamanla topluluk kullanımına uygun bir yapıya evrildi. Toplu <i>pushdown</i> işlemleri, <i>track ve strip</i> yönetimi, gelişmiş seçim araçları ve büyük ölçekli animasyon temizliği gibi özellikler sunar. Amaç, animasyon süreçlerindeki manuel tekrarları azaltmak ve ölçeklenebilir, web-uyumlu çıktılar için yapılandırılmış bir temel oluşturmaktır. Proje <strong>iş birliğine açık</strong> olup topluluk odaklı geliştirmelere zemin hazırlar."
+                "en": "<strong>NLA Batch Editor is a GNU-licensed, open-source Blender add-on</strong> for working faster inside the NLA Editor. I built it originally for my own animation workflow, then cleaned it up and released it when I realized the missing functionality wasn't just my problem. It adds batch pushdown, track and strip management, advanced selection tools, and bulk cleanup operations: the kind of repetitive manual steps that pile up fast on large rigs or multi-character scenes. The add-on is <strong>open for contributions</strong> on GitHub.",
+                "tr": "<strong>NLA Batch Editor, NLA Editor içinde animasyon iş akışını hızlandırmak amacıyla geliştirilmiş, GNU lisanslı açık kaynaklı bir Blender add-on'u.</strong> Başta yalnızca kendi ihtiyaçlarım için yazdığım projeyi; zamanla bu eksikliklerin bana özgü olmadığını görünce, derleyip yayımlamaya karar verdim. Add-on; <em>batch pushdown, track ve strip yönetimi</em>, gelişmiş seçim araçları ve toplu temizleme işlevleri sunuyor. Bu işlevler olmadan karmaşık rigler ya da çok karakterli sahneler kaçınılmaz biçimde tekrarlı ve yorucu manuel adımlar anlamına geliyor. GitHub'da <strong>katkılara açıktır.</strong>"
             },
             "url": "https://github.com/c4205m/NLA-Batch-Editor",
             "label": {
@@ -137,15 +123,28 @@
             }
         },
         {
+            "classAttr": "break",
             "name": "Azuki: Elemental XR Experience",
             "description": {
-                "en": "An immersive <strong>augmented reality experience</strong> developed to promote Azuki’s merchandise through character-driven environmental effects. Inspired by Azuki’s character universe, I designed and developed four <strong>real-time VFX ecosystem</strong> — each dynamically tracks, orbits, and responds to the user. The system used body tracking as a spatial anchor, generating real-time procedural effects centered around the user. I built <strong>custom GPU shaders to orchestrate particle systems</strong> and vertex displacement across four elemental effects. Procedural systems controlled the swirl, speed, and reactive movement of the particles, creating organic whirlpool effects around the user. The project required careful <strong>optimization of draw calls</strong> and particle counts to maintain high visual fidelity within mobile XR performance constraints.",
-                "tr": "Azuki markasının ürün lansmanını desteklemek amacıyla geliştirilen <strong>bir artırılmış gerçeklik deneyimidir</strong>. Azuki karakter evreninden ilham alarak dört farklı <strong>gerçek zamanlı VFX ekosistemi</strong> tasarlandı ve yazılım tabanları kuruldu. Sistem, gerçek zamanlı bir takip mekanizması kullanarak, Azuki evrenine uyumlu çevresel efektler ile kullanıcı odaklı bir artırılmış gerçeklik deneyimi sunar. <strong><i>Particle system</i> ve <i>vertex displacement</i> süreçlerini yönetmek için özel <i>GPU shader</i>’ları geliştirildi</strong>. Parçacıkların dönüşü, hızı ve reaktif hareketi parametrik sistemler tarafından kontrol edilerek kullanıcı etrafında organik girdap efektleri oluşturuldu. Proje, mobil XR performans kısıtlamalarına rağmen yüksek görsel kaliteyi koruyabilmek için <strong><i>draw call optimizasyonu</i></strong> ve parçacık sayısı denetimi gerektirdi."
+                "en": "An <strong>augmented reality experience</strong> built to promote Azuki's merchandise through effects tied to the brand's character universe. I designed four elemental VFX systems. Each one tracks the user's body position in real time, orbiting and reacting as they move. Each effect runs on <strong>custom GPU shaders</strong> that drive both the particle systems and vertex displacement. The swirl speed, particle density, and reaction curves are all procedural, so the effects feel organic rather than looping. The main constraint was mobile XR performance: keeping the visuals dense enough to read well while staying within draw call and particle count budgets required ongoing tradeoffs throughout development.",
+                "tr": "Azuki’nin karakter evreninden ilham alınan efektlerle markanın <em>merchandise</em>’ını öne çıkarmak için tasarlanmış bir <strong>artırılmış gerçeklik deneyimi</strong>. Kullanıcının vücut pozisyonunu gerçek zamanlı olarak takip eden, hareketle birlikte etrafında yörüngede dönen ve tepki veren dört elementel VFX sistemi geliştirdim. Her efekt, hem <em>particle system</em> hem de <em>vertex displacement</em> değerlerini aynı anda yöneten <strong>özel GPU shader</strong>’lar üzerine kurulu. Dönüş hızı, parçacık yoğunluğu ve tepki eğrilerinin tamamı prosedürel olduğundan efektler tekrarlı bir his yerine organik bir his bırakıyor. Asıl kısıt deneyimin mobil cihazlar üzerinde de çalışacak olmasıydı. Bu görsel okunaklılığı yeterli düzeyde korurken <em>draw call ve particle count</em> bütçe sınırları içinde, geliştirme boyunca sürekli yeniden kurulan dengeler gerektirdi."
             },
             "href": "/projects/azuki/",
             "label": {
                 "en": "View Project",
                 "tr": "Projeyi Görüntüle"
+            }
+        },
+        {
+            "name": "Snapchat Lens Collection",
+            "description": {
+                "en": "A collection of <strong>Snapchat lenses</strong> built in <strong>Lens Studio</strong>, spanning personal projects and client works from experimental effects to branded campaign productions.",
+                "tr": "<strong>Lens Studio</strong>'da geliştirdiğim <strong>Snapchat lenslerinden</strong> oluşan bir koleksiyon: deneysel çalışmalar ve müşteri işleri bir arada."
+            },
+            "href": "/projects/lenses/",
+            "label": {
+                "en": "View Lenses",
+                "tr": "Lensleri Görüntüle"
             }
         }
     ],

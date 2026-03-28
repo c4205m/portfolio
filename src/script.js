@@ -27,10 +27,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
                     source.src = source.dataset.src;
                     video.load();
                 }
-            } else {
-                source.removeAttribute('src');
-                video.load();
-            }
+            } 
         });
     });
 }, { rootMargin: '200px 0px 200px 0px', threshold: 0 });
@@ -177,6 +174,7 @@ function initCarousels() {
         if (!isLeft && !isRight) return;
 
         const inner = track.firstElementChild;
+        const originalWidth = inner.scrollWidth;
         [...inner.children].forEach(el => inner.appendChild(el.cloneNode(true)));
 
         let halfWidth = 0;
@@ -187,7 +185,7 @@ function initCarousels() {
 
         //
         function measure() {
-            halfWidth = inner.scrollWidth / 2;
+            halfWidth = inner.scrollWidth - originalWidth;
         }
 
         function tick(ts) {

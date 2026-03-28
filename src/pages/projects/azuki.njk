@@ -26,8 +26,8 @@
     "items": [
       { "type": "webm", "src": "/media/azuki/src0.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"]},
       { "type": "text", "content": {
-         "en": "Custom GPU shaders inspired by Azuki universe", 
-         "tr": "Azuki evreninden ilham alan özel GPU shader'lar" 
+         "en": "Custom GPU shaders that drive both the particle systems and vertex displacement", 
+         "tr": "Particle system ve vertex displacement değerlerini yöneten özel GPU shader’lar" 
         } 
       },
       { "type": "webm", "src": "/media/azuki/src6.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
@@ -48,7 +48,7 @@
       { "type": "webm", "src": "/media/azuki/src9.webm", "attrs": ["autoplay", "muted", "playsinline", "loop"] },
       { "type": "text", "content": { 
           "en": "High visual fidelity within mobile AR performance constraints", 
-          "tr": "Mobil AR performans kısıtları içinde yüksek görümtü kalitesi sağlayan optimizasyon" 
+          "tr": "Mobil AR performans kısıtları içinde yüksek görüntü kalitesi sağlayan optimizasyon" 
         } 
       },
       { "type": "webp", "src": "/media/azuki/src8.png" }
@@ -56,8 +56,8 @@
   },
   
   "text": {
-    "en": "An immersive augmented reality experience developed to promote Azuki's merchandise through Azuki's character-driven environmental effects. Inspired by Azuki's character universe, four real-time VFX ecosystem designed and developed - each dynamically tracks, orbits, and responds to the user.",
-    "tr": "Azuki'nin karakter odaklı Azuki ürünlerini tanıtmak için geliştirilmiş kapsamlı bir artırılmış gerçeklik deneyimidir. Azuki evreninden ilham alınarak tasarlanan dört adet gerçek zamanlı VFX ekosistemi geliştirilmiş olup, her biri kullanıcıyı dinamik olarak takip eder ve kullanıcının hareketlerine tepki verir."
+    "en": "An augmented reality experience built to promote Azuki's merchandise through effects tied to the brand's character universe.",
+    "tr": "Azuki’nin karakter evreninden ilham alınan efektlerle markanın merchandise’ını öne çıkarmak için tasarlanmış bir artırılmış gerçeklik deneyimi."
   }
 }
 ---
@@ -68,6 +68,6 @@
 <h2 class="section-h2 center">{{title}}</h2>
 {{ galleryComp.data(gallery0.type, {attrs: gallery0.attr, pageLanguage: lang}, gallery0.items) }}
 <section>
-  <p class="center scroll-fade"> {{text[lang]}}</p>
+  <p class="center scroll-fade"> {{text[lang] | safe}}</p>
 </section>
 {{ galleryComp.data(gallery1.type, {attrs: gallery1.attr, pageLanguage: lang}, gallery1.items) }}

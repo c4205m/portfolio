@@ -10,7 +10,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/gallery.css");
     eleventyConfig.addPassthroughCopy("./src/contact.css");
 
-    eleventyConfig.addPassthroughCopy("./src/app.js");
+    eleventyConfig.addPassthroughCopy("./src/script.js");
     eleventyConfig.addPassthroughCopy("./src/contact.js");
 
     eleventyConfig.addPassthroughCopy("./src/media");
