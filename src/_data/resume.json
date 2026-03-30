@@ -224,13 +224,13 @@
             "keywords": [
                 "GLSL",
                 "HLSL",
-                "WebGPU"
+                "WGSL"
             ]
         },
         {
             "name": {
-                "en": "Scripting Languages",
-                "tr": "Yazılım Dilleri"
+                "en": "Programming Languages",
+                "tr": "Programlama Dilleri"
             },
             "keywords": [
                 "JavaScript",
@@ -239,8 +239,7 @@
                 "C++",
                 "GDScript",
                 "Python",
-                "HTML",
-                "CSS"
+                "Bash"
             ]
         },
         {
@@ -254,22 +253,7 @@
                 "Lens Studio API",
                 "Telegram API",
                 "Three.js",
-                "Rive",
-                "Google Colab",
-                "Bash",
-                "Git"
-            ]
-        },
-        {
-            "name": {
-                "en": "AI and Generative Systems",
-                "tr": "Yapay Zekâ ve Jeneratif Prodüksiyon"
-            },
-            "keywords": [
-                "Ollama",
-                "ComfyUI",
-                "OpenCode",
-                "n8n"
+                "Rive"
             ]
         }
     ]
