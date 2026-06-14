@@ -1,0 +1,43 @@
+import { Link } from "react-router-dom";
+import { site, useLang } from "../i18n";
+
+export function Footer() {
+  const lang = useLang();
+  const prefix = `/${lang}`;
+  const tr = site.componentTranslations.footer;
+
+  return (
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <h3>c4205M</h3>
+          <p>{tr.slogan[lang]}</p>
+        </div>
+
+        <div className="footer-links">
+          <div>
+            <h4>{tr.navi[lang]}</h4>
+            {site.navigation.map((item) => (
+              <Link key={item.url} to={`${prefix}${item.url}`}>
+                {item.label[lang]}
+              </Link>
+            ))}
+          </div>
+
+          <div>
+            <h4>{tr.social[lang]}</h4>
+            {site.social.map((item) => (
+              <a key={item.url} href={item.url}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>© 2026 c4205M. {tr.bottom[lang]}</p>
+      </div>
+    </footer>
+  );
+}

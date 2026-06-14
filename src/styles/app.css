@@ -1,0 +1,25 @@
+/* Global stylesheets carried over from the Eleventy build. */
+@import "./style.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./gallery.css";
+@import "./resume.css";
+@import "./contact.css";
+@import "./projects.css";
+
+/*
+ * The React app mounts into #root, but the legacy CSS targets `body > *`
+ * for max-width centering and `.template-content > *` for the mobile gallery
+ * modal. `display: contents` makes #root's box disappear so its children
+ * behave as direct children of <body>, preserving those selectors.
+ */
+#root {
+  display: contents;
+}
+
+/* Mobile gallery "modal mode": hide everything except the active section. */
+@media (max-width: 640px) {
+  .template-content.modal-active > *:not(.modal-active-section) {
+    display: none;
+  }
+}
