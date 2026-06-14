@@ -1,0 +1,108 @@
+{
+    "navigation": [
+        { 
+            "url": "/resume/", 
+            "label": {
+                "en": "Resume",
+                "tr": "Özgeçmiş"
+            }
+        },
+        {
+            "url": "/projects/",
+            "label": {
+                "en": "Projects",
+                "tr": "Projeler"
+            }
+        },
+        {
+            "url": "/contact/",
+            "label": {
+                "en": "Contact",
+                "tr": "İletişim"
+            }
+        }
+    ],
+    "social": [
+        { "url": "https://x.com/c42m05", "label": "X (Twitter)" },
+        { "url": "https://github.com/c4205m", "label": "Github" },
+        { "url": "https://www.linkedin.com/in/c42m05/", "label": "Linkedin" }
+    ],
+    "defaultLang": "en",
+    "languages": ["en", "tr"],
+    "componentTranslations": {
+        "contact": {
+            "title": {
+                "en": "Contact",
+                "tr": "İletişim"
+            },
+            "intro": {
+                "en": "Have a project, collaboration, or idea in mind? Let’s build something cool.",
+                "tr": "Aklınızda bir proje ya da fikir mi var? Gelin beraber inşa edelim."
+            },
+            "name": {
+                "en": "Name",
+                "tr": "İsim"
+            },
+            "mail": {
+                "en": "Email",
+                "tr": "E-posta"
+            },
+            "message": {
+                "en": "Message",
+                "tr": "Mesaj"
+            },
+            "button": {
+                "en": "Send Message",
+                "tr": "Mesaj Gönder"
+            },
+            "sent": {
+                "en": "Sent",
+                "tr": "Gönderildi"
+            },
+            "errors": {
+                "name": {
+                    "en": "Please enter your name.",
+                    "tr": "Lütfen adınızı girin."
+                },
+                "emailEmpty": {
+                    "en": "Please enter your email.",
+                    "tr": "Lütfen e-posta adresinizi girin."
+                },
+                "emailInvalid": {
+                    "en": "Please enter a valid email.",
+                    "tr": "Lütfen geçerli bir e-posta adresi girin."
+                },
+                "message": {
+                    "en": "Please enter a message.",
+                    "tr": "Lütfen bir mesaj girin."
+                }
+            },
+            "statusSuccess": {
+                "en": "Message delivered successfully.",
+                "tr": "Mesajınız başarıyla iletildi."
+            },
+            "statusError": {
+                "en": "Something went wrong. Please try again.",
+                "tr": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+            }
+        },
+        "footer": {
+            "slogan": {
+                "en": "Designing intelligent real-time experiences.",
+                "tr": "Designing intelligent real-time experiences."
+            },
+            "navi": {
+                "en": "Navigation",
+                "tr": "Navigasyon"
+            },
+            "social": {
+                "en": "Social",
+                "tr": "Sosyal"
+            },
+            "bottom": {
+                "en": "All rights reserved.",
+                "tr": "Tüm hakları saklıdır."
+            }
+        }
+    }
+}
