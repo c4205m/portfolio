@@ -1,4 +1,5 @@
 import { LazyVideo } from "./LazyVideo";
+import { asset } from "../asset";
 import { useTheme } from "../context/ThemeContext";
 import type { GalleryItem as Item, Lang } from "../types/content";
 
@@ -24,16 +25,18 @@ function Image({
   const invertAttr = invert ? { "data-invert": "" } : {};
 
   if (dark) {
-    if (theme === "dark") return <img src={dark} alt={alt ?? ""} loading="lazy" {...invertAttr} />;
-    if (theme === "light") return <img src={src} alt={alt ?? ""} loading="lazy" {...invertAttr} />;
+    if (theme === "dark")
+      return <img src={asset(dark)} alt={alt ?? ""} loading="lazy" {...invertAttr} />;
+    if (theme === "light")
+      return <img src={asset(src)} alt={alt ?? ""} loading="lazy" {...invertAttr} />;
     return (
       <picture>
-        <source srcSet={dark} media="(prefers-color-scheme: dark)" />
-        <img src={src} alt={alt ?? ""} loading="lazy" {...invertAttr} />
+        <source srcSet={asset(dark)} media="(prefers-color-scheme: dark)" />
+        <img src={asset(src)} alt={alt ?? ""} loading="lazy" {...invertAttr} />
       </picture>
     );
   }
-  return <img src={src} alt={alt ?? ""} loading="lazy" {...invertAttr} />;
+  return <img src={asset(src)} alt={alt ?? ""} loading="lazy" {...invertAttr} />;
 }
 
 export function GalleryItem({ item, lang, load }: GalleryItemProps) {

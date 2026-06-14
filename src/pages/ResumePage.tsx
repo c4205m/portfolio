@@ -7,6 +7,7 @@ import { useLang } from "../i18n";
 import { useResumeScrollHeader } from "../hooks/useResumeScrollHeader";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { PageTransition } from "../components/PageTransition";
+import { asset } from "../asset";
 
 const resume = resumeData as unknown as Resume;
 
@@ -96,7 +97,7 @@ export function ResumePage() {
                     {project.label[lang]}
                   </a>
                 )}
-                <img src="/media/tap.webp" alt="" />
+                <img src={asset("/media/tap.webp")} alt="" />
               </div>
             </div>
             <p className="description" lang={lang} dangerouslySetInnerHTML={html(project.description[lang])} />

@@ -17,6 +17,17 @@
   display: contents;
 }
 
+/*
+ * `body > *` (max-width + auto margins) only matches #root in the DOM, and
+ * #root generates no box, so that centering is lost. Re-apply it to #root's
+ * children, which `display: contents` lays out as if they were body children.
+ */
+#root > * {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Mobile gallery "modal mode": hide everything except the active section. */
 @media (max-width: 640px) {
   .template-content.modal-active > *:not(.modal-active-section) {

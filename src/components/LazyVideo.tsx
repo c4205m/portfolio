@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { asset } from "../asset";
 
 interface LazyVideoProps {
   src: string;
@@ -34,7 +35,7 @@ export function LazyVideo({ src, attrs = [], className, load }: LazyVideoProps) 
       playsInline={has("playsinline")}
       controls={has("controls")}
     >
-      {load && <source src={src} type="video/webm" />}
+      {load && <source src={asset(src)} type="video/webm" />}
     </video>
   );
 }
