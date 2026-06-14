@@ -22,6 +22,7 @@ const lenses: Project = {
           { type: "webm", src: "/media/lenses/solo4.webm", href: "https://www.snapchat.com/lens/3e96d0e1f38645858e90d2181b71980f", attrs: ["autoplay", "muted", "playsinline", "loop"], class: ["link-emphasize"] },
           { type: "webm", src: "/media/lenses/solo5.webm", href: "https://www.snapchat.com/lens/074620699c284c3c80fb260e6b4773c7", attrs: ["autoplay", "muted", "playsinline", "loop"], class: ["link-emphasize"] },
           { type: "webm", src: "/media/lenses/solo6.webm", href: "https://www.snapchat.com/lens/6cd2ea51444a4f3e812d2e0999f41eea", attrs: ["autoplay", "muted", "playsinline", "loop"], class: ["link-emphasize"] },
+          { type: "webm", src: "/media/lenses/solo7.mp4", href: "https://www.snapchat.com/lens/a8ee5d7acd75467596b5074e6daebb7a", attrs: ["autoplay", "muted", "playsinline", "loop"], class: ["link-emphasize"] },
         ],
       },
     },

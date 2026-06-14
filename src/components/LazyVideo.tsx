@@ -35,7 +35,7 @@ export function LazyVideo({ src, attrs = [], className, load }: LazyVideoProps) 
       playsInline={has("playsinline")}
       controls={has("controls")}
     >
-      {load && <source src={asset(src)} type="video/webm" />}
+      {load && <source src={asset(src)} type={src.endsWith(".mp4") ? "video/mp4" : "video/webm"} />}
     </video>
   );
 }
