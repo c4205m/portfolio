@@ -9,16 +9,6 @@
       var theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("data-theme", theme);
     </script>
-    <script>
-      // GitHub Pages SPA fallback: restore the route saved by 404.html.
-      (function () {
-        var redirect = sessionStorage.getItem("spa-redirect");
-        if (redirect) {
-          sessionStorage.removeItem("spa-redirect");
-          if (redirect !== location.href) history.replaceState(null, "", redirect);
-        }
-      })();
-    </script>
   </head>
   <body>
     <div id="root"></div>
