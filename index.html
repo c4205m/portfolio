@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>c4205M</title>
-  <script>
-    const lang = navigator.language.toLowerCase();
-    // TODO: Check if lang exist and then replace if not go to english
-    if (lang.startsWith("tr")) {
-        window.location.replace("tr/resume");
-    } else {
-        window.location.replace("en/resume");
-    }
-  </script>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>c4205M</title>
+    <script>
+      // Apply persisted theme before paint to avoid a flash.
+      var theme = localStorage.getItem("theme");
+      if (theme) document.documentElement.setAttribute("data-theme", theme);
+    </script>
+    <script>
+      // GitHub Pages SPA fallback: restore the route saved by 404.html.
+      (function () {
+        var redirect = sessionStorage.getItem("spa-redirect");
+        if (redirect) {
+          sessionStorage.removeItem("spa-redirect");
+          if (redirect !== location.href) history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-rIZMw7eU.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-D_Mr1pEP.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
