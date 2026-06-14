@@ -2,13 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>c4205M</title>
     <script>
-      // GitHub Pages serves 404.html for unknown paths. Save the requested
-      // URL and bounce to the app root so the SPA router can take over.
-      sessionStorage.setItem("spa-redirect", location.href);
-      location.replace("/portfolio/");
+      // Apply persisted theme before paint to avoid a flash.
+      var theme = localStorage.getItem("theme");
+      if (theme) document.documentElement.setAttribute("data-theme", theme);
     </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-DYChjvzH.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-D_Mr1pEP.css">
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
