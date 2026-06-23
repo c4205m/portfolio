@@ -12,7 +12,7 @@ const thorn: Project = {
     { kind: "heading", text: "THORN — Parametric Lighting System", className: "center" },
     {
       kind: "paragraph",
-      className: "center scroll-fade",
+      className: "center",
       text: {
         en: "Thorn is a Red Dot Award–winning modular ceiling light by QZENS, built from three primary component types. Taking it to production meant solving a combinatorial problem: how do you document every valid configuration without manually tracking hundreds of part combinations?",
         tr: "Thorn, QZENS'in ürettiği ve Red Dot Award sahibi modüler bir tavan armatürüdür; üç temel bileşen tipi üzerine kurulmuştur. Projeyi üretime taşımak, kombinatoryal bir problemi çözmeyi gerektiriyordu: yüzlerce parça kombinasyonunu manuel olarak takip etmeden tüm geçerli konfigürasyonları nasıl belgelersiniz?",

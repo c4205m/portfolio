@@ -25,7 +25,7 @@ const azuki: Project = {
     },
     {
       kind: "paragraph",
-      className: "center scroll-fade",
+      className: "center",
       text: {
         en: "An augmented reality experience built to promote Azuki's merchandise through effects tied to the brand's character universe.",
         tr: "Azuki'nin karakter evreninden ilham alınan efektlerle markanın merchandise'ını öne çıkarmak için tasarlanmış bir artırılmış gerçeklik deneyimi.",

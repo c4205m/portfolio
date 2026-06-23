@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useLinkEmphasis } from "../hooks/useLinkEmphasis";
 
 export function Layout() {
-  useScrollReveal();
+  useLinkEmphasis();
 
   return (
     <>
