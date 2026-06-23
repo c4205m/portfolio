@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { projects, allTags } from "../data/projects";
+import { projects, externalProjects, allTags } from "../data/projects";
 import { useLang } from "../i18n";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import { PageTransition } from "../components/PageTransition";
+import { ProjectCard, type ProjectCardData } from "../components/ProjectCard";
 import type { Localized } from "../types/content";
 
 const heading: Localized = { en: "Projects", tr: "Projeler" };
@@ -17,7 +17,11 @@ export function ProjectsIndex() {
   useDocumentTitle(`${heading[lang]} | c4205M`);
 
   const [active, setActive] = useState<string | null>(null);
-  const shown = active ? projects.filter((p) => p.tags.includes(active)) : projects;
+  const cards: ProjectCardData[] = [
+    ...projects.map((p) => ({ ...p, external: false as const })),
+    ...externalProjects.map((p) => ({ ...p, external: true as const })),
+  ];
+  const shown = active ? cards.filter((p) => p.tags.includes(active)) : cards;
 
   return (
     <PageTransition>
@@ -48,27 +52,7 @@ export function ProjectsIndex() {
       <motion.div className="project-grid" layout={!reduced}>
         <AnimatePresence mode="popLayout">
           {shown.map((project) => (
-            <motion.article
-              key={project.slug}
-              className="project-card"
-              layout={!reduced}
-              initial={reduced ? false : { opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={reduced ? undefined : { opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-            >
-              <Link to={`/${lang}/projects/${project.slug}/`} className="project-card-link">
-                <h3>{project.title}</h3>
-                <p>{project.blurb[lang]}</p>
-                <div className="project-card-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="project-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </motion.article>
+            <ProjectCard key={project.slug} project={project} lang={lang} reduced={reduced} />
           ))}
         </AnimatePresence>
       </motion.div>

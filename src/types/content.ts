@@ -55,3 +55,12 @@ export interface Project {
   tags: string[];
   sections: ProjectSection[];
 }
+
+export interface ExternalProject {
+  slug: string;
+  title: string;
+  blurb: Localized;
+  tags: string[];
+  url: string;
+  label: Localized;
+}
