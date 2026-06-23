@@ -8,7 +8,7 @@ export const externalProjects: ExternalProject[] = [
       en: "An award-winning endless runner that took 1st place at a Devpost hackathon, with levels assembled by a modular tile-based generation system.",
       tr: "Devpost hackathon birinciliği kazanan endless runner; modüler tile-based üretim sistemiyle level kurulumu.",
     },
-    tags: ["Unity", "Game", "Procedural"],
+    tags: ["Lens Studio", "Game", "Procedural"],
     url: "https://devpost.com/software/dayswoaccident",
     label: {
       en: "View on Devpost",

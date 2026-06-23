@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import type { ExternalProject, Lang, Project } from "../types/content";
@@ -6,15 +7,10 @@ export type ProjectCardData =
   | (Project & { external: false })
   | (ExternalProject & { external: true });
 
-export function ProjectCard({
-  project,
-  lang,
-  reduced,
-}: {
-  project: ProjectCardData;
-  lang: Lang;
-  reduced: boolean;
-}) {
+export const ProjectCard = forwardRef<
+  HTMLElement,
+  { project: ProjectCardData; lang: Lang; reduced: boolean }
+>(function ProjectCard({ project, lang, reduced }, ref) {
   const inner = (
     <>
       <h3>{project.title}</h3>
@@ -31,6 +27,7 @@ export function ProjectCard({
 
   return (
     <motion.article
+      ref={ref}
       className="project-card"
       layout={!reduced}
       initial={reduced ? false : { opacity: 0, scale: 0.96 }}
@@ -54,4 +51,4 @@ export function ProjectCard({
       )}
     </motion.article>
   );
-}
+});
