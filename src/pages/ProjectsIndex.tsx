@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects, externalProjects, allTags } from "../data/projects";
-import { useLang } from "../i18n";
+import { site, useLang } from "../i18n";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import { PageTransition } from "../components/PageTransition";
 import { ProjectCard, type ProjectCardData } from "../components/ProjectCard";
-import type { Localized } from "../types/content";
-
-const heading: Localized = { en: "Projects", tr: "Projeler" };
-const allLabel: Localized = { en: "All", tr: "Tümü" };
 
 export function ProjectsIndex() {
   const lang = useLang();
   const reduced = usePrefersReducedMotion();
-  useDocumentTitle(`${heading[lang]} | c4205M`);
+  const tr = site.componentTranslations.projects;
+  useDocumentTitle(`${tr.title[lang]} | ${site.brand}`);
 
   const [active, setActive] = useState<string | null>(null);
   const cards: ProjectCardData[] = [
@@ -26,16 +23,16 @@ export function ProjectsIndex() {
   return (
     <PageTransition>
       <h2 className="section-h2 center" lang={lang}>
-        {heading[lang]}
+        {tr.title[lang]}
       </h2>
 
-      <div className="project-filters" role="tablist" aria-label={heading[lang]}>
+      <div className="project-filters" role="tablist" aria-label={tr.title[lang]}>
         <button
           className={`filter-chip${active === null ? " active" : ""}`}
           onClick={() => setActive(null)}
           aria-pressed={active === null}
         >
-          {allLabel[lang]}
+          {tr.all[lang]}
         </button>
         {allTags.map((tag) => (
           <button

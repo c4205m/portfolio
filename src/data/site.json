@@ -1,4 +1,5 @@
 {
+    "brand": "c4205M",
     "navigation": [
         { 
             "url": "/resume/", 
@@ -102,6 +103,16 @@
             "bottom": {
                 "en": "All rights reserved.",
                 "tr": "Tüm hakları saklıdır."
+            }
+        },
+        "projects": {
+            "title": {
+                "en": "Projects",
+                "tr": "Projeler"
+            },
+            "all": {
+                "en": "All",
+                "tr": "Tümü"
             }
         }
     }

@@ -1,6 +1,6 @@
 import { Navigate, useParams } from "react-router-dom";
 import { projectsBySlug } from "../data/projects";
-import { useLang } from "../i18n";
+import { site, useLang } from "../i18n";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { PageTransition } from "../components/PageTransition";
 import { Gallery } from "../components/Gallery";
@@ -15,7 +15,7 @@ export function ProjectPage() {
   const { slug } = useParams();
   const project = slug ? projectsBySlug[slug] : undefined;
 
-  useDocumentTitle(project ? `${project.title} | c4205M` : "c4205M");
+  useDocumentTitle(project ? `${project.title} | ${site.brand}` : site.brand);
 
   if (!project) return <Navigate to={`/${lang}/projects/`} replace />;
 

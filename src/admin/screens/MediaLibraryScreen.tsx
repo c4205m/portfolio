@@ -18,7 +18,7 @@ export function MediaLibraryScreen() {
 
       <div className="wp-media-upload">
         <Field label="Upload folder" hint="Usually the project slug.">
-          <input className="wp-input" type="text" value={folder} placeholder="thorn" onChange={(e) => setFolder(e.target.value)} />
+          <input className="wp-input" type="text" value={folder} placeholder="project-slug" onChange={(e) => setFolder(e.target.value)} />
         </Field>
         <Dropzone folder={folder} busy={media.busy} onFiles={(files) => void media.upload(folder, files)} />
       </div>

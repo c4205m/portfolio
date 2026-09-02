@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { adminApi } from "./plugins/admin-api";
@@ -7,9 +6,4 @@ import { adminApi } from "./plugins/admin-api";
 export default defineConfig({
   base: "/portfolio/",
   plugins: [react(), adminApi()],
-  test: {
-    environment: "jsdom",
-    globals: true,
-    setupFiles: "./src/test/setup.ts",
-  },
 });
