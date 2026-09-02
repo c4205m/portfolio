@@ -3,7 +3,7 @@ import type { Project } from "../../types/content";
 const lenses: Project = {
   slug: "lenses",
   title: "Snapchat Lenses",
-  tags: ["AR", "Snapchat", "Shaders"],
+  tags: ["XR", "Snapchat", "Shaders"],
   blurb: {
     en: "A collection of Snapchat lenses built in Lens Studio, spanning personal experiments and branded campaigns.",
     tr: "Lens Studio'da geliştirilen, kişisel denemelerden marka kampanyalarına uzanan bir Snapchat lens koleksiyonu.",

@@ -3,7 +3,7 @@ import type { Project } from "../../types/content";
 const azuki: Project = {
   slug: "azuki",
   title: "Azuki: Elemental XR Experience",
-  tags: ["AR", "VFX", "Shaders"],
+  tags: ["XR", "VFX", "Shaders"],
   blurb: {
     en: "An augmented reality experience promoting Azuki's merchandise through four real-time elemental VFX systems.",
     tr: "Azuki'nin merchandise'ını dört gerçek zamanlı elementel VFX sistemiyle öne çıkaran bir artırılmış gerçeklik deneyimi.",
@@ -60,8 +60,8 @@ const azuki: Project = {
           {
             type: "text",
             content: {
-              en: "High visual fidelity within mobile AR performance constraints",
-              tr: "Mobil AR performans kısıtları içinde yüksek görüntü kalitesi sağlayan optimizasyon",
+              en: "High visual fidelity within mobile XR performance constraints",
+              tr: "Mobil XR performans kısıtları içinde yüksek görüntü kalitesi sağlayan optimizasyon",
             },
           },
           { type: "webp", src: "/media/azuki/src8.png" },

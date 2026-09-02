@@ -29,4 +29,18 @@ export const externalProjects: ExternalProject[] = [
       tr: "Github'da Görüntüle",
     },
   },
+  {
+    slug: "ping-pong-game",
+    title: "Ping Pong Game",
+    blurb: {
+      en: "An XR ping pong game played by turning your head, honorable mention at the Lenslist competition, whose menu face has blinking eyes for paddles and a mouth of ping pong balls that scatter to the table on play.",
+      tr: "Kafa hareketiyle oynanan, Lenslist yarışmasında mansiyon ödüllü XR ping pong oyunu.",
+    },
+    tags: ["Lens Studio", "Game", "Shaders"],
+    url: "https://lenslist.co/snap-ar-challenges/retro-games#winners",
+    label: {
+      en: "View on Lenslist",
+      tr: "Lenslist'te Görüntüle",
+    },
+  },
 ];
