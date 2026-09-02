@@ -194,6 +194,16 @@ export function Field({ label, hint, children }: FieldProps) {
   );
 }
 
+function FieldGroup({ label, hint, children }: FieldProps) {
+  return (
+    <div className="wp-field" role="group" aria-label={label}>
+      <span className="wp-field-label">{label}</span>
+      {children}
+      {hint && <span className="wp-field-hint">{hint}</span>}
+    </div>
+  );
+}
+
 interface TextInputProps {
   label: string;
   value: string | undefined;
@@ -252,25 +262,103 @@ export function Select<T extends string>({ label, value, options, onChange }: { 
   );
 }
 
-export function TokenInput({ label, value, onChange, suggestions, hint }: { label: string; value: string[]; onChange: (v: string[]) => void; suggestions?: string[]; hint?: string }) {
-  const listId = `tokens-${label.replace(/\W+/g, "-").toLowerCase()}`;
+export function PillSelect({ label, value, options, onChange, hint }: { label: string; value: string[]; options: readonly string[]; onChange: (v: string[]) => void; hint?: string }) {
+  const extras = value.filter((v) => !options.includes(v));
+  const all = [...options, ...extras];
+
+  const toggle = (option: string) => {
+    const next = value.includes(option) ? value.filter((v) => v !== option) : [...value, option];
+    onChange(all.filter((o) => next.includes(o)));
+  };
+
   return (
-    <Field label={label} hint={hint}>
+    <FieldGroup label={label} hint={hint}>
+      <div className="wp-pills">
+        {all.map((option) => {
+          const selected = value.includes(option);
+          return (
+            <button
+              key={option}
+              type="button"
+              className={selected ? "wp-pill wp-pill-on" : "wp-pill"}
+              aria-pressed={selected}
+              onClick={() => toggle(option)}
+            >
+              {option}
+            </button>
+          );
+        })}
+      </div>
+    </FieldGroup>
+  );
+}
+
+export function TokenInput({ label, value, onChange, suggestions, hint }: { label: string; value: string[]; onChange: (v: string[]) => void; suggestions?: string[]; hint?: string }) {
+  const [draft, setDraft] = useState("");
+  const listId = `tokens-${label.replace(/\W+/g, "-").toLowerCase()}`;
+  const available = (suggestions ?? []).filter((s) => !value.includes(s));
+
+  const add = (token: string) => {
+    const clean = token.trim();
+    if (clean && !value.includes(clean)) onChange([...value, clean]);
+    setDraft("");
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" || e.key === ",") {
+      e.preventDefault();
+      add(draft);
+    } else if (e.key === "Backspace" && !draft && value.length) {
+      onChange(value.slice(0, -1));
+    }
+  };
+
+  return (
+    <FieldGroup label={label} hint={hint}>
+      {value.length > 0 && (
+        <div className="wp-pills">
+          {value.map((token) => (
+            <span key={token} className="wp-pill wp-pill-on">
+              {token}
+              <button type="button" className="wp-pill-x" aria-label={`Remove ${token}`} onClick={() => onChange(value.filter((v) => v !== token))}>
+                <Icon.close size={12} />
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
       <input
         className="wp-input"
         type="text"
-        value={value.join(", ")}
-        list={suggestions ? listId : undefined}
-        onChange={(e) => onChange(e.target.value.split(",").map((t) => t.trim()).filter(Boolean))}
+        value={draft}
+        placeholder="Add and press Enter"
+        list={available.length ? listId : undefined}
+        onChange={(e) => {
+          const next = e.target.value;
+          if (available.includes(next)) add(next);
+          else setDraft(next);
+        }}
+        onKeyDown={onKeyDown}
+        onBlur={() => add(draft)}
       />
-      {suggestions && (
-        <datalist id={listId}>
-          {suggestions.map((s) => (
-            <option key={s} value={s} />
-          ))}
-        </datalist>
+      {available.length > 0 && (
+        <>
+          <div className="wp-pills">
+            {available.map((s) => (
+              <button key={s} type="button" className="wp-pill wp-pill-add" onClick={() => add(s)}>
+                <Icon.plus size={11} />
+                {s}
+              </button>
+            ))}
+          </div>
+          <datalist id={listId}>
+            {available.map((s) => (
+              <option key={s} value={s} />
+            ))}
+          </datalist>
+        </>
       )}
-    </Field>
+    </FieldGroup>
   );
 }
 

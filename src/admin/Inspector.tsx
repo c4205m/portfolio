@@ -1,7 +1,7 @@
 import type { Lang, Localized, Project, ProjectSection } from "../types/content";
 import type { Selection } from "./BlockCanvas";
 import { MediaInput } from "./MediaLibrary";
-import { Checkbox, Empty, NumberInput, Panel, Select, TextInput, TokenInput, replaceAt } from "./ui";
+import { Checkbox, Empty, NumberInput, Panel, PillSelect, Select, TextInput, TokenInput, replaceAt } from "./ui";
 
 const GALLERY_TYPES = ["slider", "ig", "infinite-carousel", "slide-left", "slide-right"];
 const VIDEO_ATTRS = ["autoplay", "muted", "playsinline", "loop", "controls"];
@@ -49,11 +49,11 @@ function GallerySettings({ section, onChange }: { section: Extract<ProjectSectio
 
   return (
     <>
-      <TokenInput
+      <PillSelect
         label="Layout tokens"
-        hint="e.g. slider infinite-carousel slide-left"
+        hint="Combine tokens, e.g. slider + infinite-carousel + slide-left."
         value={gallery.type ? gallery.type.split(/\s+/).filter(Boolean) : []}
-        suggestions={GALLERY_TYPES}
+        options={GALLERY_TYPES}
         onChange={(tokens) => set({ type: tokens.join(" ") })}
       />
       <Select label="Ratio" value={(gallery.attr.ratio ?? "square") as (typeof RATIOS)[number]} options={RATIOS} onChange={(ratio) => setAttr({ ratio })} />
@@ -75,7 +75,7 @@ function ItemSettings({ section, itemIndex, folder, onChange }: { section: Extra
       <>
         <MediaInput label="Video" value={item.src} folder={folder} onChange={(src) => update({ ...item, src })} />
         <TextInput label="Link" value={item.href} onChange={(href) => update({ ...item, href: href || undefined })} />
-        <TokenInput label="Video attributes" value={item.attrs ?? []} suggestions={VIDEO_ATTRS} onChange={(attrs) => update({ ...item, attrs: attrs.length ? attrs : undefined })} />
+        <PillSelect label="Video attributes" value={item.attrs ?? []} options={VIDEO_ATTRS} onChange={(attrs) => update({ ...item, attrs: attrs.length ? attrs : undefined })} />
         <TokenInput label="CSS classes" value={item.class ?? []} suggestions={["link-emphasize"]} onChange={(cls) => update({ ...item, class: cls.length ? cls : undefined })} />
       </>
     );
