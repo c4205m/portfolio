@@ -8,6 +8,8 @@ import { ModalProvider } from "../context/ModalContext";
 import { ProjectsIndex } from "../pages/ProjectsIndex";
 import { ContactPage } from "../pages/ContactPage";
 import { App } from "../App";
+import { externalProjects, projects, projectsBySlug } from "../data/projects";
+import resumeData from "../data/resume.json";
 import { isLang, resolveInitialLang } from "../i18n";
 
 function renderAt(path: string, routePath: string, element: ReactElement) {
@@ -49,8 +51,7 @@ describe("App", () => {
       </ThemeProvider>,
     );
 
-    // Resume page heading from resume.json basics.label.
-    expect(await screen.findByText("Technical Artist")).toBeInTheDocument();
+    expect(await screen.findByText(resumeData.basics.label)).toBeInTheDocument();
   });
 });
 
@@ -58,12 +59,13 @@ describe("ProjectsIndex", () => {
   it("lists all projects and filters by tag without crashing", async () => {
     renderAt("/en/projects", "/:lang/projects", <ProjectsIndex />);
 
-    expect(screen.getByText("THORN — Parametric Lighting System")).toBeInTheDocument();
-    expect(screen.getByText("Azuki: Elemental XR Experience")).toBeInTheDocument();
-    expect(screen.getByText("Snapchat Lenses")).toBeInTheDocument();
+    for (const { title } of [...projects, ...externalProjects]) {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    }
 
-    await userEvent.click(screen.getByRole("button", { name: "VFX" }));
-    expect(screen.getByText("Azuki: Elemental XR Experience")).toBeInTheDocument();
+    const azuki = projectsBySlug.azuki;
+    await userEvent.click(screen.getByRole("button", { name: azuki.tags[0] }));
+    expect(screen.getByText(azuki.title)).toBeInTheDocument();
   });
 });
 

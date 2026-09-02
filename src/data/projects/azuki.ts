@@ -3,7 +3,7 @@ import type { Project } from "../../types/content";
 const azuki: Project = {
   slug: "azuki",
   title: "Azuki: Elemental XR Experience",
-  tags: ["XR", "VFX", "Shaders"],
+  tags: ["XR", "Shaders"],
   blurb: {
     en: "An augmented reality experience promoting Azuki's merchandise through four real-time elemental VFX systems.",
     tr: "Azuki'nin merchandise'ını dört gerçek zamanlı elementel VFX sistemiyle öne çıkaran bir artırılmış gerçeklik deneyimi.",
