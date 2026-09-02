@@ -6,7 +6,6 @@ import type { GalleryItem as Item, Lang } from "../types/content";
 interface GalleryItemProps {
   item: Item;
   lang: Lang;
-  /** Whether the parent section is in view (drives video loading). */
   load: boolean;
 }
 
