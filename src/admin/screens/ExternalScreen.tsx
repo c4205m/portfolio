@@ -1,6 +1,7 @@
-import type { ExternalProject } from "../types/content";
-import { LocalizedInput } from "./Inspector";
-import { Button, Empty, Icon, IconButton, Panel, TextInput, TokenInput, move, removeAt, replaceAt, useDragList } from "./ui";
+import type { ExternalProject } from "../../types/content";
+import { Button, Empty, Icon, IconButton, LocalizedInput, Panel, SaveButton, TextInput, TokenInput } from "../components";
+import { useDragList } from "../hooks";
+import { move, removeAt, replaceAt } from "../utils";
 
 const BLANK: ExternalProject = {
   slug: "",
@@ -31,9 +32,7 @@ export function ExternalScreen({ projects, tagSuggestions, dirty, saving, onChan
           <Button onClick={() => onChange([...projects, structuredClone(BLANK)])}>
             <Icon.plus size={15} /> Add link
           </Button>
-          <Button variant="primary" onClick={onSave} disabled={saving || !dirty}>
-            {saving ? "Saving…" : dirty ? "Save" : "Saved"}
-          </Button>
+          <SaveButton dirty={dirty} saving={saving} onSave={onSave} />
         </div>
       </header>
 
@@ -57,8 +56,9 @@ export function ExternalScreen({ projects, tagSuggestions, dirty, saving, onChan
                   <TextInput label="Title" value={project.title} onChange={(title) => update({ ...project, title })} />
                   <TextInput label="Slug" value={project.slug} onChange={(slug) => update({ ...project, slug })} />
                   <TextInput label="URL" value={project.url} onChange={(url) => update({ ...project, url })} />
-                  <TokenInput label="Tags" value={project.tags} suggestions={tagSuggestions} onChange={(tags) => update({ ...project, tags })} />
                 </div>
+
+                <TokenInput label="Tags" value={project.tags} suggestions={tagSuggestions} onChange={(tags) => update({ ...project, tags })} />
 
                 <Panel title="Copy" defaultOpen={false}>
                   <LocalizedInput label="Blurb" value={project.blurb} multiline onChange={(blurb) => update({ ...project, blurb })} />

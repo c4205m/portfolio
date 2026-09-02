@@ -8,7 +8,7 @@ import { ProjectsIndex } from "./pages/ProjectsIndex";
 import { ProjectPage } from "./pages/ProjectPage";
 import { defaultLang, isLang, resolveInitialLang } from "./i18n";
 
-const AdminApp = import.meta.env.DEV ? lazy(() => import("./admin/AdminApp").then((m) => ({ default: m.AdminApp }))) : null;
+const AdminApp = import.meta.env.DEV ? lazy(() => import("./admin").then((m) => ({ default: m.AdminApp }))) : null;
 
 /** Redirect unknown `/:lang` segments to the default language. */
 function LangGuard({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import type { Lang, Project } from "../types/content";
-import { BlockCanvas } from "./BlockCanvas";
-import type { Selection } from "./BlockCanvas";
-import { Inspector } from "./Inspector";
-import { Button, Icon, IconButton } from "./ui";
+import type { Lang, Project } from "../../types/content";
+import { Icon, IconButton, SaveButton } from "../components";
+import { BlockCanvas, Inspector } from "../editor";
+import type { InspectorTab, Selection } from "../types";
+
+const LANGS = ["en", "tr"] as const;
 
 interface ProjectEditorScreenProps {
   project: Project;
@@ -19,7 +20,7 @@ interface ProjectEditorScreenProps {
 
 export function ProjectEditorScreen({ project, lang, dirty, saving, tagSuggestions, onLang, onChange, onSave, onBack }: ProjectEditorScreenProps) {
   const [selection, setSelection] = useState<Selection>(null);
-  const [tab, setTab] = useState<"project" | "block">("project");
+  const [tab, setTab] = useState<InspectorTab>("project");
 
   function select(next: Selection) {
     setSelection(next);
@@ -36,16 +37,14 @@ export function ProjectEditorScreen({ project, lang, dirty, saving, tagSuggestio
         </span>
 
         <div className="wp-lang-toggle" role="group" aria-label="Editing language">
-          {(["en", "tr"] as const).map((code) => (
+          {LANGS.map((code) => (
             <button key={code} type="button" className={code === lang ? "active" : ""} aria-pressed={code === lang} onClick={() => onLang(code)}>
               {code.toUpperCase()}
             </button>
           ))}
         </div>
 
-        <Button variant="primary" onClick={onSave} disabled={saving || !dirty}>
-          {saving ? "Saving…" : dirty ? "Save" : "Saved"}
-        </Button>
+        <SaveButton dirty={dirty} saving={saving} onSave={onSave} />
       </header>
 
       <div className="wp-editor-body">

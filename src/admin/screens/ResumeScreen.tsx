@@ -1,8 +1,6 @@
-import type { ReactNode } from "react";
-import type { Lang } from "../types/content";
-import type { Resume, ResumeEducation, ResumeJob, ResumeProject, ResumeSkill } from "../types/resume";
-import { LocalizedInput } from "./Inspector";
-import { Button, Field, Icon, IconButton, Panel, TextInput, TokenInput, move, removeAt, replaceAt, useDragList } from "./ui";
+import type { Lang } from "../../types/content";
+import type { Resume, ResumeEducation, ResumeJob, ResumeProject, ResumeSkill } from "../../types/resume";
+import { Field, LocalizedInput, Panel, Repeater, SaveButton, TextInput, TokenInput } from "../components";
 
 const LANGS: Lang[] = ["en", "tr"];
 
@@ -29,44 +27,6 @@ function Highlights({ value, onChange }: { value: Record<Lang, string[]> | undef
   );
 }
 
-interface RepeaterProps<T> {
-  title: string;
-  items: T[];
-  blank: T;
-  heading: (item: T) => string;
-  children: (item: T, update: (next: T) => void) => ReactNode;
-  onChange: (items: T[]) => void;
-}
-
-function Repeater<T>({ title, items, blank, heading, children, onChange }: RepeaterProps<T>) {
-  const { bind, over } = useDragList((from, to) => onChange(move(items, from, to)));
-
-  return (
-    <section className="wp-section">
-      <header className="wp-section-head">
-        <h2>{title}</h2>
-        <Button onClick={() => onChange([...items, structuredClone(blank)])}>
-          <Icon.plus size={15} /> Add
-        </Button>
-      </header>
-      <div className="wp-cards">
-        {items.map((item, index) => (
-          <article key={index} className={over === index ? "wp-card drop" : "wp-card"} {...bind(index)}>
-            <header className="wp-card-head">
-              <span className="wp-grip" title="Drag to reorder">
-                <Icon.drag size={16} />
-              </span>
-              <h3>{heading(item) || "(untitled)"}</h3>
-              <IconButton label="Delete entry" danger icon={<Icon.trash size={15} />} onClick={() => onChange(removeAt(items, index))} />
-            </header>
-            {children(item, (next) => onChange(replaceAt(items, index, next)))}
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 interface ResumeScreenProps {
   resume: Resume;
   dirty: boolean;
@@ -83,9 +43,7 @@ export function ResumeScreen({ resume, dirty, saving, onChange, onSave }: Resume
     <div className="wp-screen">
       <header className="wp-screen-head">
         <h1>Resume</h1>
-        <Button variant="primary" onClick={onSave} disabled={saving || !dirty}>
-          {saving ? "Saving…" : dirty ? "Save" : "Saved"}
-        </Button>
+        <SaveButton dirty={dirty} saving={saving} onSave={onSave} />
       </header>
 
       <Panel title="Basics">
