@@ -1,27 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { languages, site, useLang } from "../i18n";
-import { useTheme } from "../context/ThemeContext";
+import { site, useLang } from "../i18n";
 import { useModal } from "../context/ModalContext";
-import type { Lang } from "../types/content";
-
-function swapLang(pathname: string, next: Lang): string {
-  const segments = pathname.split("/");
-  // segments[0] is "" (leading slash); segments[1] is the lang.
-  if (segments.length > 1) segments[1] = next;
-  return segments.join("/");
-}
+import { LangSwitcher } from "./LangSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function Header() {
   const lang = useLang();
   const location = useLocation();
-  const { theme, setTheme } = useTheme();
   const { activeKey, close } = useModal();
 
   const [detailsOpen, setDetailsOpen] = useState(true);
-  const [langOpen, setLangOpen] = useState(false);
   const detailsRef = useRef<HTMLDetailsElement>(null);
-  const langRef = useRef<HTMLDivElement>(null);
 
   // Collapse the switcher on small screens; keep it open on desktop.
   useEffect(() => {
@@ -34,25 +24,20 @@ export function Header() {
     return () => mql.removeEventListener("change", onChange);
   }, []);
 
-  // Outside-click closes the popover (mobile) and the language dropdown.
   useEffect(() => {
+    if (!detailsOpen) return;
     const onClick = (e: MouseEvent) => {
-      const target = e.target as Node;
       if (
-        detailsOpen &&
         detailsRef.current &&
-        !detailsRef.current.contains(target) &&
+        !detailsRef.current.contains(e.target as Node) &&
         window.innerWidth < 640
       ) {
         setDetailsOpen(false);
       }
-      if (langOpen && langRef.current && !langRef.current.contains(target)) {
-        setLangOpen(false);
-      }
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
-  }, [detailsOpen, langOpen]);
+  }, [detailsOpen]);
 
   const prefix = `/${lang}`;
   const modalActive = activeKey !== null;
@@ -67,57 +52,8 @@ export function Header() {
       >
         <summary className="switcher-summary">···</summary>
         <div className={`language-switcher${modalActive ? " modal-mode" : ""}`}>
-          <div className="lang-switcher" ref={langRef}>
-            <input
-              type="checkbox"
-              id="lang-toggle"
-              className="lang-toggle-input"
-              checked={langOpen}
-              onChange={(e) => setLangOpen(e.target.checked)}
-            />
-            <label htmlFor="lang-toggle" className="lang-trigger">
-              {lang}
-            </label>
-            <div className="lang-options">
-              {languages
-                .filter((l) => l !== lang)
-                .map((l) => (
-                  <Link
-                    key={l}
-                    className="lang-option"
-                    to={swapLang(location.pathname, l)}
-                    onClick={() => setLangOpen(false)}
-                  >
-                    {l}
-                  </Link>
-                ))}
-            </div>
-          </div>
-
-          <div id="theme" className="theme-switcher">
-            <input
-              type="radio"
-              name="theme-toggle"
-              id="theme-dark"
-              value="dark"
-              checked={theme === "dark"}
-              onChange={() => setTheme("dark")}
-            />
-            <input
-              type="radio"
-              name="theme-toggle"
-              id="theme-light"
-              value="light"
-              checked={theme === "light"}
-              onChange={() => setTheme("light")}
-            />
-            <label lang="en" htmlFor="theme-dark">
-              dark
-            </label>
-            <label lang="en" htmlFor="theme-light">
-              light
-            </label>
-          </div>
+          <LangSwitcher />
+          <ThemeSwitcher />
         </div>
       </details>
 

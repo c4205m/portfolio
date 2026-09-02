@@ -18,14 +18,27 @@
 .language-switcher { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
 
 .lang-switcher { position: relative; display: flex; align-items: center; }
-.lang-toggle-input { display: none; }
-.lang-trigger { font-size: 0.72rem; text-transform: uppercase; color: var(--muted); cursor: pointer; user-select: none; display: flex; align-items: center; gap: 3px; }
-.lang-trigger::after { content: ''; font-size: 0.6rem; color: var(--muted); transition: transform 0.2s ease; display: inline-block; }
-.lang-toggle-input:checked ~ .lang-trigger::after { transform: rotate(180deg); }
-.lang-options { position: absolute; top: calc(100% + 6px); right: 0; display: flex; flex-direction: column; gap: 4px; max-height: 0; overflow: hidden; opacity: 0; background: var(--bg); border: 1px solid transparent; border-radius: 6px; padding: 0; transition: max-height 0.2s ease, opacity 0.15s ease, border-color 0.15s ease, padding 0.2s ease; }
-.lang-toggle-input:checked ~ .lang-options { max-height: 120px; opacity: 1; border-color: var(--line); padding: 6px 10px; }
-.lang-option { font-size: 0.72rem; text-transform: uppercase; color: var(--muted); border-bottom: none !important; white-space: nowrap; }
-.lang-option:hover { color: var(--text); border-bottom: none !important; }
+
+.lang-trigger { position: relative; appearance: none; background: none; border: 0; font: inherit; padding: 0; font-size: 0.72rem; text-transform: uppercase; color: var(--muted); cursor: pointer; user-select: none; display: flex; align-items: center; gap: 4px; border-radius: 4px; transition: color 0.15s ease; }
+/* Pads the tap area to 44px without changing the header's visual rhythm. */
+.lang-trigger::before { content: ''; position: absolute; inset: -14px -6px; }
+.lang-trigger:hover { color: var(--text); }
+.lang-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.lang-caret { transition: transform 0.2s ease; }
+.lang-trigger[aria-expanded="true"] .lang-caret { transform: rotate(180deg); }
+
+.lang-options { position: absolute; top: calc(100% + 8px); right: 0; transform-origin: top right; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); z-index: 20; }
+.lang-options-list { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.lang-option { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 0.72rem; text-transform: uppercase; white-space: nowrap; color: var(--muted); border-bottom: none !important; transition: color 0.15s ease; }
+.lang-flag { font-size: 0.95rem; line-height: 1; }
+.lang-option-label { border-bottom: 1px solid var(--line); transition: border-color 0.15s ease; }
+.lang-option:hover { color: var(--text); }
+.lang-option:hover .lang-option-label, .lang-option[aria-checked="true"] .lang-option-label { border-bottom-color: var(--accent); }
+.lang-option[aria-checked="true"] { color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) {
+    .lang-caret, .lang-trigger, .lang-option { transition-duration: 0.01ms; }
+}
 
 .theme-switcher { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
 .theme-switcher input[type="radio"] { display: none; }
