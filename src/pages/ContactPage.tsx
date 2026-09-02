@@ -12,7 +12,7 @@ type Errors = Partial<Record<FieldName, string>>;
 export function ContactPage() {
   const lang = useLang();
   const tr = site.componentTranslations.contact;
-  useDocumentTitle(`${tr.title[lang]} | c4205M`);
+  useDocumentTitle(`${tr.title[lang]} | ${site.brand}`);
 
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"" | "success" | "error">("");

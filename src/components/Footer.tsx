@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <h3>c4205M</h3>
+          <h3>{site.brand}</h3>
           <p>{tr.slogan[lang]}</p>
         </div>
 
@@ -36,7 +36,9 @@ export function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 c4205M. {tr.bottom[lang]}</p>
+        <p>
+          © {new Date().getFullYear()} {site.brand}. {tr.bottom[lang]}
+        </p>
       </div>
     </footer>
   );

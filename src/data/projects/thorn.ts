@@ -3,7 +3,7 @@ import type { Project } from "../../types/content";
 const thorn: Project = {
   slug: "thorn",
   title: "THORN — Parametric Lighting System",
-  tags: ["Blender", "Parametric", "3D"],
+  tags: ["Blender", "Parametric", "Procedural", "3D"],
   blurb: {
     en: "A Red Dot Award–winning modular ceiling light, taken to production with a parametric Geometry Nodes pipeline.",
     tr: "Red Dot Award sahibi modüler bir tavan armatürü; parametrik Geometry Nodes pipeline'ı ile üretime taşındı.",
@@ -30,10 +30,7 @@ const thorn: Project = {
           { type: "webm", src: "/media/thorn/thorn-01-m.webm", attrs: ["autoplay", "muted", "playsinline", "loop"] },
           {
             type: "text",
-            content: {
-              en: "A design-to-production pipeline where the 3D model and the manufacturing docs stay in sync",
-              tr: "Tasarımdan üretime uzanan bir pipeline: 3D model ile üretim dökümanları her zaman senkron halinde",
-            },
+            content: { en: "A design-to-production pipeline where the 3D model and the manufacturing docs stay in sync", tr: "Tasarımdan üretime uzanan bir pipeline: 3D model ile üretim dökümanları her zaman senkron halinde" },
           },
           { type: "webp", src: "/media/thorn/thorn-00.webp" },
           { type: "webp", src: "/media/thorn/thorn-03.webp" },
