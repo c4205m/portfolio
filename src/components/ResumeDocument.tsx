@@ -1,6 +1,7 @@
 import { Document, Link, Page, Text, View } from "@react-pdf/renderer";
 import type { Lang, Localized } from "../types/content";
 import type { Resume } from "../types/resume";
+import { displayUrl, externalUrl } from "../asset";
 import { richText } from "./richText";
 import { styles } from "./resumePdfStyles";
 
@@ -43,8 +44,8 @@ export function ResumeDocument({ resume, lang, siteOrigin }: Props) {
               {basics.email}
             </Link>
             {basics.website && (
-              <Link src={basics.website} style={styles.contactLink}>
-                {basics.website}
+              <Link src={externalUrl(basics.website)} style={styles.contactLink}>
+                {displayUrl(basics.website)}
               </Link>
             )}
             <Text>{basics.location}</Text>
@@ -84,7 +85,11 @@ export function ResumeDocument({ resume, lang, siteOrigin }: Props) {
             <View style={styles.row}>
               <Text style={styles.rowTitle}>{project.name}</Text>
               <Link
-                src={project.href ? `${siteOrigin}/${lang}${project.href}` : project.url}
+                src={
+                  project.href
+                    ? `${siteOrigin}/${lang}${project.href}`
+                    : externalUrl(project.url ?? "")
+                }
                 style={styles.link}
               >
                 {project.label[lang]}

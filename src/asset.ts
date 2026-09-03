@@ -8,3 +8,11 @@ export function asset(path: string): string {
   if (/^https?:\/\//.test(path)) return path;
   return `${base}${path}`;
 }
+
+export function externalUrl(url: string): string {
+  return /^[a-z][a-z0-9+.-]*:/i.test(url) ? url : `https://${url}`;
+}
+
+export function displayUrl(url: string): string {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}

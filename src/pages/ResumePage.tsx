@@ -8,7 +8,7 @@ import { useResumeScrollHeader } from "../hooks/useResumeScrollHeader";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { PageTransition } from "../components/PageTransition";
 import { DownloadResumeButton } from "../components/DownloadResumeButton";
-import { asset } from "../asset";
+import { asset, displayUrl, externalUrl } from "../asset";
 
 const resume = resumeData as unknown as Resume;
 
@@ -47,7 +47,9 @@ export function ResumePage() {
           <br />
           {resume.basics.website && (
             <>
-              <a href={resume.basics.website}>{resume.basics.website}</a>
+              <a href={externalUrl(resume.basics.website)} target="_blank" rel="noopener">
+                {displayUrl(resume.basics.website)}
+              </a>
               <br />
             </>
           )}
@@ -95,7 +97,7 @@ export function ResumePage() {
                 {project.href ? (
                   <Link to={`/${lang}${project.href}`}>{project.label[lang]}</Link>
                 ) : (
-                  <a href={project.url} target="_blank" rel="noopener">
+                  <a href={externalUrl(project.url ?? "")} target="_blank" rel="noopener">
                     {project.label[lang]}
                   </a>
                 )}

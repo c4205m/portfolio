@@ -1,5 +1,5 @@
 import { LazyVideo } from "./LazyVideo";
-import { asset } from "../asset";
+import { asset, externalUrl } from "../asset";
 import { useTheme } from "../context/ThemeContext";
 import type { GalleryItem as Item, Lang } from "../types/content";
 
@@ -43,7 +43,7 @@ export function GalleryItem({ item, lang, load }: GalleryItemProps) {
     const video = <LazyVideo src={item.src} attrs={item.attrs} load={load} />;
     if (item.href) {
       return (
-        <a href={item.href} className="gallery-link" target="_blank" rel="noopener">
+        <a href={externalUrl(item.href)} className="gallery-link" target="_blank" rel="noopener">
           {video}
         </a>
       );
@@ -55,7 +55,7 @@ export function GalleryItem({ item, lang, load }: GalleryItemProps) {
     const img = <Image src={item.src} dark={item.dark} invert={item.invert} alt={item.alt} />;
     if (item.href) {
       return (
-        <a href={item.href} className="gallery-link" target="_blank" rel="noopener">
+        <a href={externalUrl(item.href)} className="gallery-link" target="_blank" rel="noopener">
           {img}
         </a>
       );

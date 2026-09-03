@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import type { ExternalProject, Lang, Project } from "../types/content";
+import { externalUrl } from "../asset";
 
 export type ProjectCardData =
   | (Project & { external: false })
@@ -37,7 +38,7 @@ export const ProjectCard = forwardRef<
     >
       {project.external ? (
         <a
-          href={project.url}
+          href={externalUrl(project.url)}
           target="_blank"
           rel="noopener noreferrer"
           className="project-card-link"

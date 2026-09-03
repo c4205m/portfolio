@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { site, useLang } from "../i18n";
+import { externalUrl } from "../asset";
 
 export function Footer() {
   const lang = useLang();
@@ -27,7 +28,7 @@ export function Footer() {
           <div>
             <h4>{tr.social[lang]}</h4>
             {site.social.map((item) => (
-              <a key={item.url} href={item.url}>
+              <a key={item.url} href={externalUrl(item.url)}>
                 {item.label}
               </a>
             ))}
