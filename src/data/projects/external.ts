@@ -30,11 +30,11 @@ export const externalProjects: ExternalProject[] = [
     },
   },
   {
-    slug: "ping-pong-game",
-    title: "Ping Pong Game",
+    slug: "pong-game",
+    title: "Pong Game",
     blurb: {
-      en: "An XR ping pong game played by turning your head, honorable mention at the Lenslist competition, whose menu face has blinking eyes for paddles and a mouth of ping pong balls that scatter to the table on play.",
-      tr: "Kafa hareketiyle oynanan, Lenslist yarışmasında mansiyon ödüllü XR ping pong oyunu.",
+      en: "An XR pong game played by turning your head, honorable mention at the Lenslist competition, whose menu face has blinking eyes for paddles and a mouth of ping pong balls that scatter to the table on play.",
+      tr: "Kafa hareketiyle oynanan, Lenslist yarışmasında mansiyon ödüllü XR pong oyunu.",
     },
     tags: ["Game", "Shaders", "Snapchat", "XR"],
     url: "https://lenslist.co/snap-ar-challenges/retro-games#winners",

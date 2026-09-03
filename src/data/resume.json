@@ -111,9 +111,9 @@
             }
         },
         {
-            "name": "Ping Pong Game",
+            "name": "Pong Game",
             "description": {
-                "en": "An XR ping pong game that took an <strong>honorable mention in Lenslist's retro games challenge</strong>. The paddle is your head: you rotate to aim, and a second player joins the match by walking into the camera frame. The part I care about is the menu. It's a face, two eyes and a mouth, and none of it is decoration. <strong>The eyes are the paddles</strong> and they track your blinks. <strong>The mouth is made of ping pong balls.</strong> Tap play and the face comes apart, each feature travelling to its position on the table and becoming the thing it already was. No loading screen, no cut, the menu just turns into the game.",
+                "en": "An XR pong game that took an <strong>honorable mention in Lenslist's retro games challenge</strong>. The paddle is your head: you rotate to aim, and a second player joins the match by walking into the camera frame. The part I care about is the menu. It's a face, two eyes and a mouth, and none of it is decoration. <strong>The eyes are the paddles</strong> and they track your blinks. <strong>The mouth is made of ping pong balls.</strong> Tap play and the face comes apart, each feature travelling to its position on the table and becoming the thing it already was. No loading screen, no cut, the menu just turns into the game.",
                 "tr": "<strong>Lenslist retro oyunlar yarışmasında mansiyon ödülü</strong> kazanan bir XR ping pong oyunu. Raket kendi kafanız: nişan almak için başınızı çeviriyorsunuz, ikinci oyuncu ise kameranın görüş alanına girdiği anda maça dahil oluyor. Benim için asıl mesele menüydü. Menü iki göz ve bir ağızdan oluşan bir yüz, ama hiçbiri süs değil. <strong>Gözler raketlerin ta kendisi</strong> ve göz kırpmalarınızı takip ediyor, <strong>ağız ise ping pong toplarından yapılmış.</strong> Play'e dokunduğunuzda yüz dağılıyor, her parça masadaki yerine gidiyor ve zaten olduğu şeye dönüşüyor. Yükleme ekranı ya da geçiş sahnesi yok, menü doğrudan oyunun kendisine dönüşüyor."
             },
             "url": "https://lenslist.co/snap-ar-challenges/retro-games#winners",
