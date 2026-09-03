@@ -58,6 +58,46 @@
     }
 }
 
-@media print {    
-    .resume-header { opacity: 1; position: relative; border-bottom: 1px solid #000; margin-bottom: 24px; }
+.resume-download {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 6px 0 -10px -11px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.resume-download > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.resume-download:not(:disabled):hover { color: var(--flash-2); }
+.resume-download:not(:disabled):active { transform: translateY(1px); }
+
+.resume-download:focus-visible {
+    outline: 2px solid var(--flash-2);
+    outline-offset: -6px;
+    border-radius: 2px;
+}
+
+.resume-download:disabled {
+    cursor: progress;
+    animation: resume-download-pulse 1s ease-in-out infinite;
+}
+
+.resume-download.failed { color: var(--error); }
+
+@keyframes resume-download-pulse {
+    50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .resume-download { transition: none; }
+    .resume-download:disabled { animation: none; opacity: 0.35; }
 }
