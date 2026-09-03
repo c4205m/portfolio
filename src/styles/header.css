@@ -79,8 +79,3 @@
     .lang-switcher { display: flex; align-items: center; }
     .site-nav { flex-wrap: wrap; gap: 16px; }
 }
-
-@media print {
-    .site-header { display: none; }
-    .site-nav { display: none; }
-}

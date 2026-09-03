@@ -92,7 +92,7 @@ export function ContactPage() {
 
   return (
     <PageTransition>
-      <section className="contact no-print">
+      <section className="contact">
         <h2>{tr.title[lang]}</h2>
 
         <div className="contact-card">

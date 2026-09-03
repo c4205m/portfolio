@@ -23,9 +23,7 @@ export function Layout() {
     <>
       <Header />
       <Outlet />
-      <div className="no-print">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

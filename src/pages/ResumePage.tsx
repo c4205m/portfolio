@@ -7,6 +7,7 @@ import { useLang } from "../i18n";
 import { useResumeScrollHeader } from "../hooks/useResumeScrollHeader";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { PageTransition } from "../components/PageTransition";
+import { DownloadResumeButton } from "../components/DownloadResumeButton";
 import { asset } from "../asset";
 
 const resume = resumeData as unknown as Resume;
@@ -37,6 +38,7 @@ export function ResumePage() {
         <div className="name">
           <h1>{resume.basics.name}</h1>
           <p>{resume.basics.label}</p>
+          <DownloadResumeButton resume={resume} lang={lang} />
         </div>
         <div className="muted">
           <a href={`tel:${resume.basics.phone}`}>{resume.basics.phone}</a>
